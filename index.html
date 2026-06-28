@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Zaunmacher24 – Betonsteine, Zaunsteine, Mauersteine und Fundamente für moderne Zaun- und Gartenprojekte. Beratung, Lieferung und Anfrage." />
   <meta name="keywords" content="Betonsteine, Zaunsteine, Mauersteine, Sichtschutz, Gartenmauer, Fundamente, Zaunbau, Betonmauer" />
+
+  <!-- Hero images preload: images appear as fast and clear as possible -->
+  <link rel="preload" as="image" href="images/hero-1.jpg">
+  <link rel="preload" as="image" href="images/hero-2.jpg">
+  <link rel="preload" as="image" href="images/hero-3.jpg">
   <title>Zaunmacher24 | Betonsteine & Zaunsteine</title>
   <style>
     :root {
@@ -1315,6 +1320,64 @@
     .hero-kaiser .hero-copy {
       position: relative;
       z-index: 6;
+    }
+
+
+    /* ============================================================
+       HERO IMAGE WITHOUT BLUR / HAZE
+       - No dark fog overlays on the hero image.
+       - No CSS blur or backdrop blur on hero elements.
+       - Image stays transparent until it loads, then appears clear.
+       ============================================================ */
+    .hero-kaiser .hero-slide::before,
+    .hero-kaiser .hero-slide::after,
+    .hero-kaiser .hero-slider::after {
+      display: none !important;
+      opacity: 0 !important;
+      background: none !important;
+    }
+    .hero-kaiser .hero-bg {
+      filter: none !important;
+      -webkit-filter: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      opacity: 0;
+      transition: opacity .25s ease, transform 6.2s ease-out;
+    }
+    .hero-kaiser .hero-slide.has-image .hero-bg {
+      opacity: 1 !important;
+    }
+    .hero-kaiser .hero-copy,
+    .hero-kaiser .hero-arrow {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+
+    /* ============================================================
+       HERO ALWAYS CLEAR FIX
+       - Hero image is visible immediately; no waiting for JS load class.
+       - No blur, haze or fade delay before image opens in the browser.
+       - If files are missing, the background remains transparent.
+       ============================================================ */
+    .hero-kaiser .hero-bg {
+      opacity: 1 !important;
+      filter: none !important;
+      -webkit-filter: none !important;
+      background-color: transparent !important;
+      transition: transform 6.2s ease-out !important;
+      will-change: transform;
+    }
+    .hero-kaiser .hero-slide.has-image .hero-bg,
+    .hero-kaiser .hero-bg.is-loaded {
+      opacity: 1 !important;
+    }
+    .hero-kaiser .hero-slide::before,
+    .hero-kaiser .hero-slide::after,
+    .hero-kaiser .hero-slider::after {
+      display: none !important;
+      opacity: 0 !important;
+      background: none !important;
     }
 
   </style>
