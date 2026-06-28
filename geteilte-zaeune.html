@@ -3,12 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Font matched from uploaded index page -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<meta name="description" content="Zaunmacher24 Geteilte Zäune: JONIEC GORC Systeme mit Bildern, Details und Anfrageformular.">
+  <meta name="description" content="Zaunmacher24 Geteilte Zäune: JONIEC GORC Systeme mit Bildern, Details und Anfrageformular.">
   <title>Geteilte Zäune | Zaunmacher24</title>
   <style>
     :root { --brand:#e31f26; --brand-dark:#b9151b; --dark:#0b0d12; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --soft:#f5f6f8; --max:1220px; --shadow:0 22px 70px rgba(17,24,39,.12); }
@@ -1484,37 +1479,34 @@
 
 
 /* ============================================================
-   FONT MATCH FROM INDEX PAGE
-   تم توحيد الخط فقط بدون تغيير الألوان أو التصميم.
+   NAV LINE FIX FROM INDEX PAGE
+   تم تطبيق شكل الخط السفلي فقط كما في صفحة index، بدون تغيير الخط/الفونت وبدون تغيير الألوان.
    ============================================================ */
-html,
-body,
-button,
-input,
-textarea,
-select,
-a,
-p,
-span,
-small,
-strong,
-label,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.btn,
-.menu,
-.logo,
-.logo-text,
-.logo-tagline,
-.product-card,
-.news-card,
-.category-entry-card {
-  font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+.menu a.active-link,
+.menu a.nav-products-link {
+  position: relative !important;
+}
+
+.menu a.active-link::after,
+.menu a.nav-products-link::after {
+  content: "" !important;
+  display: block !important;
+  height: 2px !important;
+  width: 100% !important;
+  background: currentColor !important;
+  border-radius: 99px !important;
+  margin-top: 5px !important;
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+
+@media (max-width: 980px) {
+  .menu a.active-link::after,
+  .menu a.nav-products-link::after {
+    display: none !important;
+  }
 }
 
 </style>
@@ -1559,7 +1551,7 @@ h6,
       <div class="news-grid">
       <article class="news-card">
         <div class="news-image">
-          <img src="images/geteilter-zaun-gorc-peak.webp" alt="Geteilter Zaun GORC® Peak" loading="eager" fetchpriority="high" decoding="async">
+          <img src="https://joniec.de/images/878/51b7623af2acab4cbe3a08567cb32f03.webp" alt="Geteilter Zaun GORC® Peak" loading="eager" fetchpriority="high" decoding="async">
         </div>
         <div class="news-body">
 <h3>Geteilter Zaun GORC® Peak</h3>
@@ -1570,7 +1562,7 @@ h6,
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="images/geteilte-zaeune-gorc-de-luxe-gl38.webp" alt="Geteilte Zäune GORC® de Luxe GL38" loading="lazy" decoding="async">
+          <img src="https://joniec.de/images/852/8ba7d1cc1ae37160c1d7da7fdd06d853.webp" alt="Geteilte Zäune GORC® de Luxe GL38" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
 <h3>Geteilte Zäune GORC® de Luxe GL38</h3>
@@ -1581,7 +1573,7 @@ h6,
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="images/geteilte-zaeune-gorc-de-luxe-gl22.webp" alt="Geteilte Zäune GORC® de Luxe GL22" loading="lazy" decoding="async">
+          <img src="https://joniec.de/images/872/9655821af0e1747534b9636778da8c95.webp" alt="Geteilte Zäune GORC® de Luxe GL22" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
 <h3>Geteilte Zäune GORC® de Luxe GL22</h3>
