@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zaunmacher24 Produktseite: Betonsteine, Zaunsteine, Mauersysteme, Tore, Fundamente, Beleuchtung und Zubehör ohne Onlinepreise.">
+  <meta name="description" content="Zaunmacher24 Produktseite: 15 JONIEC Produktbereiche mit deutschen Namen, Anfrageformular und ohne Onlinepreise.">
   <title>Produkte | Zaunmacher24</title>
   <style>
     :root { --brand:#e31f26; --brand-dark:#b9151b; --dark:#0b0d12; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --soft:#f5f6f8; --max:1220px; --shadow:0 22px 70px rgba(17,24,39,.12); }
@@ -781,9 +781,9 @@
 
 
     /* ============================================================
-       6 IMAGE ENTRY + ENTER SECTION IN SAME PAGE
-       Visitor first sees only 6 images. Clicking one enters that
-       section. A back button returns to the 6-image overview.
+       15 IMAGE PRODUCT OVERVIEW
+       Visitor sees all 15 JONIEC product-category images in one clean
+       responsive overview. Each click fills the request product field.
        ============================================================ */
     .category-overview {
       display: grid;
@@ -993,11 +993,11 @@
 
 
     /* ============================================================
-       FINAL: ONLY 6 CATEGORY IMAGES
-       Removed all extra gallery images. This section now shows only
-       six important category cards.
+       FINAL: 15 CATEGORY IMAGES
+       This section shows the 15 product-category cards based on
+       the JONIEC product overview with corrected image fitting.
        ============================================================ */
-    .only-six-categories {
+    .all-category-cards {
       display: grid !important;
       grid-template-columns: repeat(3, 1fr) !important;
       gap: 22px !important;
@@ -1008,7 +1008,7 @@
     }
 
     .simple-category-card::after {
-      content: "Mehr ansehen →";
+      content: "Anfragen →";
       display: inline-flex;
       align-items: center;
       width: fit-content;
@@ -1018,22 +1018,129 @@
     }
 
     @media (max-width: 1180px) {
-      .only-six-categories {
+      .all-category-cards {
         grid-template-columns: repeat(2, 1fr) !important;
       }
     }
 
     @media (max-width: 760px) {
-      .only-six-categories {
+      .all-category-cards {
         grid-template-columns: 1fr !important;
       }
     }
 
 
 
-    /* Final cleanup after removing extra sections */
+    /* Final cleanup after extending product categories */
     #bilder {
       padding-top: 92px !important;
+    }
+
+
+    /* ============================================================
+       IMAGE FIX: all 15 category photos show correctly like cards
+       on the JONIEC product overview.
+       ============================================================ */
+    #categoryOverview.all-category-cards {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 24px !important;
+      align-items: stretch !important;
+    }
+
+    #categoryOverview .category-entry-card {
+      min-width: 0 !important;
+      min-height: 100% !important;
+      grid-template-rows: auto auto 1fr auto !important;
+    }
+
+    #categoryOverview .category-entry-image {
+      width: 100% !important;
+      height: clamp(215px, 19vw, 260px) !important;
+      aspect-ratio: 16 / 10 !important;
+      border-radius: 22px !important;
+      background: linear-gradient(135deg, #eef0f3, #d6d9df) !important;
+    }
+
+    #categoryOverview .category-entry-image img {
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      display: block !important;
+    }
+
+    #categoryOverview .category-entry-card strong {
+      min-height: 2.1em;
+      display: block !important;
+    }
+
+    #categoryOverview .category-entry-card small {
+      display: block !important;
+    }
+
+    @media (max-width: 1180px) {
+      #categoryOverview.all-category-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
+      #categoryOverview .category-entry-image {
+        height: clamp(205px, 30vw, 250px) !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      #categoryOverview.all-category-cards {
+        grid-template-columns: 1fr !important;
+      }
+
+      #categoryOverview .category-entry-image {
+        height: clamp(195px, 56vw, 235px) !important;
+      }
+
+      #categoryOverview .category-entry-card strong {
+        min-height: auto;
+      }
+    }
+
+    /* ============================================================
+       USER IMAGE PLACEHOLDERS
+       ضع صورك داخل مجلد images بنفس الأسماء:
+       bild-01.webp ... bild-15.webp
+       إذا لم تكن الصورة موجودة سيظهر اسم الملف داخل البطاقة.
+       ============================================================ */
+    .category-entry-image::before {
+      content: attr(data-image-name);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 18px;
+      color: rgba(21,25,34,.62);
+      font-weight: 950;
+      letter-spacing: .02em;
+      background: linear-gradient(135deg, #f2f3f5, #e2e4e8);
+      z-index: 0;
+    }
+
+    .category-entry-image img {
+      position: relative;
+      z-index: 1;
+    }
+
+    .category-entry-image::after {
+      z-index: 2;
+    }
+
+    .category-entry-image span {
+      z-index: 3;
+    }
+
+    .category-entry-image.image-missing::after {
+      background: linear-gradient(to top, rgba(17,22,29,.20), rgba(17,22,29,.02));
     }
 
 
@@ -1065,9 +1172,9 @@
   <main>
     <section class="hero-products">
       <div class="container">
-        <p class="kicker">Ausgewählte Bereiche ohne Onlinepreise</p>
-        <h1>Bereiche für Zaun, Mauer, Garten & Einfahrt</h1>
-        <p class="lead">Die Seite zeigt nur die wichtigsten 6 Bereiche. Besucher wählen einen Bereich und können direkt eine individuelle Projektanfrage senden.</p>
+        <p class="kicker">JONIEC Produktbereiche ohne Onlinepreise</p>
+        <h1>15 Bereiche für Zaun, Mauer, Garten & Einfahrt</h1>
+        <p class="lead">Die Seite zeigt 15 Produktbereiche nach der JONIEC® Übersicht. Besucher wählen einen Bereich und können direkt eine individuelle Projektanfrage senden.</p>
         <div class="hero-actions"><a class="btn btn-primary" href="#bilder">Bereiche ansehen</a><a class="btn btn-soft" href="#anfrage">Projekt anfragen</a></div>
       </div>
     </section>
@@ -1077,59 +1184,131 @@
         <div class="section-head">
           <div>
             <p class="kicker">Bildbereiche</p>
-            <h2>6 wichtige Bereiche</h2>
+            <h2>15 Produktbereiche</h2>
           </div>
-          <p>Die Seite zeigt nur 6 wichtige Bereiche. Jeder Bereich öffnet eine eigene Detailseite mit passendem Inhalt.</p>
+          <p>Die Übersicht wurde auf 15 Bereiche erweitert. Jeder Klick trägt den gewählten Produktbereich automatisch in die Anfrage ein.</p>
         </div>
 
-        <div class="category-overview only-six-categories" id="categoryOverview">
-          <a href="zaunsysteme.html" class="category-entry-card simple-category-card" data-category-name="Zaunsysteme">
-            <span class="category-entry-image">
-              <img src="images/gallery/gallery-05.jpg" alt="Zaunsysteme">
+        <div class="category-overview all-category-cards" id="categoryOverview">
+                    <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="NEUIGKEITEN">
+            <span class="category-entry-image" data-image-name="images/bild-01.webp">
+              <img src="images/bild-01.webp" alt="NEUIGKEITEN" loading="eager" fetchpriority="high" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
               <span>Bereich 1</span>
             </span>
-            <strong>Zaunsysteme</strong>
-            <small>Moderne Zaun- und Mauersysteme mit klaren Linien.</small>
+            <strong>NEUIGKEITEN</strong>
+            <small>Entdecken Sie die neuesten Produkte aus dem JONIEC®-Sortiment.</small>
           </a>
-          <a href="betonsteine-mauern.html" class="category-entry-card simple-category-card" data-category-name="Betonsteine &amp; Mauern">
-            <span class="category-entry-image">
-              <img src="images/gallery/gallery-16.jpg" alt="Betonsteine &amp; Mauern">
+          <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="Modulare Zäune">
+            <span class="category-entry-image" data-image-name="images/bild-02.webp">
+              <img src="images/bild-02.webp" alt="Modulare Zäune" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
               <span>Bereich 2</span>
             </span>
-            <strong>Betonsteine &amp; Mauern</strong>
-            <small>Betonsteine, Mauerflächen und strukturierte Oberflächen.</small>
+            <strong>Modulare Zäune</strong>
+            <small>Moderne und vielseitige Zaunsysteme mit klarer Linienführung.</small>
           </a>
-          <a href="tore-zaunfelder.html" class="category-entry-card simple-category-card" data-category-name="Tore &amp; Zaunfelder">
-            <span class="category-entry-image">
-              <img src="images/gallery/gallery-27.jpg" alt="Tore &amp; Zaunfelder">
+          <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="Geteilte Zäune">
+            <span class="category-entry-image" data-image-name="images/bild-03.webp">
+              <img src="images/bild-03.webp" alt="Geteilte Zäune" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
               <span>Bereich 3</span>
             </span>
-            <strong>Tore &amp; Zaunfelder</strong>
-            <small>Tore, Pforten, Zaunfelder und Einfahrtslösungen.</small>
+            <strong>Geteilte Zäune</strong>
+            <small>Schieferzäune mit natürlicher Struktur und robustem Charakter.</small>
           </a>
-          <a href="gartenarchitektur.html" class="category-entry-card simple-category-card" data-category-name="Gartenarchitektur">
-            <span class="category-entry-image">
-              <img src="images/gallery/gallery-38.jpg" alt="Gartenarchitektur">
+          <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="Zaunüberspannungen, Tore und Pforten.">
+            <span class="category-entry-image" data-image-name="images/bild-04.webp">
+              <img src="images/bild-04.webp" alt="Zaunüberspannungen, Tore und Pforten." loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
               <span>Bereich 4</span>
             </span>
-            <strong>Gartenarchitektur</strong>
-            <small>Palisaden, Gartenmauern, Pflanzsteine und Außenbereiche.</small>
+            <strong>Zaunüberspannungen, Tore und Pforten.</strong>
+            <small>Füllungen, Tore und Pforten als individuelle Lösung für den Zaun.</small>
           </a>
-          <a href="beleuchtung-ausstattung.html" class="category-entry-card simple-category-card" data-category-name="Beleuchtung &amp; Ausstattung">
-            <span class="category-entry-image">
-              <img src="images/gallery/gallery-49.jpg" alt="Beleuchtung &amp; Ausstattung">
+          <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="Betonelemente/Felder">
+            <span class="category-entry-image" data-image-name="images/bild-05.webp">
+              <img src="images/bild-05.webp" alt="Betonelemente/Felder" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
               <span>Bereich 5</span>
             </span>
-            <strong>Beleuchtung &amp; Ausstattung</strong>
-            <small>Beleuchtung, Briefkästen, Multimedia und Video-Intercom.</small>
+            <strong>Betonelemente/Felder</strong>
+            <small>Betonelemente und Spannweiten als Alternative zu Stahl, Aluminium und Holz.</small>
           </a>
-          <a href="zubehoer-details.html" class="category-entry-card simple-category-card" data-category-name="Zubehör &amp; Details">
-            <span class="category-entry-image">
-              <img src="images/gallery/gallery-60.jpg" alt="Zubehör &amp; Details">
+          <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="Fassaden">
+            <span class="category-entry-image" data-image-name="images/bild-06.webp">
+              <img src="images/bild-06.webp" alt="Fassaden" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
               <span>Bereich 6</span>
             </span>
-            <strong>Zubehör &amp; Details</strong>
-            <small>Zubehör, Verbinder, Fundamente und weitere Details.</small>
+            <strong>Fassaden</strong>
+            <small>Fassadenelemente mit gespaltener Oberfläche und langlebiger Optik.</small>
+          </a>
+          <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="Vordächer aus Beton">
+            <span class="category-entry-image" data-image-name="images/bild-07.webp">
+              <img src="images/bild-07.webp" alt="Vordächer aus Beton" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
+              <span>Bereich 7</span>
+            </span>
+            <strong>Vordächer aus Beton</strong>
+            <small>Betonvordächer als stilvoller Schutz für Pfosten und Mauern.</small>
+          </a>
+          <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="Bürgersteige">
+            <span class="category-entry-image" data-image-name="images/bild-08.webp">
+              <img src="images/bild-08.webp" alt="Bürgersteige" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
+              <span>Bereich 8</span>
+            </span>
+            <strong>Bürgersteige</strong>
+            <small>Pflastersteine für Wege, Terrassen und Gartenflächen.</small>
+          </a>
+          <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="Gartenarchitektur">
+            <span class="category-entry-image" data-image-name="images/bild-09.webp">
+              <img src="images/bild-09.webp" alt="Gartenarchitektur" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
+              <span>Bereich 9</span>
+            </span>
+            <strong>Gartenarchitektur</strong>
+            <small>Palisaden, Böschungselemente und kleine Gartenarchitektur.</small>
+          </a>
+          <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="Gartenbeleuchtung">
+            <span class="category-entry-image" data-image-name="images/bild-10.webp">
+              <img src="images/bild-10.webp" alt="Gartenbeleuchtung" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
+              <span>Bereich 10</span>
+            </span>
+            <strong>Gartenbeleuchtung</strong>
+            <small>Leuchten für Garten, Haus und Zaunsysteme.</small>
+          </a>
+          <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="Briefkästen">
+            <span class="category-entry-image" data-image-name="images/bild-11.webp">
+              <img src="images/bild-11.webp" alt="Briefkästen" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
+              <span>Bereich 11</span>
+            </span>
+            <strong>Briefkästen</strong>
+            <small>Briefkästen für die Montage in Zaunpfosten und Mauern.</small>
+          </a>
+          <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="Video-Gegensprechanlagen">
+            <span class="category-entry-image" data-image-name="images/bild-12.webp">
+              <img src="images/bild-12.webp" alt="Video-Gegensprechanlagen" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
+              <span>Bereich 12</span>
+            </span>
+            <strong>Video-Gegensprechanlagen</strong>
+            <small>Moderne Video-Gegensprechanlagen für Sicherheit und Komfort.</small>
+          </a>
+          <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="Fundamente und Anschlüsse">
+            <span class="category-entry-image" data-image-name="images/bild-13.webp">
+              <img src="images/bild-13.webp" alt="Fundamente und Anschlüsse" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
+              <span>Bereich 13</span>
+            </span>
+            <strong>Fundamente und Anschlüsse</strong>
+            <small>Vorgefertigte Fundamente und Verbindungen als solide Basis.</small>
+          </a>
+          <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="Chemie am Zaun">
+            <span class="category-entry-image" data-image-name="images/bild-14.webp">
+              <img src="images/bild-14.webp" alt="Chemie am Zaun" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
+              <span>Bereich 14</span>
+            </span>
+            <strong>Chemie am Zaun</strong>
+            <small>Produkte für Pflege, Schutz, Abdichtung und Montage von Zaunelementen.</small>
+          </a>
+          <a class="category-entry-card simple-category-card" href="#anfrage" data-category-name="Gebäudezubehör">
+            <span class="category-entry-image" data-image-name="images/bild-15.webp">
+              <img src="images/bild-15.webp" alt="Gebäudezubehör" loading="lazy" decoding="async" onerror="this.style.display='none'; this.closest('.category-entry-image').classList.add('image-missing');">
+              <span>Bereich 15</span>
+            </span>
+            <strong>Gebäudezubehör</strong>
+            <small>Praktisches Zubehör für den Bau und die Montage von Betonzäunen.</small>
           </a>
         </div>
       </div>
@@ -1194,7 +1373,13 @@
     if (year) {
       year.textContent = new Date().getFullYear();
     }
-});
+
+    document.querySelectorAll('.simple-category-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const productInput = document.getElementById('product');
+        if (productInput) productInput.value = card.dataset.categoryName || '';
+      });
+    });
   </script>
 </body>
 </html>
