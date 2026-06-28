@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zaunmacher24 Modulare Zäune: JONIEC ROMA Systeme mit Bildern, Details und Anfrageformular.">
+  <title>Modulare Zäune | Zaunmacher24</title>
+  <style>
+    :root { --brand:#e31f26; --brand-dark:#b9151b; --dark:#0b0d12; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --soft:#f5f6f8; --max:1220px; --shadow:0 22px 70px rgba(17,24,39,.12); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; color:var(--text); background:#fff; line-height:1.55; }
+    a { color:inherit; text-decoration:none; } img { display:block; max-width:100%; }
+    .container { width:min(var(--max), calc(100% - 32px)); margin:0 auto; }
+    header { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); box-shadow:0 10px 28px rgba(17,24,39,.04); }
+    .nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
+    .logo { display:flex; align-items:center; gap:12px; font-weight:950; font-size:24px; letter-spacing:-.045em; }
+    .logo-mark { width:42px; height:42px; border-radius:14px; background:linear-gradient(135deg,var(--brand),#ff6b70); position:relative; box-shadow:0 12px 28px rgba(227,31,38,.22); }
+    .logo-mark:after { content:""; position:absolute; inset:11px; border:3px solid #fff; border-left:0; border-bottom:0; transform:rotate(45deg); border-radius:2px; }
+    .logo span span { color:var(--brand); }
+    .menu { display:flex; gap:22px; align-items:center; font-weight:800; color:#374151; font-size:15px; }
+    .menu a:hover { color:var(--brand); }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; border:0; border-radius:999px; padding:13px 20px; font-weight:900; cursor:pointer; transition:.2s ease; }
+    .btn-primary { background:var(--brand); color:#fff; box-shadow:0 14px 30px rgba(227,31,38,.22); } .btn-primary:hover { background:var(--brand-dark); transform:translateY(-1px); }
+    .btn-soft { background:#f3f4f6; color:#111827; } .btn-soft:hover { background:#e5e7eb; }
+    .mobile-toggle { display:none; width:44px; height:44px; border:1px solid var(--line); border-radius:14px; background:#fff; } .mobile-toggle span { display:block; width:20px; height:2px; margin:5px auto; background:#111827; }
+    .hero-products { min-height:520px; color:#fff; position:relative; overflow:hidden; display:flex; align-items:center; background:#111827; }
+    .hero-products:before { content:""; position:absolute; inset:0; background-image:linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.55) 45%, rgba(0,0,0,.08) 100%), url('images/hero-1.jpg'); background-size:cover; background-position:center; transform:scale(1.04); }
+    .hero-products .container { position:relative; z-index:2; padding:88px 0; }
+    .kicker { color:var(--brand); text-transform:uppercase; letter-spacing:.13em; font-size:13px; font-weight:950; margin:0 0 10px; }
+    .hero-products .kicker { color:#fff; opacity:.9; }
+    h1 { font-size:clamp(46px, 7vw, 92px); line-height:.92; letter-spacing:-.07em; margin:0; max-width:900px; text-shadow:0 10px 30px rgba(0,0,0,.45); }
+    .lead { font-size:clamp(18px, 2vw, 23px); color:rgba(255,255,255,.88); max-width:730px; margin:22px 0 30px; }
+    .hero-actions { display:flex; gap:14px; flex-wrap:wrap; }
+    section { padding:86px 0; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:32px; margin-bottom:34px; }
+    h2 { font-size:clamp(32px, 4.2vw, 56px); line-height:1.02; letter-spacing:-.06em; margin:0; }
+    .section-head p { max-width:540px; color:var(--muted); margin:0; }
+    .category-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+    .category-tile { text-align:left; background:#fff; border:1px solid var(--line); border-radius:24px; padding:22px; cursor:pointer; box-shadow:0 14px 42px rgba(17,24,39,.06); transition:.2s ease; }
+    .category-tile strong { display:block; font-size:18px; letter-spacing:-.03em; } .category-tile span { display:block; color:var(--muted); margin-top:6px; }
+    .category-tile:hover, .category-tile.active { border-color:var(--brand); transform:translateY(-2px); box-shadow:0 20px 48px rgba(227,31,38,.12); }
+    .toolbar { position:sticky; top:76px; z-index:20; background:rgba(11,13,18,.94); backdrop-filter:blur(8px); padding:18px; border-radius:24px; display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:28px; box-shadow:0 20px 60px rgba(0,0,0,.18); }
+    .filter-row { display:flex; gap:10px; flex-wrap:wrap; }
+    .filter-btn { border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.08); color:#fff; border-radius:999px; padding:10px 15px; font-weight:900; cursor:pointer; }
+    .filter-btn.active, .filter-btn:hover { background:var(--brand); border-color:var(--brand); }
+    .search { min-width:min(340px,100%); border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.1); color:#fff; padding:12px 16px; border-radius:999px; outline:0; }
+    .search::placeholder { color:rgba(255,255,255,.55); }
+    .dark { background:var(--dark); color:#fff; } .dark .section-head p { color:rgba(255,255,255,.65); }
+    .product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .product-card { background:#fff; color:var(--text); border-radius:28px; overflow:hidden; box-shadow:0 26px 70px rgba(0,0,0,.22); display:flex; flex-direction:column; min-height:100%; }
+    .product-image { height:205px; background:#e5e7eb; overflow:hidden; } .product-image img { width:100%; height:100%; object-fit:cover; transition:transform .45s ease; }
+    .product-card:hover img { transform:scale(1.06); }
+    .product-body { padding:24px; display:flex; flex-direction:column; flex:1; }
+    .product-group { color:var(--brand); text-transform:uppercase; letter-spacing:.12em; font-size:12px; font-weight:950; }
+    .product-card h3 { margin:8px 0 8px; font-size:24px; line-height:1.05; letter-spacing:-.04em; }
+    .product-card p { margin:0; color:var(--muted); }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 20px; } .chips span { background:#f3f4f6; border:1px solid #e5e7eb; border-radius:999px; padding:6px 10px; font-size:12px; font-weight:850; color:#374151; }
+    .text-link { margin-top:auto; color:var(--brand); font-weight:950; } .text-link:hover { color:var(--brand-dark); }
+    .note { margin-top:20px; color:rgba(255,255,255,.62); font-size:14px; }
+    .project-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .project-card { min-height:320px; border-radius:30px; overflow:hidden; position:relative; box-shadow:var(--shadow); }
+    .project-card img { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+    .project-card:after { content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.76), rgba(0,0,0,.08)); }
+    .project-card div { position:absolute; left:22px; right:22px; bottom:22px; z-index:2; color:#fff; }
+    .project-card h3 { margin:0 0 6px; font-size:26px; letter-spacing:-.04em; } .project-card p { margin:0; color:rgba(255,255,255,.78); }
+    .gallery-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+    .gallery-card { margin:0; border:1px solid var(--line); border-radius:22px; overflow:hidden; background:#fff; box-shadow:0 12px 34px rgba(17,24,39,.06); }
+    .gallery-card img { height:150px; width:100%; object-fit:cover; } .gallery-card figcaption { padding:12px 14px; color:#4b5563; font-weight:800; font-size:13px; }
+    .contact-band { background:linear-gradient(135deg,#111827,#0b0d12); color:#fff; border-radius:34px; padding:42px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; }
+    .contact-band h2 { color:#fff; } .contact-band p { color:rgba(255,255,255,.68); margin:12px 0 0; max-width:650px; }
+    .form-wrap { margin-top:28px; background:#fff; border:1px solid var(--line); border-radius:30px; padding:28px; box-shadow:var(--shadow); }
+    .form-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; } .field.full { grid-column:1/-1; } label { display:block; font-weight:900; margin-bottom:7px; }
+    input,select,textarea { width:100%; border:1px solid var(--line); border-radius:15px; padding:13px 14px; font:inherit; outline:0; } textarea { min-height:140px; resize:vertical; }
+    footer { background:#08090d; color:rgba(255,255,255,.63); padding:38px 0; } footer .foot { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; } footer a { color:#fff; font-weight:800; margin-left:16px; }
+    .hidden { display:none !important; }
+    @media(max-width:980px){ .menu,.nav-actions{display:none} .mobile-toggle{display:block} .menu.open{display:flex; position:absolute; top:76px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; gap:0; padding:14px 16px; border-bottom:1px solid var(--line)} .menu.open a{padding:14px; border-radius:14px} .category-grid,.product-grid,.project-grid,.gallery-grid{grid-template-columns:repeat(2,1fr)} .toolbar{position:static; flex-direction:column; align-items:stretch} .contact-band{grid-template-columns:1fr} }
+    @media(max-width:680px){ h1{font-size:44px} section{padding:64px 0} .section-head{display:block} .section-head p{margin-top:12px} .category-grid,.product-grid,.project-grid,.gallery-grid,.form-grid{grid-template-columns:1fr} .gallery-card img{height:190px} .hero-products{min-height:480px} }
+
+    /* ============================================================
+       ZAUNMACHER24 WEBSITE DESIGN MATCH
+       Aligns this products page with the current homepage theme:
+       anthracite + yellow, same logo lockup, fixed shrinking header,
+       cleaner hero, cards, toolbar and footer.
+       ============================================================ */
+    :root {
+      --brand: #ffcc00 !important;
+      --brand-dark: #d6a700 !important;
+      --dark: #11161d !important;
+      --dark-2: #2f3542 !important;
+      --text: #151922 !important;
+      --muted: #69707d !important;
+      --line: #e7e9ee !important;
+      --soft: #f6f7f9 !important;
+      --max: 1280px !important;
+      --shadow: 0 22px 60px rgba(47, 53, 66, .13) !important;
+      --radius: 28px;
+    }
+
+    html {
+      scroll-padding-top: 96px;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 8% 0%, rgba(255,204,0,.08), transparent 28%),
+        radial-gradient(circle at 92% 6%, rgba(47,53,66,.05), transparent 30%),
+        #fff !important;
+      color: var(--text) !important;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 36px)) !important;
+    }
+
+    header {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 999 !important;
+      background: rgba(255,255,255,.98) !important;
+      border-bottom: 1px solid rgba(229,231,235,.82) !important;
+      box-shadow: 0 14px 35px rgba(47,53,66,.08) !important;
+      transition: background .25s ease, box-shadow .25s ease, border-color .25s ease !important;
+    }
+
+    .nav {
+      min-height: 92px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 24px !important;
+      transition: min-height .25s ease !important;
+    }
+
+    .logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      height: 92px !important;
+      min-width: 0 !important;
+      flex: 0 0 auto !important;
+      letter-spacing: 0 !important;
+      transition: height .25s ease, gap .25s ease !important;
+    }
+
+    .logo img.logo-mark,
+    .logo .logo-mark {
+      width: 178px !important;
+      height: 62px !important;
+      flex: 0 0 178px !important;
+      display: block !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+      margin: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: transparent url("images/logo-icon.png") center center / contain no-repeat !important;
+      box-shadow: none !important;
+      transition: width .25s ease, height .25s ease, flex-basis .25s ease !important;
+    }
+
+    .logo .logo-mark::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    .logo-wordmark {
+      display: inline-flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: flex-start !important;
+      gap: 4px !important;
+      white-space: nowrap !important;
+      line-height: 1 !important;
+      transform: translateY(1px) !important;
+    }
+
+    .logo-text,
+    .logo > span:not(.logo-mark) {
+      display: block !important;
+      color: #2f3542 !important;
+      font-size: 26px !important;
+      font-weight: 950 !important;
+      line-height: .95 !important;
+      letter-spacing: -.045em !important;
+      white-space: nowrap !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      transition: font-size .25s ease !important;
+    }
+
+    .logo-text span,
+    .logo > span:not(.logo-mark) span {
+      color: #ffcc00 !important;
+    }
+
+    .logo-tagline {
+      display: block !important;
+      margin: 2px 0 0 1px !important;
+      color: #7b818c !important;
+      font-size: 10.5px !important;
+      font-weight: 900 !important;
+      line-height: 1 !important;
+      letter-spacing: .28em !important;
+      text-transform: uppercase !important;
+      transition: font-size .25s ease, letter-spacing .25s ease, opacity .25s ease !important;
+    }
+
+    .menu {
+      gap: 20px !important;
+      color: #374151 !important;
+      font-weight: 850 !important;
+    }
+
+    .menu a {
+      position: relative;
+      padding: 9px 0;
+    }
+
+    .menu a:hover,
+    .menu a.active-link {
+      color: #d6a700 !important;
+    }
+
+    .menu a.active-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: #ffcc00;
+      border-radius: 999px;
+    }
+
+    .btn {
+      border-radius: 999px !important;
+      font-weight: 900 !important;
+      transition: .2s ease !important;
+    }
+
+    .btn-primary {
+      background: #ffcc00 !important;
+      color: #151922 !important;
+      box-shadow: 0 16px 30px rgba(255,204,0,.28) !important;
+    }
+
+    .btn-primary:hover {
+      background: #d6a700 !important;
+      color: #111827 !important;
+      transform: translateY(-1px) !important;
+    }
+
+    .btn-soft {
+      background: #f3f4f6 !important;
+      color: #151922 !important;
+    }
+
+    .btn-soft:hover {
+      background: #e5e7eb !important;
+    }
+
+    header.is-scrolled {
+      background: rgba(255,255,255,.94) !important;
+      border-bottom-color: rgba(229,231,235,.96) !important;
+      box-shadow: 0 10px 28px rgba(47,53,66,.14) !important;
+    }
+
+    header.is-scrolled .nav {
+      min-height: 68px !important;
+    }
+
+    header.is-scrolled .logo {
+      height: 68px !important;
+      gap: 7px !important;
+    }
+
+    header.is-scrolled .logo img.logo-mark,
+    header.is-scrolled .logo .logo-mark {
+      width: 132px !important;
+      height: 46px !important;
+      flex-basis: 132px !important;
+    }
+
+    header.is-scrolled .logo-text {
+      font-size: 22px !important;
+    }
+
+    header.is-scrolled .logo-tagline {
+      font-size: 8.2px !important;
+      letter-spacing: .18em !important;
+      opacity: .86 !important;
+      margin-top: 1px !important;
+    }
+
+    header.is-scrolled .btn {
+      padding: 10px 16px !important;
+      font-size: 14px !important;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .hero-products {
+      min-height: 78svh !important;
+      padding-top: 92px !important;
+      color: #fff !important;
+      background:
+        radial-gradient(circle at 84% 26%, rgba(255,204,0,.24), transparent 30%),
+        linear-gradient(135deg, #2f3542 0%, #161b23 48%, #090b0f 100%) !important;
+      isolation: isolate;
+    }
+
+    .hero-products::before {
+      z-index: -2 !important;
+      background-image:
+        linear-gradient(90deg,
+          rgba(17,22,29,.92) 0%,
+          rgba(17,22,29,.76) 42%,
+          rgba(47,53,66,.28) 72%,
+          rgba(47,53,66,.12) 100%),
+        url("images/hero-1.jpg") !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      filter: none !important;
+      transform: scale(1.03) !important;
+    }
+
+    .hero-products::after {
+      content: "";
+      position: absolute;
+      right: clamp(18px, 6vw, 88px);
+      bottom: clamp(34px, 8vw, 95px);
+      width: min(42vw, 500px);
+      height: 240px;
+      background: url("images/logo.png") center / contain no-repeat;
+      opacity: .10;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-products .container {
+      padding: 92px 0 86px !important;
+    }
+
+    .kicker {
+      color: #d6a700 !important;
+    }
+
+    .hero-products .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,.92) !important;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      padding: 9px 15px;
+      letter-spacing: .08em !important;
+    }
+
+    .hero-products .kicker::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffcc00;
+      box-shadow: 0 0 0 8px rgba(255,204,0,.14);
+      flex: 0 0 auto;
+    }
+
+    h1 {
+      letter-spacing: -.065em !important;
+      text-shadow: 0 4px 14px rgba(0,0,0,.78), 0 18px 44px rgba(0,0,0,.48) !important;
+    }
+
+    .lead {
+      color: rgba(255,255,255,.86) !important;
+    }
+
+    section {
+      padding: 92px 0 !important;
+    }
+
+    .section-head {
+      align-items: flex-end !important;
+    }
+
+    .section-head p {
+      color: var(--muted) !important;
+      font-size: 17px;
+    }
+
+    h2 {
+      color: var(--text);
+    }
+
+    .category-grid {
+      gap: 18px !important;
+    }
+
+    .category-tile {
+      border-radius: 26px !important;
+      border-color: rgba(47,53,66,.12) !important;
+      padding: 24px !important;
+      box-shadow: 0 16px 44px rgba(47,53,66,.07) !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-tile::after {
+      content: "";
+      position: absolute;
+      right: -28px;
+      bottom: -28px;
+      width: 86px;
+      height: 86px;
+      border-radius: 26px;
+      background: rgba(255,204,0,.16);
+      transform: rotate(12deg);
+      transition: .2s ease;
+    }
+
+    .category-tile:hover,
+    .category-tile.active {
+      border-color: #ffcc00 !important;
+      box-shadow: 0 22px 52px rgba(255,204,0,.14) !important;
+    }
+
+    .category-tile:hover::after,
+    .category-tile.active::after {
+      background: rgba(255,204,0,.24);
+      transform: rotate(12deg) scale(1.12);
+    }
+
+    .dark {
+      background:
+        radial-gradient(circle at 86% 18%, rgba(255,204,0,.16), transparent 34%),
+        linear-gradient(135deg, #2f3542 0%, #11161d 62%, #080a0e 100%) !important;
+    }
+
+    .dark h2 {
+      color: #fff !important;
+    }
+
+    .dark .section-head p {
+      color: rgba(255,255,255,.68) !important;
+    }
+
+    .toolbar {
+      top: 86px !important;
+      border-radius: 26px !important;
+      background: rgba(17,22,29,.94) !important;
+      border: 1px solid rgba(255,255,255,.10) !important;
+      backdrop-filter: blur(10px) !important;
+    }
+
+    .filter-btn {
+      border-color: rgba(255,255,255,.16) !important;
+      background: rgba(255,255,255,.07) !important;
+      color: rgba(255,255,255,.86) !important;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #ffcc00 !important;
+      border-color: #ffcc00 !important;
+      color: #151922 !important;
+    }
+
+    .search {
+      background: rgba(255,255,255,.08) !important;
+      border-color: rgba(255,255,255,.16) !important;
+    }
+
+    .product-grid {
+      gap: 24px !important;
+    }
+
+    .product-card {
+      border-radius: 30px !important;
+      box-shadow: 0 26px 70px rgba(0,0,0,.20) !important;
+      border: 1px solid rgba(255,255,255,.08);
+      transition: transform .22s ease, box-shadow .22s ease !important;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 32px 80px rgba(0,0,0,.26) !important;
+    }
+
+    .product-image {
+      height: 218px !important;
+      background:
+        linear-gradient(135deg, #f2f3f5, #d4d7dd) !important;
+    }
+
+    .product-body {
+      padding: 25px !important;
+    }
+
+    .product-group {
+      color: #d6a700 !important;
+    }
+
+    .chips span {
+      border-color: #e7e9ee !important;
+      background: #f7f8fa !important;
+      color: #3f4652 !important;
+    }
+
+    .text-link {
+      color: #d6a700 !important;
+    }
+
+    .text-link:hover {
+      color: #aa8600 !important;
+    }
+
+    .note {
+      color: rgba(255,255,255,.62) !important;
+    }
+
+    .project-card,
+    .gallery-card,
+    .form-wrap,
+    .contact-band {
+      border-radius: 30px !important;
+      box-shadow: var(--shadow) !important;
+    }
+
+    .gallery-card {
+      border-color: rgba(47,53,66,.12) !important;
+    }
+
+    .gallery-card figcaption {
+      border-left: 4px solid #ffcc00;
+    }
+
+    .contact-band {
+      background:
+        radial-gradient(circle at 86% 20%, rgba(255,204,0,.20), transparent 32%),
+        linear-gradient(135deg, #2f3542, #0b0d12) !important;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #ffcc00 !important;
+      box-shadow: 0 0 0 4px rgba(255,204,0,.16) !important;
+    }
+
+    footer {
+      background: #0c0f14 !important;
+      border-top: 6px solid #ffcc00 !important;
+      color: rgba(255,255,255,.68) !important;
+      padding: 42px 0 !important;
+    }
+
+    footer .foot {
+      align-items: center !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      gap: 24px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .footer-brand {
+      display: grid;
+      gap: 14px;
+    }
+
+    footer .logo {
+      height: auto !important;
+      gap: 12px !important;
+    }
+
+    footer .logo img.logo-mark,
+    footer .logo .logo-mark {
+      width: 126px !important;
+      height: 46px !important;
+      flex-basis: 126px !important;
+    }
+
+    footer .logo-text {
+      color: #fff !important;
+      font-size: 27px !important;
+    }
+
+    footer .logo-tagline {
+      color: rgba(255,255,255,.64) !important;
+      font-size: 9px !important;
+      letter-spacing: .24em !important;
+    }
+
+    footer p {
+      margin: 0 !important;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    footer a {
+      color: rgba(255,255,255,.84) !important;
+      font-weight: 850 !important;
+      margin-left: 0 !important;
+    }
+
+    footer a:hover {
+      color: #ffcc00 !important;
+    }
+
+    @media (max-width: 1180px) {
+      .menu,
+      .nav-actions {
+        display: none !important;
+      }
+
+      .mobile-toggle {
+        display: block !important;
+      }
+
+      .menu.open {
+        display: flex !important;
+        position: absolute !important;
+        top: 92px !important;
+        left: 0 !important;
+        right: 0 !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+        background: #fff !important;
+        border-bottom: 1px solid var(--line) !important;
+        padding: 14px 16px !important;
+        box-shadow: 0 20px 50px rgba(47,53,66,.10) !important;
+      }
+
+      header.is-scrolled .menu.open {
+        top: 68px !important;
+      }
+
+      .menu.open a {
+        padding: 14px !important;
+        border-radius: 14px !important;
+      }
+
+      .menu.open a:hover {
+        background: #f3f4f6 !important;
+      }
+
+      .category-grid,
+      .product-grid,
+      .project-grid,
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      .toolbar {
+        position: static !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: calc(100% - 24px) !important;
+      }
+
+      .nav {
+        min-height: 76px !important;
+      }
+
+      .logo {
+        height: 76px !important;
+        gap: 7px !important;
+      }
+
+      .logo img.logo-mark,
+      .logo .logo-mark {
+        width: 92px !important;
+        height: 38px !important;
+        flex-basis: 92px !important;
+      }
+
+      .logo-text {
+        font-size: 19px !important;
+      }
+
+      .logo-tagline {
+        font-size: 7.4px !important;
+        letter-spacing: .16em !important;
+      }
+
+      header.is-scrolled .nav {
+        min-height: 58px !important;
+      }
+
+      header.is-scrolled .logo {
+        height: 58px !important;
+        gap: 5px !important;
+      }
+
+      header.is-scrolled .logo img.logo-mark,
+      header.is-scrolled .logo .logo-mark {
+        width: 78px !important;
+        height: 32px !important;
+        flex-basis: 78px !important;
+      }
+
+      header.is-scrolled .logo-text {
+        font-size: 16px !important;
+      }
+
+      header.is-scrolled .logo-tagline {
+        font-size: 6px !important;
+        letter-spacing: .10em !important;
+      }
+
+      .menu.open {
+        top: 76px !important;
+      }
+
+      header.is-scrolled .menu.open {
+        top: 58px !important;
+      }
+
+      .hero-products {
+        min-height: 72svh !important;
+        padding-top: 76px !important;
+      }
+
+      .hero-products .container {
+        padding: 58px 0 62px !important;
+      }
+
+      .hero-products::after {
+        width: 72vw;
+        right: 12px;
+        bottom: 36px;
+        opacity: .08;
+      }
+
+      h1 {
+        font-size: clamp(42px, 12vw, 60px) !important;
+      }
+
+      section {
+        padding: 68px 0 !important;
+      }
+
+      .section-head {
+        display: block !important;
+      }
+
+      .section-head p {
+        margin-top: 12px !important;
+      }
+
+      .category-grid,
+      .product-grid,
+      .project-grid,
+      .gallery-grid,
+      .form-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .contact-band {
+        padding: 28px !important;
+      }
+
+      .footer-links {
+        gap: 12px 16px;
+      }
+    }
+
+
+
+    /* ============================================================
+       15 IMAGE PRODUCT OVERVIEW
+       Visitor sees all 15 JONIEC product-category images in one clean
+       responsive overview. Each click fills the request product field.
+       ============================================================ */
+    .category-overview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .category-entry-card {
+      display: grid;
+      gap: 14px;
+      text-align: left;
+      padding: 14px;
+      border: 1px solid rgba(47,53,66,.12);
+      border-radius: 30px;
+      background: #fff;
+      color: var(--text);
+      box-shadow: 0 16px 44px rgba(47,53,66,.07);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+      overflow: hidden;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .category-entry-card:hover {
+      transform: translateY(-4px);
+      border-color: #ffcc00;
+      box-shadow: 0 24px 58px rgba(255,204,0,.16);
+    }
+
+    .category-entry-image {
+      position: relative;
+      height: 245px;
+      overflow: hidden;
+      border-radius: 22px;
+      background: #e5e7eb;
+      display: block;
+    }
+
+    .category-entry-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(17,22,29,.62), rgba(17,22,29,.05));
+      pointer-events: none;
+    }
+
+    .category-entry-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .category-entry-card:hover .category-entry-image img {
+      transform: scale(1.06);
+    }
+
+    .category-entry-image span {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      z-index: 2;
+      background: rgba(17,22,29,.90);
+      color: #ffcc00;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .category-entry-card strong {
+      font-size: 25px;
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      padding: 0 6px;
+    }
+
+    .category-entry-card small {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      padding: 0 6px 8px;
+    }
+
+    .category-panels {
+      margin-top: 0;
+    }
+
+    .category-content-panel {
+      background: #fff;
+      border: 1px solid rgba(47,53,66,.12);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      animation: sectionEnter .28s ease;
+    }
+
+    .category-panel-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px 24px;
+      align-items: end;
+      padding: 30px;
+      background:
+        radial-gradient(circle at 86% 18%, rgba(255,204,0,.18), transparent 32%),
+        linear-gradient(135deg, #2f3542 0%, #11161d 72%, #080a0e 100%);
+      color: #fff;
+    }
+
+    .category-panel-head > div {
+      grid-column: 1 / 2;
+    }
+
+    .category-panel-head h3 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: .96;
+      letter-spacing: -.06em;
+      color: #fff;
+    }
+
+    .category-panel-head p:not(.kicker) {
+      margin: 14px 0 0;
+      color: rgba(255,255,255,.76);
+      max-width: 760px;
+      font-size: 17px;
+    }
+
+    .category-panel-head .kicker {
+      color: #ffcc00 !important;
+    }
+
+    .back-to-categories {
+      grid-column: 1 / -1;
+      justify-self: start;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      border-radius: 999px;
+      padding: 11px 16px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .back-to-categories:hover {
+      background: #ffcc00;
+      border-color: #ffcc00;
+      color: #151922;
+    }
+
+    .category-panel-gallery {
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 20px !important;
+      padding: 28px;
+    }
+
+    .category-panel-gallery .gallery-card img {
+      height: 210px;
+    }
+
+    @keyframes sectionEnter {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 1180px) {
+      .category-overview,
+      .category-panel-gallery {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      .category-panel-head {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .category-overview,
+      .category-panel-gallery {
+        grid-template-columns: 1fr !important;
+      }
+
+      .category-entry-image {
+        height: 205px;
+      }
+
+      .category-content-panel {
+        border-radius: 26px;
+      }
+
+      .category-panel-head {
+        padding: 24px;
+      }
+
+      .category-panel-gallery {
+        padding: 18px;
+      }
+
+      .category-panel-gallery .gallery-card img {
+        height: 190px;
+      }
+    }
+
+
+
+    /* ============================================================
+       FINAL: 15 CATEGORY IMAGES
+       This section shows the 15 product-category cards based on
+       the JONIEC product overview with corrected image fitting.
+       ============================================================ */
+    .all-category-cards {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 22px !important;
+    }
+
+    .simple-category-card {
+      text-decoration: none !important;
+    }
+
+    .simple-category-card::after {
+      content: "Anfragen →";
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin: 0 6px 8px;
+      color: #d6a700;
+      font-weight: 950;
+    }
+
+    @media (max-width: 1180px) {
+      .all-category-cards {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .all-category-cards {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+
+
+    /* Final cleanup after extending product categories */
+    #bilder {
+      padding-top: 92px !important;
+    }
+
+
+    /* ============================================================
+       IMAGE FIX: all 15 category photos show correctly like cards
+       on the JONIEC product overview.
+       ============================================================ */
+    #categoryOverview.all-category-cards {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 24px !important;
+      align-items: stretch !important;
+    }
+
+    #categoryOverview .category-entry-card {
+      min-width: 0 !important;
+      min-height: 100% !important;
+      grid-template-rows: auto auto 1fr auto !important;
+    }
+
+    #categoryOverview .category-entry-image {
+      width: 100% !important;
+      height: clamp(215px, 19vw, 260px) !important;
+      aspect-ratio: 16 / 10 !important;
+      border-radius: 22px !important;
+      background: linear-gradient(135deg, #eef0f3, #d6d9df) !important;
+    }
+
+    #categoryOverview .category-entry-image img {
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      display: block !important;
+    }
+
+    #categoryOverview .category-entry-card strong {
+      min-height: 2.1em;
+      display: block !important;
+    }
+
+    #categoryOverview .category-entry-card small {
+      display: block !important;
+    }
+
+    @media (max-width: 1180px) {
+      #categoryOverview.all-category-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
+      #categoryOverview .category-entry-image {
+        height: clamp(205px, 30vw, 250px) !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      #categoryOverview.all-category-cards {
+        grid-template-columns: 1fr !important;
+      }
+
+      #categoryOverview .category-entry-image {
+        height: clamp(195px, 56vw, 235px) !important;
+      }
+
+      #categoryOverview .category-entry-card strong {
+        min-height: auto;
+      }
+    }
+
+    /* ============================================================
+       USER IMAGE PLACEHOLDERS
+       ضع صورك داخل مجلد images بنفس الأسماء:
+       bild-01.webp ... bild-15.webp
+       إذا لم تكن الصورة موجودة سيظهر اسم الملف داخل البطاقة.
+       ============================================================ */
+    .category-entry-image::before {
+      content: attr(data-image-name);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 18px;
+      color: rgba(21,25,34,.62);
+      font-weight: 950;
+      letter-spacing: .02em;
+      background: linear-gradient(135deg, #f2f3f5, #e2e4e8);
+      z-index: 0;
+    }
+
+    .category-entry-image img {
+      position: relative;
+      z-index: 1;
+    }
+
+    .category-entry-image::after {
+      z-index: 2;
+    }
+
+    .category-entry-image span {
+      z-index: 3;
+    }
+
+    .category-entry-image.image-missing::after {
+      background: linear-gradient(to top, rgba(17,22,29,.20), rgba(17,22,29,.02));
+    }
+
+
+/* ============================================================
+   NEUIGKEITEN DETAIL PAGE: 9 product cards with image + details
+   Opens when the visitor clicks the NEUIGKEITEN card.
+   ============================================================ */
+.simple-category-card[data-open-news="true"]::after {
+  content: "Details ansehen →";
+}
+
+.news-section {
+  display: none;
+  background:
+    radial-gradient(circle at 86% 9%, rgba(255,204,0,.13), transparent 28%),
+    #fff;
+  padding-top: 92px !important;
+}
+
+.news-section.is-open {
+  display: block;
+}
+
+.news-page-shell {
+  border-radius: 34px;
+  overflow: hidden;
+  border: 1px solid rgba(47,53,66,.12);
+  box-shadow: var(--shadow);
+  background: #fff;
+}
+
+.news-page-head {
+  position: relative;
+  padding: clamp(28px, 5vw, 48px);
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(17,22,29,.94), rgba(17,22,29,.76)),
+    url("https://joniec.de/images/5285/4bdf7542c585367914b68e89053425e0.webp") center / cover no-repeat;
+}
+
+.news-page-head .kicker {
+  color: #ffcc00 !important;
+}
+
+.news-page-head h2 {
+  color: #fff !important;
+  max-width: 820px;
+  margin-top: 8px;
+}
+
+.news-page-head p:not(.kicker) {
+  max-width: 780px;
+  color: rgba(255,255,255,.78);
+  margin: 16px 0 0;
+  font-size: 17px;
+}
+
+.news-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.news-back-btn {
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.09);
+  color: #fff;
+  border-radius: 999px;
+  padding: 12px 16px;
+  font-weight: 950;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.news-back-btn:hover {
+  background: #ffcc00;
+  border-color: #ffcc00;
+  color: #151922;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  padding: 28px;
+  background: #f6f7f9;
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100%;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid rgba(47,53,66,.12);
+  box-shadow: 0 16px 44px rgba(47,53,66,.08);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,204,0,.82);
+  box-shadow: 0 24px 58px rgba(47,53,66,.13);
+}
+
+.news-image {
+  position: relative;
+  height: clamp(220px, 18vw, 255px);
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .45s ease;
+}
+
+.news-card:hover .news-image img {
+  transform: scale(1.055);
+}
+
+.news-badge {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 2;
+  border-radius: 999px;
+  background: rgba(17,22,29,.92);
+  color: #ffcc00;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.news-body {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  flex: 1;
+  padding: 23px;
+}
+
+.news-body h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 25px;
+  line-height: 1.05;
+  letter-spacing: -.045em;
+}
+
+.news-category {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 999px;
+  background: rgba(255,204,0,.18);
+  color: #7b6200;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.news-desc {
+  margin: 0;
+  color: #4b5563;
+  font-size: 15px;
+  line-height: 1.52;
+}
+
+.news-detail-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #374151;
+  font-size: 14px;
+}
+
+.news-detail-list li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.news-detail-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffcc00;
+  box-shadow: 0 0 0 4px rgba(255,204,0,.16);
+}
+
+.news-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.news-card-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 10px 13px;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.news-request-btn {
+  background: #ffcc00;
+  color: #151922;
+}
+
+.news-source-btn {
+  background: #f3f4f6;
+  color: #151922;
+}
+
+.news-source-note {
+  padding: 0 28px 28px;
+  margin: -6px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+  background: #f6f7f9;
+}
+
+@media (max-width: 1180px) {
+  .news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .news-page-shell {
+    border-radius: 26px;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 18px;
+  }
+
+  .news-image {
+    height: clamp(205px, 58vw, 245px);
+  }
+
+  .news-body {
+    padding: 20px;
+  }
+
+  .news-source-note {
+    padding: 0 18px 22px;
+  }
+}
+
+
+  
+
+/* Standalone MODULARE ZÄUNE page overrides */
+.news-section {
+  display: block !important;
+  padding-top: 184px !important;
+}
+.news-section.is-open {
+  display: block !important;
+}
+.news-back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+@media (max-width: 760px) {
+  .news-section {
+    padding-top: 144px !important;
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="index.html" aria-label="Zaunmacher24 Startseite">
+        <img class="logo-mark" src="images/logo-icon.png" alt="" aria-hidden="true">
+        <span class="logo-wordmark">
+          <span class="logo-text">zaunmacher<span>24</span></span>
+          <small class="logo-tagline">ZAUN · TOR · MAUER</small>
+        </span>
+      </a>
+      <nav class="menu" id="menu">
+        <a href="index.html">Start</a>
+        <a href="produkte.html#bilder">Bereiche</a>
+        <a href="#modulare-zaeune" class="active-link">Modulare Zäune</a>
+        <a href="#anfrage">Anfrage</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-soft" href="produkte.html#bilder">Zu den Bereichen</a>
+        <a class="btn btn-primary" href="#anfrage">Anfrage senden</a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section id="modulare-zaeune" class="news-section is-open">
+  <div class="container">
+    <div class="news-page-shell">
+      <div class="news-page-head">
+        <p class="kicker">MODULARE ZÄUNE</p>
+        <h2>10 JONIEC® ROMA Systeme mit Bildern und Details</h2>
+        <p>Diese eigenständige Seite öffnet sich nach dem Klick auf „Modulare Zäune“ und zeigt die Produkte aus dem JONIEC® Bereich „Ogrodzenia modułowe“ als übersichtliche Karten mit Foto, Beschreibung und wichtigsten Daten.</p>
+        <div class="news-page-actions">
+          <a class="news-back-btn" href="produkte.html#bilder">← Zurück zu den 15 Bereichen</a>
+          <a class="btn btn-primary" href="#anfrage">Projekt zu modularen Zäunen anfragen</a>
+        </div>
+      </div>
+      <div class="news-grid">
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/34/172a35de8e91e1301443f1a0b96748cf.webp" alt="Modulare Zäune ROMA Nova" loading="lazy" decoding="async">
+          <span class="news-badge">System 01</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>Modulare Zäune ROMA Nova</h3>
+          <p class="news-desc">ROMA Nova ist ein modernes System aus massiven Betonsteinen. Das innovative Aussehen, die klare Form und die SCRATCH-Oberfläche geben dem Grundstück einen besonderen Charakter.</p>
+          <ul class="news-detail-list"><li>System ROMA Nova mit moderner Blockform</li><li>Komponente RN19: H 14,4 cm / L 75,6 cm / B 19,5 cm</li><li>Farben: Szerlit, Uran</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="Modulare Zäune ROMA Nova">Anfrage vorbereiten</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/5215/d913cdada35413031d3b05e9843b9c00.webp" alt="ROMA Horizon ECO Modulare Zäune" loading="lazy" decoding="async">
+          <span class="news-badge">System 02</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>ROMA Horizon ECO Modulare Zäune</h3>
+          <p class="news-desc">ROMA Horizon ECO ist ein ästhetischer und funktioneller Zaun aus JONIEC®-Blöcken. Die Konstruktion reduziert Betonverbrauch, Montagezeit und Kosten.</p>
+          <ul class="news-detail-list"><li>Blöcke RHE20/RHE28 mit passenden Vordächern</li><li>Konstruktion mit kleineren Flutkammern</li><li>Farben: weiß, graphit, asche, calcit, iridium</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Horizon ECO Modulare Zäune">Anfrage vorbereiten</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/889/1cfbbcb15ead2568b7a38093d89ca58b.webp" alt="Modulare Zäune ROMA Mega" loading="lazy" decoding="async">
+          <span class="news-badge">System 03</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>Modulare Zäune ROMA Mega</h3>
+          <p class="news-desc">ROMA Mega ist für exklusive, moderne Formen gedacht. Große Betonblöcke ermöglichen eine schnelle Errichtung massiver und repräsentativer Zaunanlagen.</p>
+          <ul class="news-detail-list"><li>Großformatige Blöcke RM28 und RM19</li><li>RM28: H 28,8 cm / L 75,6 cm / B 28 cm</li><li>Farben: Aragon, Gabro, Galena, Lidyt, Turmalin, Snow</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="Modulare Zäune ROMA Mega">Anfrage vorbereiten</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/5286/1f292e94d4c9bb0695cabf5d1b0ba1ed.webp" alt="ROMA Vital ECO Modulare Zäune" loading="lazy" decoding="async">
+          <span class="news-badge">System 04</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>ROMA Vital ECO Modulare Zäune</h3>
+          <p class="news-desc">ROMA Vital ECO verbindet modernes Design mit einfacher Montage und geringeren Kosten. Abgeschrägte Kanten unterstreichen den modernen Charakter.</p>
+          <ul class="news-detail-list"><li>Block RVE19: H 20 cm / L 57 cm / B 19,5 cm</li><li>Vordach CRVE19: H 6 cm / L 57 cm / B 19,5 cm</li><li>Farben: weiß, grafit, asche, iridium, calcit</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Vital ECO Modulare Zäune">Anfrage vorbereiten</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/1572/22f2d9f95b312c9d158d5d55f2799e6c.webp" alt="Modulare Zäune ROMA Horizon" loading="lazy" decoding="async">
+          <span class="news-badge">System 05</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>Modulare Zäune ROMA Horizon</h3>
+          <p class="news-desc">ROMA Horizon zeichnet sich durch elegantes Design und eine einfache, schnelle Montage aus. Die Farbpalette eignet sich für warme und kühle Fassadentöne.</p>
+          <ul class="news-detail-list"><li>Blöcke BH20, BH36 und BH28</li><li>Passende Vordächer ROMA Horizon verfügbar</li><li>Farben u. a. Amber, Weiß, Graphit, Magnetit, Marengo, Nero, Onyx, Pyrit, Asche</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="Modulare Zäune ROMA Horizon">Anfrage vorbereiten</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/5315/8057f4dc02d771787ebee8e25ef6552d.webp" alt="ROMA Vital ECO Multigrain Modulzäune" loading="lazy" decoding="async">
+          <span class="news-badge">System 06</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>ROMA Vital ECO Multigrain Modulzäune</h3>
+          <p class="news-desc">Der Multigrain-Effekt verleiht den Blöcken eine dezente körnige Oberfläche. Die ECO-Konstruktion reduziert Materialverbrauch und Montagezeit.</p>
+          <ul class="news-detail-list"><li>Block RVEM19: H 20 cm / L 57 cm / B 19,5 cm</li><li>Vordach CRVEM19: H 6 cm / L 57 cm / B 19,5 cm</li><li>Farben: grafit, popiel</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Vital ECO Multigrain Modulzäune">Anfrage vorbereiten</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/1574/9693488c8c1e4afafb477e7e531cc9f9.webp" alt="Modulare Zäune ROMA Perfect" loading="lazy" decoding="async">
+          <span class="news-badge">System 07</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>Modulare Zäune ROMA Perfect</h3>
+          <p class="news-desc">ROMA Perfect ist für Liebhaber einer rohen, asketischen Ästhetik gemacht. Die SCRATCH-Technologie sorgt für eine unregelmäßige, steinartige Oberfläche.</p>
+          <ul class="news-detail-list"><li>SCRATCH-Oberfläche mit unregelmäßiger Struktur</li><li>Komponente RP20: H 20 cm / L 50,4 cm / B 20 cm</li><li>Farben: Alba, Dioryt, Milos, Morion</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="Modulare Zäune ROMA Perfect">Anfrage vorbereiten</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/5291/5e9d3d46c1c966bfc5260dd0f7ccdae0.webp" alt="ROMA Integra ECO Modulare Zäune" loading="lazy" decoding="async">
+          <span class="news-badge">System 08</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>ROMA Integra ECO Modulare Zäune</h3>
+          <p class="news-desc">ROMA Integra ECO ist ein stilvoller großformatiger Zaun. Die langen Elemente und abgeschrägten Kanten schaffen eine ruhige, moderne Linie.</p>
+          <ul class="news-detail-list"><li>Block RIE20: H 20 cm / L 75,6 cm / B 19,8 cm</li><li>Vordach CRIE20: H 7,2 cm / L 75,6 cm / B 19,8 cm</li><li>Farben: weiß, grafit, iridium</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Integra ECO Modulare Zäune">Anfrage vorbereiten</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/5285/4bdf7542c585367914b68e89053425e0.webp" alt="ROMA Giga Modulare Zäune" loading="lazy" decoding="async">
+          <span class="news-badge">System 09</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>ROMA Giga Modulare Zäune</h3>
+          <p class="news-desc">ROMA Giga ist eine Neuheit im Bereich modularer JONIEC®-Zäune. Markante Segmente verbinden minimalistische Optik mit hoher Funktionalität.</p>
+          <ul class="news-detail-list"><li>Block RGM20: H 40 cm / L 50,4 cm / B 19,8 cm</li><li>Vordach CRGM20: H 7,2 cm / L 50,4 cm / B 19,8 cm</li><li>Farben: weiß, grafit, popiel, iryd, sandy</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Giga Modulare Zäune">Anfrage vorbereiten</a>
+          </div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-image">
+          <img src="https://joniec.de/images/5171/8715dffdc9fc77a0e3a0815434da7b3e.webp" alt="ROMA Lite Modulare Zäune" loading="lazy" decoding="async">
+          <span class="news-badge">System 10</span>
+        </div>
+        <div class="news-body">
+          <span class="news-category">Modulare Zäune</span>
+          <h3>ROMA Lite Modulare Zäune</h3>
+          <p class="news-desc">ROMA Lite ist ein schlankes modulares Zaunsystem mit minimalistischem Stil. Es passt sehr gut zu moderner Architektur und gedeckten Farben.</p>
+          <ul class="news-detail-list"><li>Block RL19: H 14,4 cm / L 75,6 cm / B 19,5 cm</li><li>Vordach CRL19: H 7,2 cm / L 75,6 cm / B 19,5 cm</li><li>Farben: weiß, grafit, asche</li></ul>
+          <div class="news-card-actions">
+            <a class="news-request-btn" href="#anfrage" data-product-name="ROMA Lite Modulare Zäune">Anfrage vorbereiten</a>
+          </div>
+        </div>
+      </article>
+      </div>
+      <p class="news-source-note">Hinweis: Die Produktbilder sind als externe JONIEC®-Bildlinks eingebunden. Wenn Sie eigene lokale Bilder nutzen möchten, können Sie die Bildpfade später z. B. auf <code>images/modulare-01.webp</code> bis <code>images/modulare-10.webp</code> ändern.</p>
+    </div>
+  </div>
+</section>
+
+    <section id="anfrage">
+      <div class="container">
+        <div class="contact-band"><div><p class="kicker">Anfrage</p><h2>Projekt individuell kalkulieren lassen</h2><p>Senden Sie Produkt, Menge, Länge, Höhe, Lieferort und Fotos vom Projektort. Danach kann ein Angebot vorbereitet werden.</p></div><a class="btn btn-primary" href="mailto:info@zaunmacher24.de">info@zaunmacher24.de</a></div>
+        <form class="form-wrap" action="mailto:info@zaunmacher24.de" method="post" enctype="text/plain">
+          <div class="form-grid">
+            <div class="field"><label for="name">Name</label><input id="name" name="Name" required placeholder="Ihr Name"></div>
+            <div class="field"><label for="phone">Telefon</label><input id="phone" name="Telefon" placeholder="Telefonnummer"></div>
+            <div class="field"><label for="email">E-Mail</label><input id="email" name="Email" type="email" required placeholder="E-Mail-Adresse"></div>
+            <div class="field"><label for="area">Lieferort</label><input id="area" name="Lieferort" placeholder="PLZ / Ort"></div>
+            <div class="field full"><label for="product">Produkt</label><input id="product" name="Produkt" placeholder="Produkt wird per Klick automatisch eingetragen"></div>
+            <div class="field full"><label for="message">Nachricht</label><textarea id="message" name="Nachricht" placeholder="Bitte Maße, Länge, Höhe, Farbe, gewünschtes System und Lieferadresse beschreiben."></textarea></div>
+          </div>
+          <button class="btn btn-primary" type="submit" style="margin-top:18px">Anfrage vorbereiten</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div class="footer-brand">
+        <div class="logo">
+          <img class="logo-mark" src="images/logo-icon.png" alt="" aria-hidden="true">
+          <span class="logo-wordmark">
+            <span class="logo-text">zaunmacher<span>24</span></span>
+            <small class="logo-tagline">ZAUN · TOR · MAUER</small>
+          </span>
+        </div>
+        <p>© <span id="year"></span> Zaunmacher24 · Modulare-Zäune-Seite ohne Onlinepreise.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Start</a>
+        <a href="produkte.html#bilder">Bereiche</a>
+        <a href="#anfrage">Anfrage</a>
+      </div>
+    </div>
+  </footer>
+
+  
+<script>
+  const pageHeader = document.querySelector('header');
+  const menu = document.getElementById('menu');
+  const toggle = document.getElementById('mobileToggle');
+  const year = document.getElementById('year');
+
+  function updateHeaderState() {
+    if (!pageHeader) return;
+    pageHeader.classList.toggle('is-scrolled', window.scrollY > 40);
+  }
+
+  updateHeaderState();
+  window.addEventListener('scroll', updateHeaderState, { passive: true });
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => menu.classList.toggle('open'));
+  }
+
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
+
+  document.querySelectorAll('.news-request-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const productInput = document.getElementById('product');
+      if (productInput) productInput.value = button.dataset.productName || 'Modulare Zäune';
+      if (menu) menu.classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
