@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Zaunmacher24 – Betonsteine, Zaunsteine, Mauersteine und Fundamente für moderne Zaun- und Gartenprojekte. Beratung, Lieferung und Anfrage." />
   <meta name="keywords" content="Betonsteine, Zaunsteine, Mauersteine, Sichtschutz, Gartenmauer, Fundamente, Zaunbau, Betonmauer" />
+  <!-- Font closer to the provided reference screenshot -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/logo-icon.png">
   <link rel="preload" as="image" href="images/logo.png">
 
@@ -869,25 +873,33 @@
     .image-panel {
       min-height: 520px;
       border-radius: 34px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.58), rgba(255,255,255,.12)),
-        repeating-linear-gradient(0deg, #d8dadd 0 42px, #c1c4ca 42px 47px),
-        #d1d5db;
+      background: #eef0f3;
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
       border: 1px solid var(--line);
     }
+    .image-panel img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+      z-index: 0;
+      transform: scale(1.01);
+    }
     .image-panel::after {
       content: "";
       position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 34%;
+      inset: 0;
       background:
-        linear-gradient(90deg, #1f2328 0 13%, transparent 13% 21%, #1f2328 21% 34%, transparent 34% 42%, #1f2328 42% 55%, transparent 55% 63%, #1f2328 63% 76%, transparent 76% 84%, #1f2328 84% 100%);
-      opacity: .92;
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(15,17,21,.16)),
+        linear-gradient(90deg, rgba(255,255,255,.22), transparent 46%);
+      opacity: 1;
+      pointer-events: none;
+      z-index: 1;
     }
     .callout {
       position: absolute;
@@ -3490,6 +3502,303 @@
       }
     }
 
+
+
+    /* ============================================================
+       TYPOGRAPHY ONLY UPDATE
+       Match the uploaded reference style: clean geometric sans font,
+       bold uppercase headings, calm readable paragraphs.
+       Colors and layout are intentionally unchanged.
+       ============================================================ */
+    body,
+    button,
+    input,
+    textarea,
+    select {
+      font-family: "Montserrat", Arial, Helvetica, sans-serif !important;
+      font-weight: 400;
+      letter-spacing: -0.012em;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .logo,
+    .menu,
+    .btn,
+    .section-kicker,
+    .kaiser-pretitle,
+    .kaiser-subtitle,
+    .benefit h3,
+    .product-card h3,
+    .sortiment-mini-card h3,
+    .step h3,
+    .faq h3,
+    .gallery-label,
+    label {
+      font-family: "Montserrat", Arial, Helvetica, sans-serif !important;
+    }
+
+    h1,
+    .hero-kaiser h1 {
+      font-weight: 800 !important;
+      letter-spacing: -0.045em !important;
+    }
+
+    h2 {
+      font-weight: 800 !important;
+      letter-spacing: -0.042em !important;
+    }
+
+    h3,
+    h4,
+    .benefit h3,
+    .product-card h3,
+    .sortiment-mini-card h3,
+    .step h3,
+    .faq h3 {
+      font-weight: 700 !important;
+      letter-spacing: -0.028em !important;
+    }
+
+    .section-kicker,
+    .kaiser-pretitle,
+    .kaiser-subtitle,
+    .menu,
+    .btn,
+    label,
+    .chip,
+    .badge {
+      font-weight: 700 !important;
+    }
+
+    p,
+    .hero p.lead,
+    .benefit p,
+    .product-card p,
+    .sortiment-clean-copy p,
+    .sortiment-mini-card p,
+    .step p,
+    .faq p,
+    .contact-list a,
+    .contact-list div,
+    footer p,
+    footer a {
+      font-family: "Montserrat", Arial, Helvetica, sans-serif !important;
+      font-weight: 400 !important;
+      line-height: 1.78;
+      letter-spacing: -0.018em;
+    }
+
+    .hero-kaiser .kaiser-pretitle,
+    .hero-kaiser .kaiser-subtitle {
+      letter-spacing: -0.026em !important;
+      line-height: 1.18 !important;
+    }
+
+    header .logo > span:not(.logo-mark) {
+      font-family: "Montserrat", Arial, Helvetica, sans-serif !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.055em !important;
+    }
+
+
+
+    /* ============================================================
+       FINAL MOBILE MENU FIX: smooth opening + better hamburger button
+       ============================================================ */
+    @media (max-width: 1080px) {
+      header .container.nav {
+        position: relative !important;
+        overflow: visible !important;
+      }
+
+      header .mobile-toggle {
+        width: 50px !important;
+        height: 50px !important;
+        display: inline-grid !important;
+        place-items: center !important;
+        position: relative !important;
+        z-index: 120 !important;
+        flex: 0 0 50px !important;
+        border-radius: 18px !important;
+        border: 1px solid rgba(47,53,66,.16) !important;
+        background: rgba(255,255,255,.96) !important;
+        box-shadow: 0 10px 26px rgba(47,53,66,.10) !important;
+        cursor: pointer !important;
+        transition:
+          background .24s ease,
+          border-color .24s ease,
+          box-shadow .24s ease,
+          transform .24s ease !important;
+      }
+
+      header .mobile-toggle:hover {
+        transform: translateY(-1px) !important;
+        box-shadow: 0 14px 34px rgba(47,53,66,.14) !important;
+      }
+
+      header .mobile-toggle span {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        display: block !important;
+        width: 24px !important;
+        height: 2px !important;
+        margin: 0 !important;
+        border-radius: 99px !important;
+        background: var(--accent) !important;
+        transform-origin: center !important;
+        transition:
+          transform .28s ease,
+          opacity .2s ease,
+          background .24s ease !important;
+      }
+
+      header .mobile-toggle span:nth-child(1) { transform: translate(-50%, -8px) !important; }
+      header .mobile-toggle span:nth-child(2) { transform: translate(-50%, -50%) !important; }
+      header .mobile-toggle span:nth-child(3) { transform: translate(-50%, 6px) !important; }
+
+      header .mobile-toggle.is-active {
+        background: var(--accent) !important;
+        border-color: var(--accent) !important;
+        box-shadow: 0 16px 36px rgba(47,53,66,.22) !important;
+      }
+
+      header .mobile-toggle.is-active span {
+        background: #fff !important;
+      }
+
+      header .mobile-toggle.is-active span:nth-child(1) {
+        transform: translate(-50%, -50%) rotate(45deg) !important;
+      }
+
+      header .mobile-toggle.is-active span:nth-child(2) {
+        opacity: 0 !important;
+        transform: translate(-50%, -50%) scaleX(.25) !important;
+      }
+
+      header .mobile-toggle.is-active span:nth-child(3) {
+        transform: translate(-50%, -50%) rotate(-45deg) !important;
+      }
+
+      header .container.nav .menu {
+        display: flex !important;
+        position: absolute !important;
+        top: calc(100% + 10px) !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 110 !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 6px !important;
+        max-height: 0 !important;
+        padding: 0 12px !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transform: translateY(-12px) scale(.98) !important;
+        background: rgba(255,255,255,.98) !important;
+        border: 1px solid rgba(229,231,235,.96) !important;
+        border-radius: 24px !important;
+        box-shadow: 0 26px 70px rgba(15,17,21,.18) !important;
+        transition:
+          max-height .42s cubic-bezier(.2,.8,.2,1),
+          padding .32s ease,
+          opacity .25s ease,
+          transform .32s ease,
+          visibility .32s ease !important;
+      }
+
+      header .container.nav .menu.open {
+        top: calc(100% + 10px) !important;
+        max-height: 520px !important;
+        padding: 14px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translateY(0) scale(1) !important;
+      }
+
+      header .container.nav .menu a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        padding: 14px 16px !important;
+        border-radius: 17px !important;
+        color: var(--accent) !important;
+        font-weight: 850 !important;
+        letter-spacing: -.01em !important;
+        opacity: 0 !important;
+        transform: translateY(-5px) !important;
+        transition:
+          opacity .24s ease,
+          transform .28s ease,
+          background .2s ease,
+          color .2s ease !important;
+      }
+
+      header .container.nav .menu.open a {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+
+      header .container.nav .menu.open a:nth-child(1) { transition-delay: .04s !important; }
+      header .container.nav .menu.open a:nth-child(2) { transition-delay: .08s !important; }
+      header .container.nav .menu.open a:nth-child(3) { transition-delay: .12s !important; }
+      header .container.nav .menu.open a:nth-child(4) { transition-delay: .16s !important; }
+      header .container.nav .menu.open a:nth-child(5) { transition-delay: .20s !important; }
+      header .container.nav .menu.open a:nth-child(6) { transition-delay: .24s !important; }
+
+      header .container.nav .menu a:hover {
+        background: #f5f6f8 !important;
+        color: var(--brand-dark) !important;
+      }
+
+      header .container.nav .menu a::after {
+        content: "›" !important;
+        display: inline-block !important;
+        height: auto !important;
+        margin: 0 !important;
+        background: none !important;
+        color: var(--brand-dark) !important;
+        font-size: 22px !important;
+        line-height: 1 !important;
+        opacity: .7 !important;
+      }
+
+      header .container.nav .menu .nav-products-link::after {
+        display: inline-block !important;
+      }
+    }
+
+    @media (max-width: 620px) {
+      header .mobile-toggle {
+        width: 46px !important;
+        height: 46px !important;
+        flex-basis: 46px !important;
+        border-radius: 16px !important;
+      }
+
+      header .container.nav .menu,
+      header .container.nav .menu.open {
+        top: calc(100% + 8px) !important;
+        border-radius: 22px !important;
+      }
+
+      header .container.nav .menu.open {
+        padding: 12px !important;
+      }
+
+      header .container.nav .menu a {
+        padding: 13px 14px !important;
+        border-radius: 15px !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -3524,7 +3833,7 @@
         <a class="btn btn-soft" href="tel:+490000000000">Anrufen</a>
         <a class="btn btn-primary" href="#kontakt">Anfrage senden</a>
       </div>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Menü öffnen">
+      <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Menü öffnen" aria-controls="menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -3694,7 +4003,8 @@
 
     <section id="beratung">
       <div class="container split">
-        <div class="image-panel" aria-hidden="true">
+        <div class="image-panel">
+          <img src="images/anfrage-betonsteine.png" alt="Betonsteine auf Palette mit Maßband, Farbmuster und Anfrageunterlagen" loading="lazy">
           <div class="callout">
             <strong>Alles für Ihre Anfrage</strong>
             <span>Menge, Farbe, Maße, Lieferadresse und gewünschte Ausführung.</span>
@@ -3894,8 +4204,39 @@
     const year = document.getElementById('year');
     year.textContent = new Date().getFullYear();
 
-    toggle.addEventListener('click', () => menu.classList.toggle('open'));
-    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.remove('open')));
+    function setMobileMenu(open) {
+      if (!menu || !toggle) return;
+      menu.classList.toggle('open', open);
+      toggle.classList.toggle('is-active', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      document.body.classList.toggle('menu-open', open);
+    }
+
+    if (menu && toggle) {
+      toggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        setMobileMenu(!menu.classList.contains('open'));
+      });
+
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setMobileMenu(false));
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!menu.classList.contains('open')) return;
+        if (menu.contains(event.target) || toggle.contains(event.target)) return;
+        setMobileMenu(false);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') setMobileMenu(false);
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1080) setMobileMenu(false);
+      });
+    }
 
 
     const heroSlides = document.querySelectorAll('.hero-slide');
