@@ -778,6 +778,8 @@
       }
     }
 
+
+
     /* ============================================================
        15 IMAGE PRODUCT OVERVIEW
        Visitor sees all 15 JONIEC product-category images in one clean
@@ -988,6 +990,8 @@
       }
     }
 
+
+
     /* ============================================================
        FINAL: 15 CATEGORY IMAGES
        This section shows the 15 product-category cards based on
@@ -1025,10 +1029,13 @@
       }
     }
 
+
+
     /* Final cleanup after extending product categories */
     #bilder {
       padding-top: 92px !important;
     }
+
 
     /* ============================================================
        IMAGE FIX: all 15 category photos show correctly like cards
@@ -1131,7 +1138,7 @@
   color: #fff;
   background:
     linear-gradient(90deg, rgba(17,22,29,.94), rgba(17,22,29,.76)),
-    url("") center / cover no-repeat;
+    url("images/roma-giga-modulare-zaeune.webp") center / cover no-repeat;
 }
 
 .news-page-head .kicker {
@@ -1335,6 +1342,59 @@
   background: #f6f7f9;
 }
 
+.news-detail-list .colors-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.news-detail-list .colors-row::before {
+  display: none;
+}
+
+.detail-label {
+  font-weight: 900;
+  color: #374151;
+  margin-right: 2px;
+}
+
+.color-swatches {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.color-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid rgba(255,255,255,.95);
+  box-shadow: 0 0 0 1px rgba(47,53,66,.16);
+}
+
+.color-swatch.white { background: #f3f2ed; }
+.color-swatch.grafit, .color-swatch.graphit { background: #2f3940; }
+.color-swatch.popiel { background: #b9bcc0; }
+.color-swatch.iryd, .color-swatch.iridium { background: #d8d4cb; }
+.color-swatch.sandy, .color-swatch.piaskowy { background: #d6c2a0; }
+.color-swatch.asche { background: #989a93; }
+.color-swatch.calcit { background: #e6e2d7; }
+.color-swatch.amber { background: #be8a38; }
+.color-swatch.magnetit { background: #5c6268; }
+.color-swatch.marengo { background: #4d5561; }
+.color-swatch.nero, .color-swatch.czarny, .color-swatch.onyx { background: #1c1c1c; }
+.color-swatch.pyrit, .color-swatch.piryt { background: #82784f; }
+.color-swatch.dark { background: #41464d; }
+.color-swatch.wanad { background: #7f848a; }
+.color-swatch.shade { background: #a6a198; }
+.color-swatch.alaska { background: #e7e8e0; }
+.color-swatch.bronzyt { background: #8c6a4c; }
+.color-swatch.getyt { background: #5f584a; }
+
 @media (max-width: 1180px) {
   .news-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1365,6 +1425,9 @@
   }
 }
 
+
+  
+
 /* Standalone NEUIGKEITEN page overrides */
 .news-section {
   display: block !important;
@@ -1385,9 +1448,230 @@
   }
 }
 
+
 /* ============================================================
-   CLEAN HERO + MATTE COLOR SWATCHES
-   تم تعديل الهيرو وحذف كلام الروابط وتحويل الألوان إلى دوائر طبيعية.
+   COLOR SWATCH DESIGN — Farbangaben als runde Auswahlfelder
+   ============================================================ */
+.news-specs {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.news-spec-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 8px;
+  padding: 10px 12px;
+  border: 1px solid #e7e9ee;
+  border-radius: 15px;
+  background: #f7f8fa;
+  color: #374151;
+  font-size: 13.5px;
+  line-height: 1.35;
+}
+
+.news-spec-line strong {
+  color: #151922;
+  font-weight: 950;
+}
+
+.color-picker {
+  display: grid;
+  gap: 10px;
+  padding-top: 2px;
+}
+
+.color-picker-title {
+  color: #151922;
+  font-size: 14px;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.news-specs .color-swatches {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 11px;
+}
+
+.news-specs .color-swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 3px solid #fff;
+  box-shadow:
+    0 0 0 1px rgba(47,53,66,.17),
+    0 8px 17px rgba(47,53,66,.14);
+  position: relative;
+  flex: 0 0 auto;
+  cursor: default;
+  overflow: visible;
+}
+
+.news-specs .color-swatch.is-selected {
+  box-shadow:
+    0 0 0 3px #eef2f7,
+    0 0 0 5px #64748b,
+    0 9px 18px rgba(47,53,66,.16);
+}
+
+.news-specs .color-swatch::after {
+  content: attr(aria-label);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 9px);
+  transform: translateX(-50%) translateY(5px);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 6;
+  background: #11161d;
+  color: #fff;
+  border-radius: 9px;
+  padding: 6px 9px;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 850;
+  box-shadow: 0 10px 22px rgba(0,0,0,.22);
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.news-specs .color-swatch:hover::after,
+.news-specs .color-swatch:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.news-specs .color-swatch:focus-visible {
+  outline: 3px solid rgba(255,204,0,.65);
+  outline-offset: 4px;
+}
+
+.news-specs .swatch-white,
+.news-specs .swatch-weiss {
+  background: radial-gradient(circle at 35% 30%, #ffffff 0 12%, #f4f4f1 13% 34%, #e7e7e2 35% 60%, #fafaf7 61% 100%);
+}
+.news-specs .swatch-grafit,
+.news-specs .swatch-graphit {
+  background: #263039;
+}
+.news-specs .swatch-popiel {
+  background: radial-gradient(circle at 32% 27%, #eeeeea 0 10%, #c9cbc7 11% 38%, #adafaa 39% 65%, #d8d9d5 66% 100%);
+}
+.news-specs .swatch-iryd,
+.news-specs .swatch-iridium {
+  background: linear-gradient(135deg, #5f666c, #9fa5a9 48%, #3e454a);
+}
+.news-specs .swatch-sandy,
+.news-specs .swatch-piaskowy {
+  background: linear-gradient(135deg, #e3cfaa, #b99567);
+}
+.news-specs .swatch-asche {
+  background: linear-gradient(135deg, #c2c5c8, #868d94);
+}
+.news-specs .swatch-calcit {
+  background: radial-gradient(circle at 30% 28%, #fbf6e7 0 16%, #ded4bc 17% 54%, #c8b88f 55% 100%);
+}
+.news-specs .swatch-amber {
+  background: linear-gradient(135deg, #d88a2f, #874a22);
+}
+.news-specs .swatch-magnetit {
+  background: linear-gradient(135deg, #5b5d5f, #2d3235);
+}
+.news-specs .swatch-marengo {
+  background: linear-gradient(135deg, #475461, #1f2933);
+}
+.news-specs .swatch-nero,
+.news-specs .swatch-czarny {
+  background: #111111;
+}
+.news-specs .swatch-onyx {
+  background: radial-gradient(circle at 35% 30%, #39404a 0 18%, #20252c 19% 55%, #0f1216 56% 100%);
+}
+.news-specs .swatch-pyrit,
+.news-specs .swatch-piryt {
+  background: linear-gradient(135deg, #b98955, #6f5035);
+}
+.news-specs .swatch-dark {
+  background: #25252a;
+}
+.news-specs .swatch-wanad {
+  background: linear-gradient(135deg, #7d7c6f, #4f5348);
+}
+.news-specs .swatch-shade {
+  background: linear-gradient(135deg, #8a8278, #5a554f);
+}
+.news-specs .swatch-alaska {
+  background: radial-gradient(circle at 35% 30%, #f7f9f9 0 16%, #dce3e4 17% 55%, #b9c4c5 56% 100%);
+}
+.news-specs .swatch-bronzyt {
+  background: linear-gradient(135deg, #8b6650, #4f372c);
+}
+.news-specs .swatch-getyt {
+  background: linear-gradient(135deg, #bd7b3d, #704021);
+}
+
+
+/* ============================================================
+   MATTE NATURAL COLOR SWATCHES
+   ألوان طبيعية بدون لمعان أو تدرجات قوية.
+   ============================================================ */
+.news-specs .color-swatch {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 999px !important;
+  border: 2px solid #e5e7eb !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+.news-specs .color-swatch.is-selected {
+  border-color: #ffffff !important;
+  box-shadow: 0 0 0 3px #cbd5e1 !important;
+}
+
+.news-specs .color-swatch:hover,
+.news-specs .color-swatch:focus-visible {
+  transform: none !important;
+  box-shadow: 0 0 0 3px #cbd5e1 !important;
+}
+
+.news-specs .swatch-white,
+.news-specs .swatch-weiss { background: #f1f1ec !important; }
+.news-specs .swatch-grafit,
+.news-specs .swatch-graphit { background: #263039 !important; }
+.news-specs .swatch-popiel { background: #c9c9c4 !important; }
+.news-specs .swatch-iryd,
+.news-specs .swatch-iridium { background: #8d9396 !important; }
+.news-specs .swatch-sandy,
+.news-specs .swatch-piaskowy { background: #c7ad82 !important; }
+.news-specs .swatch-asche { background: #92989c !important; }
+.news-specs .swatch-calcit { background: #d8cfb8 !important; }
+.news-specs .swatch-amber { background: #b97935 !important; }
+.news-specs .swatch-magnetit { background: #44494d !important; }
+.news-specs .swatch-marengo { background: #384350 !important; }
+.news-specs .swatch-nero,
+.news-specs .swatch-czarny { background: #171717 !important; }
+.news-specs .swatch-onyx { background: #222831 !important; }
+.news-specs .swatch-pyrit,
+.news-specs .swatch-piryt { background: #7b6041 !important; }
+.news-specs .swatch-dark { background: #2f343b !important; }
+.news-specs .swatch-wanad { background: #666b62 !important; }
+.news-specs .swatch-shade { background: #756e66 !important; }
+.news-specs .swatch-alaska { background: #dce2e2 !important; }
+.news-specs .swatch-bronzyt { background: #6d4f40 !important; }
+.news-specs .swatch-getyt { background: #8f5a34 !important; }
+
+
+/* User update: remove Neuheit number badges from product images */
+.news-badge { display: none !important; }
+
+
+/* ============================================================
+   FINAL CLEAN: LOCAL IMAGE FILENAMES + HERO + COLOR SWATCHES
    ============================================================ */
 .news-page-head {
   min-height: clamp(360px, 42vw, 560px) !important;
@@ -1403,42 +1687,31 @@
 }
 .news-page-head h2 {
   max-width: 900px !important;
+  color: #fff !important;
   text-shadow: 0 6px 18px rgba(0,0,0,.55) !important;
 }
 .news-page-head p:not(.kicker) {
   max-width: 760px !important;
+  color: rgba(255,255,255,.82) !important;
   text-shadow: 0 3px 12px rgba(0,0,0,.42) !important;
+}
+.news-page-actions,
+.news-card-actions,
+.news-source-note,
+.news-badge {
+  display: none !important;
 }
 .news-image::before,
 .category-entry-image::before {
   content: none !important;
   display: none !important;
 }
-.news-badge,
-.news-source-note,
-.news-card-actions {
-  display: none !important;
-}
-.color-row {
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  padding-left: 0 !important;
-  margin-top: 2px !important;
-}
-.color-row::before {
-  display: none !important;
-}
-.color-label {
-  font-weight: 900 !important;
-  color: #374151 !important;
-  min-width: 58px !important;
-}
 .color-swatches {
   display: inline-flex !important;
   flex-wrap: wrap !important;
   gap: 8px !important;
   align-items: center !important;
+  vertical-align: middle !important;
 }
 .color-swatch {
   width: 28px !important;
@@ -1446,12 +1719,13 @@
   border-radius: 999px !important;
   border: 2px solid #e5e7eb !important;
   box-shadow: none !important;
-  background-image: none !important;
   display: inline-block !important;
 }
-.color-swatch:hover {
-  outline: 3px solid #cbd5e1 !important;
-  outline-offset: 1px !important;
+.news-detail-list li:has(.color-swatches)::before {
+  display: none !important;
+}
+.news-detail-list li:has(.color-swatches) {
+  padding-left: 0 !important;
 }
 
 </style>
@@ -1484,109 +1758,109 @@
     <section id="neuigkeiten" class="news-section is-open">
   <div class="container">
     <div class="news-page-shell">
-      <div class="news-page-head" style="--hero-image:url(\'">
+      <div class="news-page-head" style="--hero-image:url('images/roma-giga-modulare-zaeune.webp')">
         <p class="kicker">NEUIGKEITEN</p>
         <h2>Neue JONIEC® Produkte für moderne Zaun- und Gartenprojekte</h2>
-        <p>Eine übersichtliche Auswahl neuer Systeme mit Bildern, kurzen Beschreibungen und kompakten technischen Details.</p>
+        <p>Eine klare Übersicht mit Produktbild, kurzer Beschreibung, Maßen und Farbauswahl.</p>
       </div>
       <div class="news-grid">
       <article class="news-card">
         <div class="news-image">
-          <img src="" alt="ROMA Giga Modulare Zäune" loading="lazy" decoding="async">
+          <img src="images/roma-giga-modulare-zaeune.webp" alt="ROMA Giga Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
           <span class="news-category">Modulare Zäune</span>
           <h3>ROMA Giga Modulare Zäune</h3>
           <p class="news-desc">ROMA Giga ist eine Neuheit in der Reihe der modularen JONIEC®-Zäune. Schlanke Segmente und ein markantes Design verbinden moderne Ästhetik mit Funktionalität.</p>
-          <ul class="news-detail-list"><li>Block RGM20: H 40 cm / L 50,4 cm / B 19,8 cm</li><li>Vordach CRGM20: H 7,2 cm / L 50,4 cm / B 19,8 cm</li><li class="color-row"><span class="color-label">Farben</span><span class="color-swatches"><span class="color-swatch swatch-weiss" title="weiß" aria-label="weiß" style="background:#f1f1ec"></span><span class="color-swatch swatch-grafit" title="grafit" aria-label="grafit" style="background:#263039"></span><span class="color-swatch swatch-popiel" title="popiel" aria-label="popiel" style="background:#c9c9c4"></span><span class="color-swatch swatch-iryd" title="iryd" aria-label="iryd" style="background:#8d9396"></span><span class="color-swatch swatch-sandy" title="sandy" aria-label="sandy" style="background:#c7ad82"></span></span></li></ul>
+          <div class="news-specs"><div class="news-spec-line"><strong>Block RGM20</strong><span>H 40 cm / L 50,4 cm / B 19,8 cm</span></div><div class="news-spec-line"><strong>Vordach CRGM20</strong><span>H 7,2 cm / L 50,4 cm / B 19,8 cm</span></div><div class="color-picker"><span class="color-picker-title">Farben</span><div class="color-swatches"><span class="color-swatch swatch-grafit is-selected" role="img" aria-label="grafit" tabindex="0"></span><span class="color-swatch swatch-weiss" role="img" aria-label="weiß" tabindex="0"></span><span class="color-swatch swatch-popiel" role="img" aria-label="popiel" tabindex="0"></span><span class="color-swatch swatch-iryd" role="img" aria-label="iryd" tabindex="0"></span><span class="color-swatch swatch-sandy" role="img" aria-label="sandy" tabindex="0"></span></div></div></div>
         </div>
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="" alt="ROMA Vital ECO Modulare Zäune" loading="lazy" decoding="async">
+          <img src="images/roma-vital-eco-modulare-zaeune.webp" alt="ROMA Vital ECO Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
           <span class="news-category">Modulare Zäune</span>
           <h3>ROMA Vital ECO Modulare Zäune</h3>
           <p class="news-desc">ROMA Vital ECO verbindet modernes Design mit einfacher Montage und geringeren Umsetzungskosten. Die abgeschrägten Kanten betonen den modernen Charakter.</p>
-          <ul class="news-detail-list"><li>Block RVE19: H 20 cm / L 57 cm / B 19,5 cm</li><li>Vordach CRVE19: H 6 cm / L 57 cm / B 19,5 cm</li><li class="color-row"><span class="color-label">Farben</span><span class="color-swatches"><span class="color-swatch swatch-weiss" title="weiß" aria-label="weiß" style="background:#f1f1ec"></span><span class="color-swatch swatch-grafit" title="grafit" aria-label="grafit" style="background:#263039"></span><span class="color-swatch swatch-asche" title="asche" aria-label="asche" style="background:#92989c"></span><span class="color-swatch swatch-iridium" title="iridium" aria-label="iridium" style="background:#8d9396"></span><span class="color-swatch swatch-calcit" title="calcit" aria-label="calcit" style="background:#d8cfb8"></span></span></li></ul>
+          <div class="news-specs"><div class="news-spec-line"><strong>Block RVE19</strong><span>H 20 cm / L 57 cm / B 19,5 cm</span></div><div class="news-spec-line"><strong>Vordach CRVE19</strong><span>H 6 cm / L 57 cm / B 19,5 cm</span></div><div class="color-picker"><span class="color-picker-title">Farben</span><div class="color-swatches"><span class="color-swatch swatch-grafit is-selected" role="img" aria-label="grafit" tabindex="0"></span><span class="color-swatch swatch-weiss" role="img" aria-label="weiß" tabindex="0"></span><span class="color-swatch swatch-asche" role="img" aria-label="asche" tabindex="0"></span><span class="color-swatch swatch-iridium" role="img" aria-label="iridium" tabindex="0"></span><span class="color-swatch swatch-calcit" role="img" aria-label="calcit" tabindex="0"></span></div></div></div>
         </div>
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="" alt="ROMA Vital ECO Multigrain Modulzäune" loading="lazy" decoding="async">
+          <img src="images/roma-vital-eco-multigrain-modulzaeune.webp" alt="ROMA Vital ECO Multigrain Modulzäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
           <span class="news-category">Modulare Zäune</span>
           <h3>ROMA Vital ECO Multigrain Modulzäune</h3>
           <p class="news-desc">Der Multigrain-Effekt verleiht den Blöcken eine dezente körnige Oberfläche. Die innovative Konstruktion reduziert Baukosten und Montagezeit.</p>
-          <ul class="news-detail-list"><li>Block RVEM19: H 20 cm / L 57 cm / B 19,5 cm</li><li>Vordach CRVEM19: H 6 cm / L 57 cm / B 19,5 cm</li><li class="color-row"><span class="color-label">Farben</span><span class="color-swatches"><span class="color-swatch swatch-grafit" title="grafit" aria-label="grafit" style="background:#263039"></span><span class="color-swatch swatch-popiel" title="popiel" aria-label="popiel" style="background:#c9c9c4"></span></span></li></ul>
+          <div class="news-specs"><div class="news-spec-line"><strong>Block RVEM19</strong><span>H 20 cm / L 57 cm / B 19,5 cm</span></div><div class="news-spec-line"><strong>Vordach CRVEM19</strong><span>H 6 cm / L 57 cm / B 19,5 cm</span></div><div class="color-picker"><span class="color-picker-title">Farben</span><div class="color-swatches"><span class="color-swatch swatch-grafit is-selected" role="img" aria-label="grafit" tabindex="0"></span><span class="color-swatch swatch-popiel" role="img" aria-label="popiel" tabindex="0"></span></div></div></div>
         </div>
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="" alt="ROMA Lite Modulare Zäune" loading="lazy" decoding="async">
+          <img src="images/roma-lite-modulare-zaeune.webp" alt="ROMA Lite Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
           <span class="news-category">Modulare Zäune</span>
           <h3>ROMA Lite Modulare Zäune</h3>
           <p class="news-desc">ROMA Lite ist ein schlankes modulares Zaunsystem im minimalistischen Stil. Es passt besonders gut zu moderner Architektur.</p>
-          <ul class="news-detail-list"><li>Block RL19: H 14,4 cm / L 75,6 cm / B 19,5 cm</li><li>Vordach CRL19: H 7,2 cm / L 75,6 cm / B 19,5 cm</li><li class="color-row"><span class="color-label">Farben</span><span class="color-swatches"><span class="color-swatch swatch-weiss" title="weiß" aria-label="weiß" style="background:#f1f1ec"></span><span class="color-swatch swatch-grafit" title="grafit" aria-label="grafit" style="background:#263039"></span><span class="color-swatch swatch-asche" title="asche" aria-label="asche" style="background:#92989c"></span></span></li></ul>
+          <div class="news-specs"><div class="news-spec-line"><strong>Block RL19</strong><span>H 14,4 cm / L 75,6 cm / B 19,5 cm</span></div><div class="news-spec-line"><strong>Vordach CRL19</strong><span>H 7,2 cm / L 75,6 cm / B 19,5 cm</span></div><div class="color-picker"><span class="color-picker-title">Farben</span><div class="color-swatches"><span class="color-swatch swatch-grafit is-selected" role="img" aria-label="grafit" tabindex="0"></span><span class="color-swatch swatch-weiss" role="img" aria-label="weiß" tabindex="0"></span><span class="color-swatch swatch-asche" role="img" aria-label="asche" tabindex="0"></span></div></div></div>
         </div>
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="" alt="ROMA Horizon ECO Modulare Zäune" loading="lazy" decoding="async">
+          <img src="images/roma-horizon-eco-modulare-zaeune.webp" alt="ROMA Horizon ECO Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
           <span class="news-category">Modulare Zäune</span>
           <h3>ROMA Horizon ECO Modulare Zäune</h3>
           <p class="news-desc">ROMA Horizon ECO ist ein ästhetischer und funktioneller Zaun aus JONIEC®-Blöcken, der Betonverbrauch und Montagezeit reduziert.</p>
-          <ul class="news-detail-list"><li>Blöcke RHE20/RHE28 mit passenden Vordächern</li><li>Kostenoptimierte Konstruktion mit kleineren Flutkammern</li><li class="color-row"><span class="color-label">Farben</span><span class="color-swatches"><span class="color-swatch swatch-weiss" title="weiß" aria-label="weiß" style="background:#f1f1ec"></span><span class="color-swatch swatch-graphit" title="graphit" aria-label="graphit" style="background:#263039"></span><span class="color-swatch swatch-asche" title="asche" aria-label="asche" style="background:#92989c"></span><span class="color-swatch swatch-calcit" title="calcit" aria-label="calcit" style="background:#d8cfb8"></span><span class="color-swatch swatch-iridium" title="iridium" aria-label="iridium" style="background:#8d9396"></span></span></li></ul>
+          <div class="news-specs"><div class="news-spec-line"><strong>System</strong><span>Blöcke RHE20/RHE28 mit passenden Vordächern</span></div><div class="news-spec-line"><strong>Vorteil</strong><span>Kostenoptimierte Konstruktion mit kleineren Flutkammern</span></div><div class="color-picker"><span class="color-picker-title">Farben</span><div class="color-swatches"><span class="color-swatch swatch-graphit is-selected" role="img" aria-label="graphit" tabindex="0"></span><span class="color-swatch swatch-weiss" role="img" aria-label="weiß" tabindex="0"></span><span class="color-swatch swatch-asche" role="img" aria-label="asche" tabindex="0"></span><span class="color-swatch swatch-calcit" role="img" aria-label="calcit" tabindex="0"></span><span class="color-swatch swatch-iridium" role="img" aria-label="iridium" tabindex="0"></span></div></div></div>
         </div>
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="" alt="ROMA Integra ECO Modulare Zäune" loading="lazy" decoding="async">
+          <img src="images/roma-integra-eco-modulare-zaeune.webp" alt="ROMA Integra ECO Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
           <span class="news-category">Modulare Zäune</span>
           <h3>ROMA Integra ECO Modulare Zäune</h3>
           <p class="news-desc">ROMA Integra ECO ist ein großformatiger Zaun mit moderner Linienführung. Die Konstruktion senkt den Materialbedarf und wirkt gleichzeitig hochwertig.</p>
-          <ul class="news-detail-list"><li>Block RIE20: H 20 cm / L 75,6 cm / B 19,8 cm</li><li>Vordach CRIE20: H 7,2 cm / L 75,6 cm / B 19,8 cm</li><li class="color-row"><span class="color-label">Farben</span><span class="color-swatches"><span class="color-swatch swatch-weiss" title="weiß" aria-label="weiß" style="background:#f1f1ec"></span><span class="color-swatch swatch-grafit" title="grafit" aria-label="grafit" style="background:#263039"></span><span class="color-swatch swatch-iridium" title="iridium" aria-label="iridium" style="background:#8d9396"></span></span></li></ul>
+          <div class="news-specs"><div class="news-spec-line"><strong>Block RIE20</strong><span>H 20 cm / L 75,6 cm / B 19,8 cm</span></div><div class="news-spec-line"><strong>Vordach CRIE20</strong><span>H 7,2 cm / L 75,6 cm / B 19,8 cm</span></div><div class="color-picker"><span class="color-picker-title">Farben</span><div class="color-swatches"><span class="color-swatch swatch-grafit is-selected" role="img" aria-label="grafit" tabindex="0"></span><span class="color-swatch swatch-weiss" role="img" aria-label="weiß" tabindex="0"></span><span class="color-swatch swatch-iridium" role="img" aria-label="iridium" tabindex="0"></span></div></div></div>
         </div>
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="" alt="ROMA Horizon Modulzaun" loading="lazy" decoding="async">
+          <img src="images/roma-horizon-modulzaun.webp" alt="ROMA Horizon Modulzaun" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
           <span class="news-category">Modulare Zäune</span>
           <h3>ROMA Horizon Modulzaun</h3>
           <p class="news-desc">ROMA Horizon bietet eine neue Farbpalette und erweiterte Blockmaße für noch mehr Gestaltungsmöglichkeiten im modernen Stil.</p>
-          <ul class="news-detail-list"><li>Blöcke BH20, BH36 und BH28</li><li>Viele Farbvarianten wie Amber, Weiß, Graphit, Magnetit, Marengo, Nero, Onyx, Pyrit, Asche</li><li>Passende Vordächer ROMA Horizon verfügbar</li></ul>
+          <div class="news-specs"><div class="news-spec-line"><strong>Blöcke</strong><span>BH20, BH36 und BH28</span></div><div class="news-spec-line"><strong>Vordächer</strong><span>Passende Vordächer ROMA Horizon verfügbar</span></div><div class="color-picker"><span class="color-picker-title">Farben</span><div class="color-swatches"><span class="color-swatch swatch-graphit is-selected" role="img" aria-label="Graphit" tabindex="0"></span><span class="color-swatch swatch-weiss" role="img" aria-label="Weiß" tabindex="0"></span><span class="color-swatch swatch-amber" role="img" aria-label="Amber" tabindex="0"></span><span class="color-swatch swatch-magnetit" role="img" aria-label="Magnetit" tabindex="0"></span><span class="color-swatch swatch-marengo" role="img" aria-label="Marengo" tabindex="0"></span><span class="color-swatch swatch-nero" role="img" aria-label="Nero" tabindex="0"></span><span class="color-swatch swatch-onyx" role="img" aria-label="Onyx" tabindex="0"></span><span class="color-swatch swatch-pyrit" role="img" aria-label="Pyrit" tabindex="0"></span><span class="color-swatch swatch-asche" role="img" aria-label="Asche" tabindex="0"></span></div></div></div>
         </div>
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="" alt="Geteilter Zaun GORC® Peak" loading="lazy" decoding="async">
+          <img src="images/geteilter-zaun-gorc-peak.webp" alt="Geteilter Zaun GORC® Peak" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
           <span class="news-category">Geteilte Zäune</span>
           <h3>Geteilter Zaun GORC® Peak</h3>
           <p class="news-desc">GORC® Peak kombiniert Tradition und Moderne: eine neue Interpretation des klassischen Schieferzauns mit großen Blockformaten.</p>
-          <ul class="news-detail-list"><li>Großes Blockformat für schnelle Montage</li><li>Elemente GPSD, GPMM, GPSM und GPMMP</li><li class="color-row"><span class="color-label">Farben</span><span class="color-swatches"><span class="color-swatch swatch-dark" title="Dark" aria-label="Dark" style="background:#2f343b"></span><span class="color-swatch swatch-onyx" title="Onyx" aria-label="Onyx" style="background:#222831"></span><span class="color-swatch swatch-piryt" title="Piryt" aria-label="Piryt" style="background:#7b6041"></span><span class="color-swatch swatch-wanad" title="Wanad" aria-label="Wanad" style="background:#666b62"></span><span class="color-swatch swatch-shade" title="shade" aria-label="shade" style="background:#756e66"></span></span></li></ul>
+          <div class="news-specs"><div class="news-spec-line"><strong>Format</strong><span>Großes Blockformat für schnelle Montage</span></div><div class="news-spec-line"><strong>Elemente</strong><span>GPSD, GPMM, GPSM und GPMMP</span></div><div class="color-picker"><span class="color-picker-title">Farben</span><div class="color-swatches"><span class="color-swatch swatch-dark is-selected" role="img" aria-label="Dark" tabindex="0"></span><span class="color-swatch swatch-onyx" role="img" aria-label="Onyx" tabindex="0"></span><span class="color-swatch swatch-piryt" role="img" aria-label="Piryt" tabindex="0"></span><span class="color-swatch swatch-wanad" role="img" aria-label="Wanad" tabindex="0"></span><span class="color-swatch swatch-shade" role="img" aria-label="shade" tabindex="0"></span></div></div></div>
         </div>
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="" alt="STONE Palisades" loading="lazy" decoding="async">
+          <img src="images/stone-palisades.webp" alt="STONE Palisades" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
           <span class="news-category">Gartenarchitektur</span>
           <h3>STONE Palisades</h3>
           <p class="news-desc">Die neue STONE-Palisadenfarbe ist verfügbar. Palisaden ordnen Gartenflächen, schützen Pflanzenbereiche und setzen dekorative Akzente.</p>
-          <ul class="news-detail-list"><li>Palisaden-Elemente wie PL37, PL34, PL19, PL71 und PL75</li><li>Einsatz für Rabatten, Wege, Böschungen und Gartenkanten</li><li>Farben u. a. alaska, bronzyt, czarny, getyt, onyx, piaskowy, piryt</li></ul>
+          <div class="news-specs"><div class="news-spec-line"><strong>Elemente</strong><span>PL37, PL34, PL19, PL71 und PL75</span></div><div class="news-spec-line"><strong>Einsatz</strong><span>Rabatten, Wege, Böschungen und Gartenkanten</span></div><div class="color-picker"><span class="color-picker-title">Farben</span><div class="color-swatches"><span class="color-swatch swatch-alaska is-selected" role="img" aria-label="alaska" tabindex="0"></span><span class="color-swatch swatch-bronzyt" role="img" aria-label="bronzyt" tabindex="0"></span><span class="color-swatch swatch-czarny" role="img" aria-label="czarny" tabindex="0"></span><span class="color-swatch swatch-getyt" role="img" aria-label="getyt" tabindex="0"></span><span class="color-swatch swatch-onyx" role="img" aria-label="onyx" tabindex="0"></span><span class="color-swatch swatch-piaskowy" role="img" aria-label="piaskowy" tabindex="0"></span><span class="color-swatch swatch-piryt" role="img" aria-label="piryt" tabindex="0"></span></div></div></div>
         </div>
       </article>
       </div>
@@ -1631,6 +1905,7 @@
     </div>
   </footer>
 
+  
 <script>
   const pageHeader = document.querySelector('header');
   const menu = document.getElementById('menu');
