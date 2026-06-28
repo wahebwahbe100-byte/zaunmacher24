@@ -1115,17 +1115,10 @@
        إذا لم تكن الصورة موجودة سيظهر اسم الملف داخل البطاقة.
        ============================================================ */
     .category-entry-image::before {
-      content: attr(data-image-name);
+      content: "";
       position: absolute;
       inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 18px;
-      color: rgba(21,25,34,.62);
-      font-weight: 950;
-      letter-spacing: .02em;
+      display: block;
       background: linear-gradient(135deg, #f2f3f5, #e2e4e8);
       z-index: 0;
     }
