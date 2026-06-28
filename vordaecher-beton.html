@@ -3,12 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Font matched from uploaded index page -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<meta name="description" content="Zaunmacher24 Vordächer aus Beton: JONIEC Übersicht mit Bildern, Details und Anfrageformular.">
+  <meta name="description" content="Zaunmacher24 Vordächer aus Beton: JONIEC Übersicht mit Bildern, Details und Anfrageformular.">
   <title>Vordächer aus Beton | Zaunmacher24</title>
   <style>
 :root{--brand:#ffcc00;--brand-dark:#d6a700;--dark:#11161d;--dark-2:#2f3542;--text:#151922;--muted:#69707d;--line:#e7e9ee;--soft:#f6f7f9;--max:1280px;--shadow:0 22px 60px rgba(47,53,66,.13)}
@@ -84,37 +79,106 @@ header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,2
 
 
 /* ============================================================
-   FONT MATCH FROM INDEX PAGE
-   تم توحيد الخط فقط بدون تغيير الألوان أو التصميم.
+   NAV LINE FIX FROM INDEX PAGE
+   تم تطبيق شكل الخط السفلي فقط كما في صفحة index، بدون تغيير الخط/الفونت وبدون تغيير الألوان.
    ============================================================ */
-html,
-body,
-button,
-input,
-textarea,
-select,
-a,
-p,
-span,
-small,
-strong,
-label,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.btn,
-.menu,
-.logo,
-.logo-text,
-.logo-tagline,
-.product-card,
-.news-card,
-.category-entry-card {
-  font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+.menu a.active-link,
+.menu a.nav-products-link {
+  position: relative !important;
+}
+
+.menu a.active-link::after,
+.menu a.nav-products-link::after {
+  content: "" !important;
+  display: block !important;
+  height: 2px !important;
+  width: 100% !important;
+  background: currentColor !important;
+  border-radius: 99px !important;
+  margin-top: 5px !important;
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+
+@media (max-width: 980px) {
+  .menu a.active-link::after,
+  .menu a.nav-products-link::after {
+    display: none !important;
+  }
+}
+
+
+/* ============================================================
+   FINAL DESIGNED HERO FIX
+   Hero images are local and included in this ZIP.
+   ============================================================ */
+.news-page-head,
+.page-head {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: clamp(390px, 48vw, 620px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  isolation: isolate !important;
+  border-radius: 34px 34px 0 0 !important;
+  background-image:
+    linear-gradient(90deg, rgba(17,22,29,.90) 0%, rgba(17,22,29,.72) 42%, rgba(17,22,29,.30) 72%, rgba(17,22,29,.12) 100%),
+    var(--hero-image) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  color: #fff !important;
+}
+.news-page-head::after,
+.page-head::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  background:
+    radial-gradient(circle at 84% 18%, rgba(255,204,0,.20), transparent 28%),
+    linear-gradient(to top, rgba(17,22,29,.48), transparent 52%) !important;
+  pointer-events: none !important;
+}
+.news-page-head > *,
+.page-head > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+.news-page-head h1,
+.news-page-head h2,
+.page-head h1,
+.page-head h2 {
+  color: #fff !important;
+  text-shadow: 0 6px 18px rgba(0,0,0,.55) !important;
+  max-width: 980px !important;
+}
+.news-page-head p,
+.page-head p {
+  text-shadow: 0 3px 12px rgba(0,0,0,.42) !important;
+}
+.news-image,
+.product-image {
+  background: #f3f4f6 !important;
+  min-height: 220px !important;
+}
+.news-image img,
+.product-image img {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 220px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+@media (max-width: 760px) {
+  .news-page-head,
+  .page-head {
+    min-height: 360px !important;
+    background-position: center center !important;
+  }
 }
 
 </style>
@@ -140,36 +204,15 @@ h6,
   <section id="vordaecher-beton" class="page-section">
     <div class="container">
       <div class="page-shell">
-        <div class="page-head" style="--hero-image:url('images/vordaecher-roma-nova.webp')">
+        <div class="page-head" style="--hero-image:url('https://joniec.de/images/1029/04d3b53f3e5b576483ba366fe7c3e35c.webp')">
           <p class="kicker">VORDÄCHER AUS BETON</p>
           <h1>Vordächer aus Beton</h1>
           <p>Betonvordächer schützen Pfosten und Mauern vor Regen, Schnee und Frost und geben dem Zaun einen sauberen Abschluss.</p>
           <div class="page-actions"><a class="news-back-btn" href="Systeme.html#bilder">← Zurück zu den 15 Bereichen</a><a class="btn btn-primary" href="#anfrage">Projekt anfragen</a></div>
         </div>
-        <div class="product-grid">
-          <article class="product-card">
-  <div class="product-image" data-image-name="https://joniec.de/images/1006/d1cf8438390c2c5acd99bd3e8a5e13d5.webp">
-    <img src="images/vordaecher-roma-nova.webp" alt="Vordächer ROMA Nova" loading="lazy" decoding="async" data-original-src="https://joniec.de/images/1006/d1cf8438390c2c5acd99bd3e8a5e13d5.webp" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
-    </div>
-  <div class="product-body">
-<h3>Vordächer ROMA Nova</h3>
-    <p class="product-desc">Passende Betonabdeckungen für ROMA Nova Zaunanlagen.</p>
-    <ul class="detail-list"><li>Schützt Pfosten und Mauern</li><li>Passend zum ROMA Nova System</li><li>Eleganter oberer Abschluss</li></ul>
-    
-  </div>
-</article><article class="product-card">
-  <div class="product-image" data-image-name="https://joniec.de/images/1011/dd23322f24eb60514d2c9a43762b65c97.webp">
-    <img src="images/vordaecher-roma-mega.webp" alt="Vordächer ROMA Mega" loading="lazy" decoding="async" data-original-src="https://joniec.de/images/1011/dd23322f24eb60514d2c9a43762b65c97.webp" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
-    </div>
-  <div class="product-body">
-<h3>Vordächer ROMA Mega</h3>
-    <p class="product-desc">Großformatige Abdeckungen für massive ROMA Mega Elemente.</p>
-    <ul class="detail-list"><li>Für große Betonblöcke</li><li>Robuster Wetterschutz</li><li>Systemgerechte Optik</li></ul>
-    
-  </div>
-</article><article class="product-card">
+        <div class="product-grid"><article class="product-card">
   <div class="product-image" data-image-name="https://joniec.de/images/1029/04d3b53f3e5b576483ba366fe7c3e35c.webp">
-    <img src="images/vordaecher-roma-horizon.webp" alt="Vordächer ROMA Horizon" loading="lazy" decoding="async" data-original-src="https://joniec.de/images/1029/04d3b53f3e5b576483ba366fe7c3e35c.webp" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
+    <img src="https://joniec.de/images/1029/04d3b53f3e5b576483ba366fe7c3e35c.webp" alt="Vordächer ROMA Horizon" loading="lazy" decoding="async" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
     </div>
   <div class="product-body">
 <h3>Vordächer ROMA Horizon</h3>
@@ -179,7 +222,7 @@ h6,
   </div>
 </article><article class="product-card">
   <div class="product-image" data-image-name="https://joniec.de/images/1050/4aa06364e6fb2999ffeb5ed0022ec482.webp">
-    <img src="images/vordaecher-roma-perfect.webp" alt="Vordächer ROMA Perfect" loading="lazy" decoding="async" data-original-src="https://joniec.de/images/1050/4aa06364e6fb2999ffeb5ed0022ec482.webp" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
+    <img src="https://joniec.de/images/1050/4aa06364e6fb2999ffeb5ed0022ec482.webp" alt="Vordächer ROMA Perfect" loading="lazy" decoding="async" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
     </div>
   <div class="product-body">
 <h3>Vordächer ROMA Perfect</h3>
@@ -189,7 +232,7 @@ h6,
   </div>
 </article><article class="product-card">
   <div class="product-image" data-image-name="https://joniec.de/images/1060/4ce2d18462e7b8598562607a95fa7940.webp">
-    <img src="images/vordaecher-roma-diamond.webp" alt="Vordächer ROMA Diamond" loading="lazy" decoding="async" data-original-src="https://joniec.de/images/1060/4ce2d18462e7b8598562607a95fa7940.webp" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
+    <img src="https://joniec.de/images/1060/4ce2d18462e7b8598562607a95fa7940.webp" alt="Vordächer ROMA Diamond" loading="lazy" decoding="async" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
     </div>
   <div class="product-body">
 <h3>Vordächer ROMA Diamond</h3>
@@ -199,7 +242,7 @@ h6,
   </div>
 </article><article class="product-card">
   <div class="product-image" data-image-name="https://joniec.de/images/1071/6a5877346ac7fd9e2f4e33bcbc24047f.webp">
-    <img src="images/vordaecher-roma-classic.webp" alt="Vordächer ROMA Classic" loading="lazy" decoding="async" data-original-src="https://joniec.de/images/1071/6a5877346ac7fd9e2f4e33bcbc24047f.webp" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
+    <img src="https://joniec.de/images/1071/6a5877346ac7fd9e2f4e33bcbc24047f.webp" alt="Vordächer ROMA Classic" loading="lazy" decoding="async" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
     </div>
   <div class="product-body">
 <h3>Vordächer ROMA Classic</h3>
@@ -209,7 +252,7 @@ h6,
   </div>
 </article><article class="product-card">
   <div class="product-image" data-image-name="https://joniec.de/images/1454/b671754e5e1d43c483899ed5435f4a04.webp">
-    <img src="images/vordaecher-gorc-peak.webp" alt="Vordächer GORC® Peak" loading="lazy" decoding="async" data-original-src="https://joniec.de/images/1454/b671754e5e1d43c483899ed5435f4a04.webp" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
+    <img src="https://joniec.de/images/1454/b671754e5e1d43c483899ed5435f4a04.webp" alt="Vordächer GORC® Peak" loading="lazy" decoding="async" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
     </div>
   <div class="product-body">
 <h3>Vordächer GORC® Peak</h3>
@@ -219,7 +262,7 @@ h6,
   </div>
 </article><article class="product-card">
   <div class="product-image" data-image-name="https://joniec.de/images/1226/feb5e08e1c517f7f89d4e013f22271e7.webp">
-    <img src="images/vordaecher-gorc-de-luxe-gl22.webp" alt="Vordächer GORC® de Luxe GL22" loading="lazy" decoding="async" data-original-src="https://joniec.de/images/1226/feb5e08e1c517f7f89d4e013f22271e7.webp" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
+    <img src="https://joniec.de/images/1226/feb5e08e1c517f7f89d4e013f22271e7.webp" alt="Vordächer GORC® de Luxe GL22" loading="lazy" decoding="async" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
     </div>
   <div class="product-body">
 <h3>Vordächer GORC® de Luxe GL22</h3>
@@ -229,7 +272,7 @@ h6,
   </div>
 </article><article class="product-card">
   <div class="product-image" data-image-name="https://joniec.de/images/1227/daf3ba99b5d60514d2c9a43762b65c97.webp">
-    <img src="images/vordaecher-gorc-de-luxe-gl38.webp" alt="Vordächer GORC® de Luxe GL38" loading="lazy" decoding="async" data-original-src="https://joniec.de/images/1227/daf3ba99b5d60514d2c9a43762b65c97.webp" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
+    <img src="https://joniec.de/images/1227/daf3ba99b5d60514d2c9a43762b65c97.webp" alt="Vordächer GORC® de Luxe GL38" loading="lazy" decoding="async" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
     </div>
   <div class="product-body">
 <h3>Vordächer GORC® de Luxe GL38</h3>
@@ -239,7 +282,7 @@ h6,
   </div>
 </article><article class="product-card">
   <div class="product-image" data-image-name="https://joniec.de/images/1128/e3051aaba701d2f48293f7d1f599f65f.webp">
-    <img src="images/vordacher-rio.webp" alt="Vordacher RIO" loading="lazy" decoding="async" data-original-src="https://joniec.de/images/1128/e3051aaba701d2f48293f7d1f599f65f.webp" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
+    <img src="https://joniec.de/images/1128/e3051aaba701d2f48293f7d1f599f65f.webp" alt="Vordacher RIO" loading="lazy" decoding="async" onerror="if(!this.dataset.fallbackDone){this.dataset.fallbackDone=&#x27;1&#x27;;this.onerror=null;this.src=this.closest(&#x27;.product-image,.category-entry-image,.news-image&#x27;)?.dataset.imageName||this.src;}">
     </div>
   <div class="product-body">
 <h3>Vordacher RIO</h3>

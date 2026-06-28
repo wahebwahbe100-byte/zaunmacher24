@@ -3,12 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Font matched from uploaded index page -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<meta name="description" content="Zaunmacher24 Modulare Zäune: JONIEC ROMA Systeme mit Bildern, Details und Anfrageformular.">
+  <meta name="description" content="Zaunmacher24 Modulare Zäune: JONIEC ROMA Systeme mit Bildern, Details und Anfrageformular.">
   <title>Modulare Zäune | Zaunmacher24</title>
   <style>
     :root { --brand:#e31f26; --brand-dark:#b9151b; --dark:#0b0d12; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --soft:#f5f6f8; --max:1220px; --shadow:0 22px 70px rgba(17,24,39,.12); }
@@ -1484,37 +1479,106 @@
 
 
 /* ============================================================
-   FONT MATCH FROM INDEX PAGE
-   تم توحيد الخط فقط بدون تغيير الألوان أو التصميم.
+   NAV LINE FIX FROM INDEX PAGE
+   تم تطبيق شكل الخط السفلي فقط كما في صفحة index، بدون تغيير الخط/الفونت وبدون تغيير الألوان.
    ============================================================ */
-html,
-body,
-button,
-input,
-textarea,
-select,
-a,
-p,
-span,
-small,
-strong,
-label,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.btn,
-.menu,
-.logo,
-.logo-text,
-.logo-tagline,
-.product-card,
-.news-card,
-.category-entry-card {
-  font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+.menu a.active-link,
+.menu a.nav-products-link {
+  position: relative !important;
+}
+
+.menu a.active-link::after,
+.menu a.nav-products-link::after {
+  content: "" !important;
+  display: block !important;
+  height: 2px !important;
+  width: 100% !important;
+  background: currentColor !important;
+  border-radius: 99px !important;
+  margin-top: 5px !important;
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+
+@media (max-width: 980px) {
+  .menu a.active-link::after,
+  .menu a.nav-products-link::after {
+    display: none !important;
+  }
+}
+
+
+/* ============================================================
+   FINAL DESIGNED HERO FIX
+   Hero images are local and included in this ZIP.
+   ============================================================ */
+.news-page-head,
+.page-head {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: clamp(390px, 48vw, 620px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  isolation: isolate !important;
+  border-radius: 34px 34px 0 0 !important;
+  background-image:
+    linear-gradient(90deg, rgba(17,22,29,.90) 0%, rgba(17,22,29,.72) 42%, rgba(17,22,29,.30) 72%, rgba(17,22,29,.12) 100%),
+    var(--hero-image) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  color: #fff !important;
+}
+.news-page-head::after,
+.page-head::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  background:
+    radial-gradient(circle at 84% 18%, rgba(255,204,0,.20), transparent 28%),
+    linear-gradient(to top, rgba(17,22,29,.48), transparent 52%) !important;
+  pointer-events: none !important;
+}
+.news-page-head > *,
+.page-head > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+.news-page-head h1,
+.news-page-head h2,
+.page-head h1,
+.page-head h2 {
+  color: #fff !important;
+  text-shadow: 0 6px 18px rgba(0,0,0,.55) !important;
+  max-width: 980px !important;
+}
+.news-page-head p,
+.page-head p {
+  text-shadow: 0 3px 12px rgba(0,0,0,.42) !important;
+}
+.news-image,
+.product-image {
+  background: #f3f4f6 !important;
+  min-height: 220px !important;
+}
+.news-image img,
+.product-image img {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 220px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+@media (max-width: 760px) {
+  .news-page-head,
+  .page-head {
+    min-height: 360px !important;
+    background-position: center center !important;
+  }
 }
 
 </style>
@@ -1547,7 +1611,7 @@ h6,
     <section id="modulare-zaeune" class="news-section is-open">
   <div class="container">
     <div class="news-page-shell">
-      <div class="news-page-head" style="--hero-image:url('images/modulare-zaeune-roma-nova.webp')">
+      <div class="news-page-head" style="--hero-image:url('https://joniec.de/images/34/172a35de8e91e1301443f1a0b96748cf.webp')">
         <p class="kicker">MODULARE ZÄUNE</p>
         <h2>JONIEC® ROMA Systeme für moderne Zaunanlagen</h2>
         <p>Eine klare Übersicht der passenden Systeme mit Foto, Beschreibung und den wichtigsten Daten für Ihre Anfrage.</p>
@@ -1559,7 +1623,7 @@ h6,
       <div class="news-grid">
       <article class="news-card">
         <div class="news-image">
-          <img src="images/modulare-zaeune-roma-nova.webp" alt="Modulare Zäune ROMA Nova" loading="lazy" decoding="async">
+          <img src="https://joniec.de/images/34/172a35de8e91e1301443f1a0b96748cf.webp" alt="Modulare Zäune ROMA Nova" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
 <h3>Modulare Zäune ROMA Nova</h3>
@@ -1570,7 +1634,7 @@ h6,
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="images/roma-horizon-eco-modulare-zaeune.webp" alt="ROMA Horizon ECO Modulare Zäune" loading="lazy" decoding="async">
+          <img src="https://joniec.de/images/5215/d913cdada35413031d3b05e9843b9c00.webp" alt="ROMA Horizon ECO Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
 <h3>ROMA Horizon ECO Modulare Zäune</h3>
@@ -1581,7 +1645,7 @@ h6,
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="images/modulare-zaeune-roma-mega.webp" alt="Modulare Zäune ROMA Mega" loading="lazy" decoding="async">
+          <img src="https://joniec.de/images/889/1cfbbcb15ead2568b7a38093d89ca58b.webp" alt="Modulare Zäune ROMA Mega" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
 <h3>Modulare Zäune ROMA Mega</h3>
@@ -1592,7 +1656,7 @@ h6,
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="images/roma-vital-eco-modulare-zaeune.webp" alt="ROMA Vital ECO Modulare Zäune" loading="lazy" decoding="async">
+          <img src="https://joniec.de/images/5286/1f292e94d4c9bb0695cabf5d1b0ba1ed.webp" alt="ROMA Vital ECO Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
 <h3>ROMA Vital ECO Modulare Zäune</h3>
@@ -1603,7 +1667,7 @@ h6,
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="images/modulare-zaeune-roma-horizon.webp" alt="Modulare Zäune ROMA Horizon" loading="lazy" decoding="async">
+          <img src="https://joniec.de/images/1572/22f2d9f95b312c9d158d5d55f2799e6c.webp" alt="Modulare Zäune ROMA Horizon" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
 <h3>Modulare Zäune ROMA Horizon</h3>
@@ -1614,7 +1678,7 @@ h6,
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="images/roma-vital-eco-multigrain-modulzaeune.webp" alt="ROMA Vital ECO Multigrain Modulzäune" loading="lazy" decoding="async">
+          <img src="https://joniec.de/images/5315/8057f4dc02d771787ebee8e25ef6552d.webp" alt="ROMA Vital ECO Multigrain Modulzäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
 <h3>ROMA Vital ECO Multigrain Modulzäune</h3>
@@ -1625,7 +1689,7 @@ h6,
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="images/modulare-zaeune-roma-perfect.webp" alt="Modulare Zäune ROMA Perfect" loading="lazy" decoding="async">
+          <img src="https://joniec.de/images/1574/9693488c8c1e4afafb477e7e531cc9f9.webp" alt="Modulare Zäune ROMA Perfect" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
 <h3>Modulare Zäune ROMA Perfect</h3>
@@ -1636,7 +1700,7 @@ h6,
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="images/roma-integra-eco-modulare-zaeune.webp" alt="ROMA Integra ECO Modulare Zäune" loading="lazy" decoding="async">
+          <img src="https://joniec.de/images/5291/5e9d3d46c1c966bfc5260dd0f7ccdae0.webp" alt="ROMA Integra ECO Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
 <h3>ROMA Integra ECO Modulare Zäune</h3>
@@ -1647,7 +1711,7 @@ h6,
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="images/geteilte-zaeune-hintergrund.webp" alt="ROMA Giga Modulare Zäune" loading="lazy" decoding="async">
+          <img src="https://joniec.de/images/5285/4bdf7542c585367914b68e89053425e0.webp" alt="ROMA Giga Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
 <h3>ROMA Giga Modulare Zäune</h3>
@@ -1658,7 +1722,7 @@ h6,
       </article>
       <article class="news-card">
         <div class="news-image">
-          <img src="images/roma-lite-modulare-zaeune.webp" alt="ROMA Lite Modulare Zäune" loading="lazy" decoding="async">
+          <img src="https://joniec.de/images/5171/8715dffdc9fc77a0e3a0815434da7b3e.webp" alt="ROMA Lite Modulare Zäune" loading="lazy" decoding="async">
         </div>
         <div class="news-body">
 <h3>ROMA Lite Modulare Zäune</h3>

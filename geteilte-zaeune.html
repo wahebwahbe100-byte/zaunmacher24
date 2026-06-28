@@ -1509,6 +1509,78 @@
   }
 }
 
+
+/* ============================================================
+   FINAL DESIGNED HERO FIX
+   Hero images are local and included in this ZIP.
+   ============================================================ */
+.news-page-head,
+.page-head {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: clamp(390px, 48vw, 620px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  isolation: isolate !important;
+  border-radius: 34px 34px 0 0 !important;
+  background-image:
+    linear-gradient(90deg, rgba(17,22,29,.90) 0%, rgba(17,22,29,.72) 42%, rgba(17,22,29,.30) 72%, rgba(17,22,29,.12) 100%),
+    var(--hero-image) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  color: #fff !important;
+}
+.news-page-head::after,
+.page-head::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  background:
+    radial-gradient(circle at 84% 18%, rgba(255,204,0,.20), transparent 28%),
+    linear-gradient(to top, rgba(17,22,29,.48), transparent 52%) !important;
+  pointer-events: none !important;
+}
+.news-page-head > *,
+.page-head > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+.news-page-head h1,
+.news-page-head h2,
+.page-head h1,
+.page-head h2 {
+  color: #fff !important;
+  text-shadow: 0 6px 18px rgba(0,0,0,.55) !important;
+  max-width: 980px !important;
+}
+.news-page-head p,
+.page-head p {
+  text-shadow: 0 3px 12px rgba(0,0,0,.42) !important;
+}
+.news-image,
+.product-image {
+  background: #f3f4f6 !important;
+  min-height: 220px !important;
+}
+.news-image img,
+.product-image img {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 220px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+@media (max-width: 760px) {
+  .news-page-head,
+  .page-head {
+    min-height: 360px !important;
+    background-position: center center !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1539,7 +1611,7 @@
     <section id="geteilte-zaeune" class="news-section is-open">
   <div class="container">
     <div class="news-page-shell">
-      <div class="news-page-head" style="--hero-image:url('images/geteilter-zaun-gorc-peak.webp')">
+      <div class="news-page-head" style="--hero-image:url('https://joniec.de/images/878/51b7623af2acab4cbe3a08567cb32f03.webp')">
         <p class="kicker">GETEILTE ZÄUNE</p>
         <h2>JONIEC® GORC Systeme für moderne Grundstücke</h2>
         <p>Eine klare Übersicht der passenden Systeme mit Foto, Beschreibung und den wichtigsten Daten für Ihre Anfrage.</p>
