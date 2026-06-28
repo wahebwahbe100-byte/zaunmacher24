@@ -1108,23 +1108,9 @@
        USER IMAGE PLACEHOLDERS
        ضع صورك داخل مجلد images بنفس الأسماء:
        bild-01.webp ... bild-15.webp
-       إذا لم تكن الصورة موجودة سيظهر اسم الملف داخل البطاقة.
+       إذا لم تكن الصورة موجودة لن يظهر نص داخل الصورة.
        ============================================================ */
-    .category-entry-image::before {
-      content: attr(data-image-name);
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 18px;
-      color: rgba(21,25,34,.62);
-      font-weight: 950;
-      letter-spacing: .02em;
-      background: linear-gradient(135deg, #f2f3f5, #e2e4e8);
-      z-index: 0;
-    }
+    .category-entry-image::before{content:"";position:absolute;inset:0;background:#eef0f3;z-index:0}
 
     .category-entry-image img {
       position: relative;
@@ -1704,3 +1690,7 @@
 
 </body>
 </html>
+
+<style>
+.product-image .badge,.category-entry-image span,.news-image .news-badge{display:none!important;}
+</style>
