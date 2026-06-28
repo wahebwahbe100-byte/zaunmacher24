@@ -4264,6 +4264,39 @@
       }
     }
 
+
+    /* ============================================================
+       FINAL NAVBAR FIX
+       Active/hover menu item changes COLOR ONLY on desktop.
+       No underline, no background box, no movement.
+       ============================================================ */
+    @media (min-width: 1081px) {
+      header .container.nav .menu a {
+        color: var(--accent) !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        transform: none !important;
+      }
+
+      header .container.nav .menu a::after,
+      header .container.nav .menu .nav-products-link::after,
+      header .container.nav .menu a.nav-active::after {
+        content: none !important;
+        display: none !important;
+      }
+
+      header .container.nav .menu a:hover,
+      header .container.nav .menu a:focus-visible,
+      header .container.nav .menu a.nav-active {
+        color: var(--brand-dark) !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        transform: none !important;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -4287,8 +4320,8 @@
         </span>
       </a>
       <nav class="menu" id="menu">
-        <a href="#start">Start</a>
-        <a href="#produkte" class="nav-products-link">Produkte</a>
+        <a href="#start" class="nav-active">Start</a>
+        <a href="#produkte">Produkte</a>
         <a href="#vorteile">Vorteile</a>
         <a href="#beratung">Beratung</a>
         <a href="#ablauf">Ablauf</a>
@@ -4931,6 +4964,50 @@
 
       updateHeaderState();
       window.addEventListener("scroll", updateHeaderState, { passive: true });
+    })();
+  </script>
+
+
+  <script>
+    (function () {
+      const header = document.querySelector('header');
+      const menu = document.querySelector('header .menu');
+      if (!header || !menu) return;
+
+      const links = Array.from(menu.querySelectorAll('a[href^="#"]'));
+      const sections = links
+        .map((link) => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+      function setActive(id) {
+        links.forEach((link) => {
+          link.classList.toggle('nav-active', link.getAttribute('href') === '#' + id);
+        });
+      }
+
+      function updateActiveLink() {
+        const offset = header.offsetHeight + 90;
+        let currentId = sections[0] ? sections[0].id : '';
+
+        sections.forEach((section) => {
+          if (section.getBoundingClientRect().top <= offset) {
+            currentId = section.id;
+          }
+        });
+
+        if (currentId) setActive(currentId);
+      }
+
+      links.forEach((link) => {
+        link.addEventListener('click', () => {
+          const id = link.getAttribute('href').slice(1);
+          if (id) setActive(id);
+        });
+      });
+
+      updateActiveLink();
+      window.addEventListener('scroll', updateActiveLink, { passive: true });
+      window.addEventListener('resize', updateActiveLink);
     })();
   </script>
 
