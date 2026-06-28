@@ -76,21 +76,988 @@
     .hidden { display:none !important; }
     @media(max-width:980px){ .menu,.nav-actions{display:none} .mobile-toggle{display:block} .menu.open{display:flex; position:absolute; top:76px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; gap:0; padding:14px 16px; border-bottom:1px solid var(--line)} .menu.open a{padding:14px; border-radius:14px} .category-grid,.product-grid,.project-grid,.gallery-grid{grid-template-columns:repeat(2,1fr)} .toolbar{position:static; flex-direction:column; align-items:stretch} .contact-band{grid-template-columns:1fr} }
     @media(max-width:680px){ h1{font-size:44px} section{padding:64px 0} .section-head{display:block} .section-head p{margin-top:12px} .category-grid,.product-grid,.project-grid,.gallery-grid,.form-grid{grid-template-columns:1fr} .gallery-card img{height:190px} .hero-products{min-height:480px} }
+
+    /* ============================================================
+       ZAUNMACHER24 WEBSITE DESIGN MATCH
+       Aligns this products page with the current homepage theme:
+       anthracite + yellow, same logo lockup, fixed shrinking header,
+       cleaner hero, cards, toolbar and footer.
+       ============================================================ */
+    :root {
+      --brand: #ffcc00 !important;
+      --brand-dark: #d6a700 !important;
+      --dark: #11161d !important;
+      --dark-2: #2f3542 !important;
+      --text: #151922 !important;
+      --muted: #69707d !important;
+      --line: #e7e9ee !important;
+      --soft: #f6f7f9 !important;
+      --max: 1280px !important;
+      --shadow: 0 22px 60px rgba(47, 53, 66, .13) !important;
+      --radius: 28px;
+    }
+
+    html {
+      scroll-padding-top: 96px;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 8% 0%, rgba(255,204,0,.08), transparent 28%),
+        radial-gradient(circle at 92% 6%, rgba(47,53,66,.05), transparent 30%),
+        #fff !important;
+      color: var(--text) !important;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 36px)) !important;
+    }
+
+    header {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 999 !important;
+      background: rgba(255,255,255,.98) !important;
+      border-bottom: 1px solid rgba(229,231,235,.82) !important;
+      box-shadow: 0 14px 35px rgba(47,53,66,.08) !important;
+      transition: background .25s ease, box-shadow .25s ease, border-color .25s ease !important;
+    }
+
+    .nav {
+      min-height: 92px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 24px !important;
+      transition: min-height .25s ease !important;
+    }
+
+    .logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      height: 92px !important;
+      min-width: 0 !important;
+      flex: 0 0 auto !important;
+      letter-spacing: 0 !important;
+      transition: height .25s ease, gap .25s ease !important;
+    }
+
+    .logo img.logo-mark,
+    .logo .logo-mark {
+      width: 178px !important;
+      height: 62px !important;
+      flex: 0 0 178px !important;
+      display: block !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+      margin: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: transparent url("images/logo-icon.png") center center / contain no-repeat !important;
+      box-shadow: none !important;
+      transition: width .25s ease, height .25s ease, flex-basis .25s ease !important;
+    }
+
+    .logo .logo-mark::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    .logo-wordmark {
+      display: inline-flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: flex-start !important;
+      gap: 4px !important;
+      white-space: nowrap !important;
+      line-height: 1 !important;
+      transform: translateY(1px) !important;
+    }
+
+    .logo-text,
+    .logo > span:not(.logo-mark) {
+      display: block !important;
+      color: #2f3542 !important;
+      font-size: 26px !important;
+      font-weight: 950 !important;
+      line-height: .95 !important;
+      letter-spacing: -.045em !important;
+      white-space: nowrap !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      transition: font-size .25s ease !important;
+    }
+
+    .logo-text span,
+    .logo > span:not(.logo-mark) span {
+      color: #ffcc00 !important;
+    }
+
+    .logo-tagline {
+      display: block !important;
+      margin: 2px 0 0 1px !important;
+      color: #7b818c !important;
+      font-size: 10.5px !important;
+      font-weight: 900 !important;
+      line-height: 1 !important;
+      letter-spacing: .28em !important;
+      text-transform: uppercase !important;
+      transition: font-size .25s ease, letter-spacing .25s ease, opacity .25s ease !important;
+    }
+
+    .menu {
+      gap: 20px !important;
+      color: #374151 !important;
+      font-weight: 850 !important;
+    }
+
+    .menu a {
+      position: relative;
+      padding: 9px 0;
+    }
+
+    .menu a:hover,
+    .menu a.active-link {
+      color: #d6a700 !important;
+    }
+
+    .menu a.active-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: #ffcc00;
+      border-radius: 999px;
+    }
+
+    .btn {
+      border-radius: 999px !important;
+      font-weight: 900 !important;
+      transition: .2s ease !important;
+    }
+
+    .btn-primary {
+      background: #ffcc00 !important;
+      color: #151922 !important;
+      box-shadow: 0 16px 30px rgba(255,204,0,.28) !important;
+    }
+
+    .btn-primary:hover {
+      background: #d6a700 !important;
+      color: #111827 !important;
+      transform: translateY(-1px) !important;
+    }
+
+    .btn-soft {
+      background: #f3f4f6 !important;
+      color: #151922 !important;
+    }
+
+    .btn-soft:hover {
+      background: #e5e7eb !important;
+    }
+
+    header.is-scrolled {
+      background: rgba(255,255,255,.94) !important;
+      border-bottom-color: rgba(229,231,235,.96) !important;
+      box-shadow: 0 10px 28px rgba(47,53,66,.14) !important;
+    }
+
+    header.is-scrolled .nav {
+      min-height: 68px !important;
+    }
+
+    header.is-scrolled .logo {
+      height: 68px !important;
+      gap: 7px !important;
+    }
+
+    header.is-scrolled .logo img.logo-mark,
+    header.is-scrolled .logo .logo-mark {
+      width: 132px !important;
+      height: 46px !important;
+      flex-basis: 132px !important;
+    }
+
+    header.is-scrolled .logo-text {
+      font-size: 22px !important;
+    }
+
+    header.is-scrolled .logo-tagline {
+      font-size: 8.2px !important;
+      letter-spacing: .18em !important;
+      opacity: .86 !important;
+      margin-top: 1px !important;
+    }
+
+    header.is-scrolled .btn {
+      padding: 10px 16px !important;
+      font-size: 14px !important;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .hero-products {
+      min-height: 78svh !important;
+      padding-top: 92px !important;
+      color: #fff !important;
+      background:
+        radial-gradient(circle at 84% 26%, rgba(255,204,0,.24), transparent 30%),
+        linear-gradient(135deg, #2f3542 0%, #161b23 48%, #090b0f 100%) !important;
+      isolation: isolate;
+    }
+
+    .hero-products::before {
+      z-index: -2 !important;
+      background-image:
+        linear-gradient(90deg,
+          rgba(17,22,29,.92) 0%,
+          rgba(17,22,29,.76) 42%,
+          rgba(47,53,66,.28) 72%,
+          rgba(47,53,66,.12) 100%),
+        url("images/hero-1.jpg") !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      filter: none !important;
+      transform: scale(1.03) !important;
+    }
+
+    .hero-products::after {
+      content: "";
+      position: absolute;
+      right: clamp(18px, 6vw, 88px);
+      bottom: clamp(34px, 8vw, 95px);
+      width: min(42vw, 500px);
+      height: 240px;
+      background: url("images/logo.png") center / contain no-repeat;
+      opacity: .10;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-products .container {
+      padding: 92px 0 86px !important;
+    }
+
+    .kicker {
+      color: #d6a700 !important;
+    }
+
+    .hero-products .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,.92) !important;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      padding: 9px 15px;
+      letter-spacing: .08em !important;
+    }
+
+    .hero-products .kicker::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffcc00;
+      box-shadow: 0 0 0 8px rgba(255,204,0,.14);
+      flex: 0 0 auto;
+    }
+
+    h1 {
+      letter-spacing: -.065em !important;
+      text-shadow: 0 4px 14px rgba(0,0,0,.78), 0 18px 44px rgba(0,0,0,.48) !important;
+    }
+
+    .lead {
+      color: rgba(255,255,255,.86) !important;
+    }
+
+    section {
+      padding: 92px 0 !important;
+    }
+
+    .section-head {
+      align-items: flex-end !important;
+    }
+
+    .section-head p {
+      color: var(--muted) !important;
+      font-size: 17px;
+    }
+
+    h2 {
+      color: var(--text);
+    }
+
+    .category-grid {
+      gap: 18px !important;
+    }
+
+    .category-tile {
+      border-radius: 26px !important;
+      border-color: rgba(47,53,66,.12) !important;
+      padding: 24px !important;
+      box-shadow: 0 16px 44px rgba(47,53,66,.07) !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-tile::after {
+      content: "";
+      position: absolute;
+      right: -28px;
+      bottom: -28px;
+      width: 86px;
+      height: 86px;
+      border-radius: 26px;
+      background: rgba(255,204,0,.16);
+      transform: rotate(12deg);
+      transition: .2s ease;
+    }
+
+    .category-tile:hover,
+    .category-tile.active {
+      border-color: #ffcc00 !important;
+      box-shadow: 0 22px 52px rgba(255,204,0,.14) !important;
+    }
+
+    .category-tile:hover::after,
+    .category-tile.active::after {
+      background: rgba(255,204,0,.24);
+      transform: rotate(12deg) scale(1.12);
+    }
+
+    .dark {
+      background:
+        radial-gradient(circle at 86% 18%, rgba(255,204,0,.16), transparent 34%),
+        linear-gradient(135deg, #2f3542 0%, #11161d 62%, #080a0e 100%) !important;
+    }
+
+    .dark h2 {
+      color: #fff !important;
+    }
+
+    .dark .section-head p {
+      color: rgba(255,255,255,.68) !important;
+    }
+
+    .toolbar {
+      top: 86px !important;
+      border-radius: 26px !important;
+      background: rgba(17,22,29,.94) !important;
+      border: 1px solid rgba(255,255,255,.10) !important;
+      backdrop-filter: blur(10px) !important;
+    }
+
+    .filter-btn {
+      border-color: rgba(255,255,255,.16) !important;
+      background: rgba(255,255,255,.07) !important;
+      color: rgba(255,255,255,.86) !important;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #ffcc00 !important;
+      border-color: #ffcc00 !important;
+      color: #151922 !important;
+    }
+
+    .search {
+      background: rgba(255,255,255,.08) !important;
+      border-color: rgba(255,255,255,.16) !important;
+    }
+
+    .product-grid {
+      gap: 24px !important;
+    }
+
+    .product-card {
+      border-radius: 30px !important;
+      box-shadow: 0 26px 70px rgba(0,0,0,.20) !important;
+      border: 1px solid rgba(255,255,255,.08);
+      transition: transform .22s ease, box-shadow .22s ease !important;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 32px 80px rgba(0,0,0,.26) !important;
+    }
+
+    .product-image {
+      height: 218px !important;
+      background:
+        linear-gradient(135deg, #f2f3f5, #d4d7dd) !important;
+    }
+
+    .product-body {
+      padding: 25px !important;
+    }
+
+    .product-group {
+      color: #d6a700 !important;
+    }
+
+    .chips span {
+      border-color: #e7e9ee !important;
+      background: #f7f8fa !important;
+      color: #3f4652 !important;
+    }
+
+    .text-link {
+      color: #d6a700 !important;
+    }
+
+    .text-link:hover {
+      color: #aa8600 !important;
+    }
+
+    .note {
+      color: rgba(255,255,255,.62) !important;
+    }
+
+    .project-card,
+    .gallery-card,
+    .form-wrap,
+    .contact-band {
+      border-radius: 30px !important;
+      box-shadow: var(--shadow) !important;
+    }
+
+    .gallery-card {
+      border-color: rgba(47,53,66,.12) !important;
+    }
+
+    .gallery-card figcaption {
+      border-left: 4px solid #ffcc00;
+    }
+
+    .contact-band {
+      background:
+        radial-gradient(circle at 86% 20%, rgba(255,204,0,.20), transparent 32%),
+        linear-gradient(135deg, #2f3542, #0b0d12) !important;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #ffcc00 !important;
+      box-shadow: 0 0 0 4px rgba(255,204,0,.16) !important;
+    }
+
+    footer {
+      background: #0c0f14 !important;
+      border-top: 6px solid #ffcc00 !important;
+      color: rgba(255,255,255,.68) !important;
+      padding: 42px 0 !important;
+    }
+
+    footer .foot {
+      align-items: center !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      gap: 24px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .footer-brand {
+      display: grid;
+      gap: 14px;
+    }
+
+    footer .logo {
+      height: auto !important;
+      gap: 12px !important;
+    }
+
+    footer .logo img.logo-mark,
+    footer .logo .logo-mark {
+      width: 126px !important;
+      height: 46px !important;
+      flex-basis: 126px !important;
+    }
+
+    footer .logo-text {
+      color: #fff !important;
+      font-size: 27px !important;
+    }
+
+    footer .logo-tagline {
+      color: rgba(255,255,255,.64) !important;
+      font-size: 9px !important;
+      letter-spacing: .24em !important;
+    }
+
+    footer p {
+      margin: 0 !important;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    footer a {
+      color: rgba(255,255,255,.84) !important;
+      font-weight: 850 !important;
+      margin-left: 0 !important;
+    }
+
+    footer a:hover {
+      color: #ffcc00 !important;
+    }
+
+    @media (max-width: 1180px) {
+      .menu,
+      .nav-actions {
+        display: none !important;
+      }
+
+      .mobile-toggle {
+        display: block !important;
+      }
+
+      .menu.open {
+        display: flex !important;
+        position: absolute !important;
+        top: 92px !important;
+        left: 0 !important;
+        right: 0 !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+        background: #fff !important;
+        border-bottom: 1px solid var(--line) !important;
+        padding: 14px 16px !important;
+        box-shadow: 0 20px 50px rgba(47,53,66,.10) !important;
+      }
+
+      header.is-scrolled .menu.open {
+        top: 68px !important;
+      }
+
+      .menu.open a {
+        padding: 14px !important;
+        border-radius: 14px !important;
+      }
+
+      .menu.open a:hover {
+        background: #f3f4f6 !important;
+      }
+
+      .category-grid,
+      .product-grid,
+      .project-grid,
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      .toolbar {
+        position: static !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: calc(100% - 24px) !important;
+      }
+
+      .nav {
+        min-height: 76px !important;
+      }
+
+      .logo {
+        height: 76px !important;
+        gap: 7px !important;
+      }
+
+      .logo img.logo-mark,
+      .logo .logo-mark {
+        width: 92px !important;
+        height: 38px !important;
+        flex-basis: 92px !important;
+      }
+
+      .logo-text {
+        font-size: 19px !important;
+      }
+
+      .logo-tagline {
+        font-size: 7.4px !important;
+        letter-spacing: .16em !important;
+      }
+
+      header.is-scrolled .nav {
+        min-height: 58px !important;
+      }
+
+      header.is-scrolled .logo {
+        height: 58px !important;
+        gap: 5px !important;
+      }
+
+      header.is-scrolled .logo img.logo-mark,
+      header.is-scrolled .logo .logo-mark {
+        width: 78px !important;
+        height: 32px !important;
+        flex-basis: 78px !important;
+      }
+
+      header.is-scrolled .logo-text {
+        font-size: 16px !important;
+      }
+
+      header.is-scrolled .logo-tagline {
+        font-size: 6px !important;
+        letter-spacing: .10em !important;
+      }
+
+      .menu.open {
+        top: 76px !important;
+      }
+
+      header.is-scrolled .menu.open {
+        top: 58px !important;
+      }
+
+      .hero-products {
+        min-height: 72svh !important;
+        padding-top: 76px !important;
+      }
+
+      .hero-products .container {
+        padding: 58px 0 62px !important;
+      }
+
+      .hero-products::after {
+        width: 72vw;
+        right: 12px;
+        bottom: 36px;
+        opacity: .08;
+      }
+
+      h1 {
+        font-size: clamp(42px, 12vw, 60px) !important;
+      }
+
+      section {
+        padding: 68px 0 !important;
+      }
+
+      .section-head {
+        display: block !important;
+      }
+
+      .section-head p {
+        margin-top: 12px !important;
+      }
+
+      .category-grid,
+      .product-grid,
+      .project-grid,
+      .gallery-grid,
+      .form-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .contact-band {
+        padding: 28px !important;
+      }
+
+      .footer-links {
+        gap: 12px 16px;
+      }
+    }
+
+
+
+    /* ============================================================
+       6 IMAGE ENTRY + ENTER SECTION IN SAME PAGE
+       Visitor first sees only 6 images. Clicking one enters that
+       section. A back button returns to the 6-image overview.
+       ============================================================ */
+    .category-overview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .category-entry-card {
+      display: grid;
+      gap: 14px;
+      text-align: left;
+      padding: 14px;
+      border: 1px solid rgba(47,53,66,.12);
+      border-radius: 30px;
+      background: #fff;
+      color: var(--text);
+      box-shadow: 0 16px 44px rgba(47,53,66,.07);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+      overflow: hidden;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .category-entry-card:hover {
+      transform: translateY(-4px);
+      border-color: #ffcc00;
+      box-shadow: 0 24px 58px rgba(255,204,0,.16);
+    }
+
+    .category-entry-image {
+      position: relative;
+      height: 245px;
+      overflow: hidden;
+      border-radius: 22px;
+      background: #e5e7eb;
+      display: block;
+    }
+
+    .category-entry-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(17,22,29,.62), rgba(17,22,29,.05));
+      pointer-events: none;
+    }
+
+    .category-entry-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .category-entry-card:hover .category-entry-image img {
+      transform: scale(1.06);
+    }
+
+    .category-entry-image span {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      z-index: 2;
+      background: rgba(17,22,29,.90);
+      color: #ffcc00;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .category-entry-card strong {
+      font-size: 25px;
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      padding: 0 6px;
+    }
+
+    .category-entry-card small {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      padding: 0 6px 8px;
+    }
+
+    .category-panels {
+      margin-top: 0;
+    }
+
+    .category-content-panel {
+      background: #fff;
+      border: 1px solid rgba(47,53,66,.12);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      animation: sectionEnter .28s ease;
+    }
+
+    .category-panel-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px 24px;
+      align-items: end;
+      padding: 30px;
+      background:
+        radial-gradient(circle at 86% 18%, rgba(255,204,0,.18), transparent 32%),
+        linear-gradient(135deg, #2f3542 0%, #11161d 72%, #080a0e 100%);
+      color: #fff;
+    }
+
+    .category-panel-head > div {
+      grid-column: 1 / 2;
+    }
+
+    .category-panel-head h3 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: .96;
+      letter-spacing: -.06em;
+      color: #fff;
+    }
+
+    .category-panel-head p:not(.kicker) {
+      margin: 14px 0 0;
+      color: rgba(255,255,255,.76);
+      max-width: 760px;
+      font-size: 17px;
+    }
+
+    .category-panel-head .kicker {
+      color: #ffcc00 !important;
+    }
+
+    .back-to-categories {
+      grid-column: 1 / -1;
+      justify-self: start;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      border-radius: 999px;
+      padding: 11px 16px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .back-to-categories:hover {
+      background: #ffcc00;
+      border-color: #ffcc00;
+      color: #151922;
+    }
+
+    .category-panel-gallery {
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 20px !important;
+      padding: 28px;
+    }
+
+    .category-panel-gallery .gallery-card img {
+      height: 210px;
+    }
+
+    @keyframes sectionEnter {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 1180px) {
+      .category-overview,
+      .category-panel-gallery {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      .category-panel-head {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .category-overview,
+      .category-panel-gallery {
+        grid-template-columns: 1fr !important;
+      }
+
+      .category-entry-image {
+        height: 205px;
+      }
+
+      .category-content-panel {
+        border-radius: 26px;
+      }
+
+      .category-panel-head {
+        padding: 24px;
+      }
+
+      .category-panel-gallery {
+        padding: 18px;
+      }
+
+      .category-panel-gallery .gallery-card img {
+        height: 190px;
+      }
+    }
+
+
+
+    /* ============================================================
+       FINAL: ONLY 6 CATEGORY IMAGES
+       Removed all extra gallery images. This section now shows only
+       six important category cards.
+       ============================================================ */
+    .only-six-categories {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 22px !important;
+    }
+
+    .simple-category-card {
+      text-decoration: none !important;
+    }
+
+    .simple-category-card::after {
+      content: "Mehr ansehen →";
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin: 0 6px 8px;
+      color: #d6a700;
+      font-weight: 950;
+    }
+
+    @media (max-width: 1180px) {
+      .only-six-categories {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .only-six-categories {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+
+
+    /* Final cleanup after removing extra sections */
+    #bilder {
+      padding-top: 92px !important;
+    }
+
+
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-      <a class="logo" href="index.html"><span class="logo-mark"></span><span>Zaunmacher<span>24</span></span></a>
+      <a class="logo" href="index.html" aria-label="Zaunmacher24 Startseite">
+        <img class="logo-mark" src="images/logo-icon.png" alt="" aria-hidden="true">
+        <span class="logo-wordmark">
+          <span class="logo-text">zaunmacher<span>24</span></span>
+          <small class="logo-tagline">ZAUN · TOR · MAUER</small>
+        </span>
+      </a>
       <nav class="menu" id="menu">
         <a href="index.html">Start</a>
-        <a href="#kategorien">Kategorien</a>
-        <a href="#produkte">Produkte</a>
-        <a href="#projekte">Projekte</a>
-        <a href="#bilder">Bilder</a>
+        <a href="#bilder" class="active-link">Bereiche</a>
         <a href="#anfrage">Anfrage</a>
       </nav>
-      <div class="nav-actions"><a class="btn btn-soft" href="index.html">Zur Startseite</a><a class="btn btn-primary" href="#anfrage">Anfrage senden</a></div>
+      <div class="nav-actions">
+        <a class="btn btn-soft" href="index.html">Zur Startseite</a>
+        <a class="btn btn-primary" href="#anfrage">Anfrage senden</a>
+      </div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
     </div>
   </header>
@@ -98,953 +1065,72 @@
   <main>
     <section class="hero-products">
       <div class="container">
-        <p class="kicker">Komplettes Sortiment ohne Onlinepreise</p>
-        <h1>Produkte für Zaun, Mauer, Garten & Einfahrt</h1>
-        <p class="lead">Eine komplette Produktseite für Betonsteine, Zaunsteine, Mauerelemente, Tore, Fundamente, Beleuchtung und Zubehör. Alle Anfragen werden individuell kalkuliert.</p>
-        <div class="hero-actions"><a class="btn btn-primary" href="#produkte">Produkte ansehen</a><a class="btn btn-soft" href="#anfrage">Projekt anfragen</a></div>
-      </div>
-    </section>
-
-    <section id="kategorien">
-      <div class="container">
-        <div class="section-head"><div><p class="kicker">Kategorien</p><h2>Produktbereiche</h2></div><p>Die Kategorien orientieren sich an den Produktbereichen von JONIEC. Für die Website sind sie auf Deutsch und kundenfreundlich formuliert.</p></div>
-        <div class="category-grid">
-        <button class="category-tile" data-filter="all">
-          <strong>Neuheiten</strong>
-          <span>Neue Systeme und ausgewählte Produktlinien.</span>
-        </button>
-
-        <button class="category-tile" data-filter="modular">
-          <strong>Modulare Zaunsysteme</strong>
-          <span>ROMA- und KOMBO-Systeme für moderne Zäune.</span>
-        </button>
-
-        <button class="category-tile" data-filter="split">
-          <strong>Gespaltene Zaunsysteme</strong>
-          <span>GORC- und strukturierte Betonsteinoptik.</span>
-        </button>
-
-        <button class="category-tile" data-filter="concrete">
-          <strong>Betonelemente</strong>
-          <span>Systemelemente, Abdeckungen und Spezialformen.</span>
-        </button>
-
-        <button class="category-tile" data-filter="gates">
-          <strong>Tore, Pforten &amp; Zaunfelder</strong>
-          <span>Stahl, Gabionen, Aluminium und Zaunfelder.</span>
-        </button>
-
-        <button class="category-tile" data-filter="facade">
-          <strong>Fassaden</strong>
-          <span>Blöcke und Platten für Fassaden und Sockel.</span>
-        </button>
-
-        <button class="category-tile" data-filter="garden">
-          <strong>Pflaster</strong>
-          <span>Gartenflächen, Wege und Split-Brick-Elemente.</span>
-        </button>
-
-        <button class="category-tile" data-filter="garden">
-          <strong>Gartenarchitektur</strong>
-          <span>Pflanzsteine, Böschungssteine und Palisaden.</span>
-        </button>
-
-        <button class="category-tile" data-filter="lighting">
-          <strong>Beleuchtung</strong>
-          <span>Gartenlampen und LED BLOCK für Zaunanlagen.</span>
-        </button>
-
-        <button class="category-tile" data-filter="equipment">
-          <strong>Briefkästen</strong>
-          <span>Brief- und Paketlösungen im Zaunsystem.</span>
-        </button>
-
-        <button class="category-tile" data-filter="equipment">
-          <strong>Video &amp; Multimedia</strong>
-          <span>Videogegensprechanlagen und Multimedia-Pfosten.</span>
-        </button>
-
-        <button class="category-tile" data-filter="foundation">
-          <strong>Fundamente &amp; Verbinder</strong>
-          <span>Betonfundamente und Montageverbinder.</span>
-        </button>
-
-        <button class="category-tile" data-filter="chemistry">
-          <strong>Chemie</strong>
-          <span>Imprägnierung, Kleber und Schutzprodukte.</span>
-        </button>
-
-        <button class="category-tile" data-filter="equipment">
-          <strong>Zubehör</strong>
-          <span>Montage- und Systemzubehör.</span>
-        </button>
-        </div>
-      </div>
-    </section>
-
-    <section id="produkte" class="dark">
-      <div class="container">
-        <div class="section-head"><div><p class="kicker">Sortiment</p><h2>Alle Produktgruppen</h2></div><p>Die Produktkarten zeigen keine Preise. Jede Karte führt direkt zur Anfrage mit vorausgefülltem Produktnamen.</p></div>
-        <div class="toolbar">
-          <div class="filter-row">
-            <button class="filter-btn active" data-filter="all">Alle</button>
-            <button class="filter-btn" data-filter="modular">Modular</button>
-            <button class="filter-btn" data-filter="split">Split / Struktur</button>
-            <button class="filter-btn" data-filter="garden">Garten</button>
-            <button class="filter-btn" data-filter="foundation">Fundamente</button>
-            <button class="filter-btn" data-filter="gates">Tore</button>
-            <button class="filter-btn" data-filter="equipment">Ausstattung</button>
-            <button class="filter-btn" data-filter="lighting">Licht</button>
-          </div>
-          <input id="search" class="search" type="search" placeholder="Suchen: ROMA, GORC, Briefkasten, LED...">
-        </div>
-        <div class="product-grid" id="productGrid">
-        <article class="product-card" data-cat="modular" data-name="roma vital eco modulare zaunsysteme glatt eco caps">
-          <a class="product-image" href="#anfrage" data-product="ROMA Vital ECO"><img src="images/products/product-01.jpg" alt="ROMA Vital ECO"></a>
-          <div class="product-body">
-            <span class="product-group">Modulare Zaunsysteme</span>
-            <h3>ROMA Vital ECO</h3>
-            <p>Glattes ECO-Zaunsystem für moderne Mauern und Sichtschutzlinien.</p>
-            <div class="chips"><span>glatt</span><span>ECO</span><span>Caps</span></div>
-            <a class="text-link" href="#anfrage" data-product="ROMA Vital ECO">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="modular" data-name="roma vital eco multigrain modulare zaunsysteme multigrain eco zaun">
-          <a class="product-image" href="#anfrage" data-product="ROMA Vital ECO Multigrain"><img src="images/products/product-02.jpg" alt="ROMA Vital ECO Multigrain"></a>
-          <div class="product-body">
-            <span class="product-group">Modulare Zaunsysteme</span>
-            <h3>ROMA Vital ECO Multigrain</h3>
-            <p>Multigrain-Oberfläche für reduzierte, moderne Zaunflächen.</p>
-            <div class="chips"><span>multigrain</span><span>ECO</span><span>Zaun</span></div>
-            <a class="text-link" href="#anfrage" data-product="ROMA Vital ECO Multigrain">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="modular" data-name="roma integra eco modulare zaunsysteme großformat glatt eco">
-          <a class="product-image" href="#anfrage" data-product="ROMA Integra ECO"><img src="images/products/product-03.jpg" alt="ROMA Integra ECO"></a>
-          <div class="product-body">
-            <span class="product-group">Modulare Zaunsysteme</span>
-            <h3>ROMA Integra ECO</h3>
-            <p>Großformatige Elemente für ruhige, elegante Betonstein-Flächen.</p>
-            <div class="chips"><span>großformat</span><span>glatt</span><span>ECO</span></div>
-            <a class="text-link" href="#anfrage" data-product="ROMA Integra ECO">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="modular" data-name="roma horizon eco modulare zaunsysteme horizon glatt caps">
-          <a class="product-image" href="#anfrage" data-product="ROMA Horizon ECO"><img src="images/products/product-04.jpg" alt="ROMA Horizon ECO"></a>
-          <div class="product-body">
-            <span class="product-group">Modulare Zaunsysteme</span>
-            <h3>ROMA Horizon ECO</h3>
-            <p>Horizontales System für klare Linien in Garten, Einfahrt und Sichtschutz.</p>
-            <div class="chips"><span>horizon</span><span>glatt</span><span>Caps</span></div>
-            <a class="text-link" href="#anfrage" data-product="ROMA Horizon ECO">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="modular" data-name="roma giga modulare zaunsysteme massiv glatt pfeiler">
-          <a class="product-image" href="#anfrage" data-product="ROMA Giga"><img src="images/products/product-05.jpg" alt="ROMA Giga"></a>
-          <div class="product-body">
-            <span class="product-group">Modulare Zaunsysteme</span>
-            <h3>ROMA Giga</h3>
-            <p>Hohe, massive Blöcke für markante Pfeiler und Sichtschutzbereiche.</p>
-            <div class="chips"><span>massiv</span><span>glatt</span><span>Pfeiler</span></div>
-            <a class="text-link" href="#anfrage" data-product="ROMA Giga">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="modular" data-name="roma lite modulare zaunsysteme lite glatt modern">
-          <a class="product-image" href="#anfrage" data-product="ROMA Lite"><img src="images/products/product-06.jpg" alt="ROMA Lite"></a>
-          <div class="product-body">
-            <span class="product-group">Modulare Zaunsysteme</span>
-            <h3>ROMA Lite</h3>
-            <p>Leichte, moderne Betonstein-Lösung mit passender Abdeckung.</p>
-            <div class="chips"><span>lite</span><span>glatt</span><span>modern</span></div>
-            <a class="text-link" href="#anfrage" data-product="ROMA Lite">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="modular" data-name="roma mega modulare zaunsysteme mega großformat sichtschutz">
-          <a class="product-image" href="#anfrage" data-product="ROMA Mega"><img src="images/products/product-07.jpg" alt="ROMA Mega"></a>
-          <div class="product-body">
-            <span class="product-group">Modulare Zaunsysteme</span>
-            <h3>ROMA Mega</h3>
-            <p>Großformatige Betonsteine für starke, repräsentative Mauern.</p>
-            <div class="chips"><span>mega</span><span>großformat</span><span>Sichtschutz</span></div>
-            <a class="text-link" href="#anfrage" data-product="ROMA Mega">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="modular" data-name="roma horizon modulare zaunsysteme modular horizon farben">
-          <a class="product-image" href="#anfrage" data-product="ROMA Horizon"><img src="images/products/product-08.jpg" alt="ROMA Horizon"></a>
-          <div class="product-body">
-            <span class="product-group">Modulare Zaunsysteme</span>
-            <h3>ROMA Horizon</h3>
-            <p>Modulares Zaunsystem in mehreren Breiten und Farben.</p>
-            <div class="chips"><span>modular</span><span>Horizon</span><span>Farben</span></div>
-            <a class="text-link" href="#anfrage" data-product="ROMA Horizon">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="split" data-name="roma nova strukturierte zaunsysteme scratch beidseitig zaun">
-          <a class="product-image" href="#anfrage" data-product="ROMA Nova"><img src="images/products/product-09.jpg" alt="ROMA Nova"></a>
-          <div class="product-body">
-            <span class="product-group">Strukturierte Zaunsysteme</span>
-            <h3>ROMA Nova</h3>
-            <p>Scratch-Oberfläche mit beidseitiger Struktur für moderne Gestaltung.</p>
-            <div class="chips"><span>scratch</span><span>beidseitig</span><span>Zaun</span></div>
-            <a class="text-link" href="#anfrage" data-product="ROMA Nova">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="split" data-name="roma perfect strukturierte zaunsysteme scratch vierseitig premium">
-          <a class="product-image" href="#anfrage" data-product="ROMA Perfect"><img src="images/products/product-10.jpg" alt="ROMA Perfect"></a>
-          <div class="product-body">
-            <span class="product-group">Strukturierte Zaunsysteme</span>
-            <h3>ROMA Perfect</h3>
-            <p>Vierseitig strukturierte Zaunsteine für hochwertige Außenanlagen.</p>
-            <div class="chips"><span>scratch</span><span>vierseitig</span><span>Premium</span></div>
-            <a class="text-link" href="#anfrage" data-product="ROMA Perfect">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="split" data-name="roma diamond strukturierte zaunsysteme multigrain scratch design">
-          <a class="product-image" href="#anfrage" data-product="ROMA Diamond"><img src="images/products/product-11.jpg" alt="ROMA Diamond"></a>
-          <div class="product-body">
-            <span class="product-group">Strukturierte Zaunsysteme</span>
-            <h3>ROMA Diamond</h3>
-            <p>Multigrain-Scratch-Optik für besondere Betonstein-Flächen.</p>
-            <div class="chips"><span>multigrain</span><span>scratch</span><span>Design</span></div>
-            <a class="text-link" href="#anfrage" data-product="ROMA Diamond">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="split" data-name="roma classic strukturierte zaunsysteme classic multigrain mauer">
-          <a class="product-image" href="#anfrage" data-product="ROMA Classic"><img src="images/products/product-12.jpg" alt="ROMA Classic"></a>
-          <div class="product-body">
-            <span class="product-group">Strukturierte Zaunsysteme</span>
-            <h3>ROMA Classic</h3>
-            <p>Klassische Multigrain-Optik für zeitlose Zaun- und Mauerlösungen.</p>
-            <div class="chips"><span>classic</span><span>multigrain</span><span>Mauer</span></div>
-            <a class="text-link" href="#anfrage" data-product="ROMA Classic">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="split" data-name="gorc® peak gespaltene zaunsysteme gespalten natursteinoptik caps">
-          <a class="product-image" href="#anfrage" data-product="GORC® Peak"><img src="images/products/product-13.jpg" alt="GORC® Peak"></a>
-          <div class="product-body">
-            <span class="product-group">Gespaltene Zaunsysteme</span>
-            <h3>GORC® Peak</h3>
-            <p>Gespaltene Oberfläche mit Naturstein-Charakter für robuste Zäune.</p>
-            <div class="chips"><span>gespalten</span><span>Natursteinoptik</span><span>Caps</span></div>
-            <a class="text-link" href="#anfrage" data-product="GORC® Peak">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="split" data-name="gorc® de luxe gl22 gespaltene zaunsysteme gl22 split de luxe">
-          <a class="product-image" href="#anfrage" data-product="GORC® de Luxe GL22"><img src="images/products/product-14.jpg" alt="GORC® de Luxe GL22"></a>
-          <div class="product-body">
-            <span class="product-group">Gespaltene Zaunsysteme</span>
-            <h3>GORC® de Luxe GL22</h3>
-            <p>Split-Fence-System für schmale, elegante Mauern und Pfeiler.</p>
-            <div class="chips"><span>GL22</span><span>split</span><span>de Luxe</span></div>
-            <a class="text-link" href="#anfrage" data-product="GORC® de Luxe GL22">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="split" data-name="gorc® de luxe gl38 gespaltene zaunsysteme gl38 split massiv">
-          <a class="product-image" href="#anfrage" data-product="GORC® de Luxe GL38"><img src="images/products/product-15.jpg" alt="GORC® de Luxe GL38"></a>
-          <div class="product-body">
-            <span class="product-group">Gespaltene Zaunsysteme</span>
-            <h3>GORC® de Luxe GL38</h3>
-            <p>Breitere GL-Ausführung für massive Zaun- und Mauerabschnitte.</p>
-            <div class="chips"><span>GL38</span><span>split</span><span>massiv</span></div>
-            <a class="text-link" href="#anfrage" data-product="GORC® de Luxe GL38">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="concrete" data-name="kombo® betonelemente betonelement system caps">
-          <a class="product-image" href="#anfrage" data-product="KOMBO®"><img src="images/products/product-16.jpg" alt="KOMBO®"></a>
-          <div class="product-body">
-            <span class="product-group">Betonelemente</span>
-            <h3>KOMBO®</h3>
-            <p>Betonelemente für dekorative Zaun- und Mauersysteme.</p>
-            <div class="chips"><span>Betonelement</span><span>System</span><span>Caps</span></div>
-            <a class="text-link" href="#anfrage" data-product="KOMBO®">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="facade" data-name="tom fassadenblöcke fassaden &amp; mauern fassade single-sided split">
-          <a class="product-image" href="#anfrage" data-product="TOM Fassadenblöcke"><img src="images/products/product-17.jpg" alt="TOM Fassadenblöcke"></a>
-          <div class="product-body">
-            <span class="product-group">Fassaden &amp; Mauern</span>
-            <h3>TOM Fassadenblöcke</h3>
-            <p>Fassadenblöcke mit gespaltener Sichtseite für Wand- und Sockelbereiche.</p>
-            <div class="chips"><span>Fassade</span><span>single-sided</span><span>split</span></div>
-            <a class="text-link" href="#anfrage" data-product="TOM Fassadenblöcke">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="facade" data-name="piano fassadenplatten fassaden &amp; mauern fliese fassade split">
-          <a class="product-image" href="#anfrage" data-product="PIANO Fassadenplatten"><img src="images/products/product-18.jpg" alt="PIANO Fassadenplatten"></a>
-          <div class="product-body">
-            <span class="product-group">Fassaden &amp; Mauern</span>
-            <h3>PIANO Fassadenplatten</h3>
-            <p>Schlanke Fassadenplatten für dekorative Außenflächen.</p>
-            <div class="chips"><span>Fliese</span><span>Fassade</span><span>split</span></div>
-            <a class="text-link" href="#anfrage" data-product="PIANO Fassadenplatten">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="garden" data-name="rio böschungssteine gartenarchitektur böschung garten caps">
-          <a class="product-image" href="#anfrage" data-product="RIO Böschungssteine"><img src="images/products/product-19.jpg" alt="RIO Böschungssteine"></a>
-          <div class="product-body">
-            <span class="product-group">Gartenarchitektur</span>
-            <h3>RIO Böschungssteine</h3>
-            <p>Böschungs- und Hangsteine für Gartenmauern und Geländeabfangungen.</p>
-            <div class="chips"><span>Böschung</span><span>Garten</span><span>Caps</span></div>
-            <a class="text-link" href="#anfrage" data-product="RIO Böschungssteine">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="garden" data-name="moonflor / proflor gartenarchitektur pflanzstein garten begrünung">
-          <a class="product-image" href="#anfrage" data-product="MOONFLOR / PROFLOR"><img src="images/products/product-20.jpg" alt="MOONFLOR / PROFLOR"></a>
-          <div class="product-body">
-            <span class="product-group">Gartenarchitektur</span>
-            <h3>MOONFLOR / PROFLOR</h3>
-            <p>Pflanzsteine für Garten, Begrünung und dekorative Abgrenzungen.</p>
-            <div class="chips"><span>Pflanzstein</span><span>Garten</span><span>Begrünung</span></div>
-            <a class="text-link" href="#anfrage" data-product="MOONFLOR / PROFLOR">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="garden" data-name="mogielica palisaden palisaden palisade split kanten">
-          <a class="product-image" href="#anfrage" data-product="MOGIELICA Palisaden"><img src="images/products/product-21.jpg" alt="MOGIELICA Palisaden"></a>
-          <div class="product-body">
-            <span class="product-group">Palisaden</span>
-            <h3>MOGIELICA Palisaden</h3>
-            <p>Gespaltene Palisaden für Kanten, Mauern und Höhenversatz.</p>
-            <div class="chips"><span>Palisade</span><span>split</span><span>Kanten</span></div>
-            <a class="text-link" href="#anfrage" data-product="MOGIELICA Palisaden">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="garden" data-name="stone palisaden palisaden stone palisade garten">
-          <a class="product-image" href="#anfrage" data-product="STONE Palisaden"><img src="images/products/product-22.jpg" alt="STONE Palisaden"></a>
-          <div class="product-body">
-            <span class="product-group">Palisaden</span>
-            <h3>STONE Palisaden</h3>
-            <p>Palisadensystem mit mehreren Formaten für Außenanlagen.</p>
-            <div class="chips"><span>STONE</span><span>Palisade</span><span>Garten</span></div>
-            <a class="text-link" href="#anfrage" data-product="STONE Palisaden">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="foundation" data-name="beton-fundamentbretter fundamente &amp; verbinder fundament beton montage">
-          <a class="product-image" href="#anfrage" data-product="Beton-Fundamentbretter"><img src="images/products/product-23.jpg" alt="Beton-Fundamentbretter"></a>
-          <div class="product-body">
-            <span class="product-group">Fundamente &amp; Verbinder</span>
-            <h3>Beton-Fundamentbretter</h3>
-            <p>Vorgefertigte Betonfundamente als Basis für Zaunfelder.</p>
-            <div class="chips"><span>Fundament</span><span>Beton</span><span>Montage</span></div>
-            <a class="text-link" href="#anfrage" data-product="Beton-Fundamentbretter">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="foundation" data-name="beton-verbinder fundamente &amp; verbinder verbinder ecke beton">
-          <a class="product-image" href="#anfrage" data-product="Beton-Verbinder"><img src="images/products/product-24.jpg" alt="Beton-Verbinder"></a>
-          <div class="product-body">
-            <span class="product-group">Fundamente &amp; Verbinder</span>
-            <h3>Beton-Verbinder</h3>
-            <p>Gerade und Eckverbinder für vorgefertigte Fundamente.</p>
-            <div class="chips"><span>Verbinder</span><span>Ecke</span><span>Beton</span></div>
-            <a class="text-link" href="#anfrage" data-product="Beton-Verbinder">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="foundation" data-name="stahl- &amp; kunststoffverbinder fundamente &amp; verbinder stahl kunststoff ral">
-          <a class="product-image" href="#anfrage" data-product="Stahl- &amp; Kunststoffverbinder"><img src="images/products/product-25.jpg" alt="Stahl- &amp; Kunststoffverbinder"></a>
-          <div class="product-body">
-            <span class="product-group">Fundamente &amp; Verbinder</span>
-            <h3>Stahl- &amp; Kunststoffverbinder</h3>
-            <p>Verbinder in Kunststoff oder Stahl für unterschiedliche Montagesituationen.</p>
-            <div class="chips"><span>Stahl</span><span>Kunststoff</span><span>RAL</span></div>
-            <a class="text-link" href="#anfrage" data-product="Stahl- &amp; Kunststoffverbinder">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="garden" data-name="pflaster &amp; split-brick pflaster pflaster brick garten">
-          <a class="product-image" href="#anfrage" data-product="Pflaster &amp; Split-Brick"><img src="images/products/product-26.jpg" alt="Pflaster &amp; Split-Brick"></a>
-          <div class="product-body">
-            <span class="product-group">Pflaster</span>
-            <h3>Pflaster &amp; Split-Brick</h3>
-            <p>Gespaltene Pflaster- und Brick-Elemente für Wege und Flächen.</p>
-            <div class="chips"><span>Pflaster</span><span>Brick</span><span>Garten</span></div>
-            <a class="text-link" href="#anfrage" data-product="Pflaster &amp; Split-Brick">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="gates" data-name="vero zaunfelder &amp; tore tore, pforten &amp; zaunfelder stahl tor pforte">
-          <a class="product-image" href="#anfrage" data-product="VERO Zaunfelder &amp; Tore"><img src="images/products/product-27.jpg" alt="VERO Zaunfelder &amp; Tore"></a>
-          <div class="product-body">
-            <span class="product-group">Tore, Pforten &amp; Zaunfelder</span>
-            <h3>VERO Zaunfelder &amp; Tore</h3>
-            <p>Stahl- und Gabionen-Elemente für komplette Zaunanlagen.</p>
-            <div class="chips"><span>Stahl</span><span>Tor</span><span>Pforte</span></div>
-            <a class="text-link" href="#anfrage" data-product="VERO Zaunfelder &amp; Tore">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="gates" data-name="optima zaunfelder &amp; tore tore, pforten &amp; zaunfelder optima stahl system">
-          <a class="product-image" href="#anfrage" data-product="OPTIMA Zaunfelder &amp; Tore"><img src="images/products/product-28.jpg" alt="OPTIMA Zaunfelder &amp; Tore"></a>
-          <div class="product-body">
-            <span class="product-group">Tore, Pforten &amp; Zaunfelder</span>
-            <h3>OPTIMA Zaunfelder &amp; Tore</h3>
-            <p>Zaunfelder, Doppelflügeltore, Schiebetore und Pforten in verschiedenen Abständen.</p>
-            <div class="chips"><span>OPTIMA</span><span>Stahl</span><span>System</span></div>
-            <a class="text-link" href="#anfrage" data-product="OPTIMA Zaunfelder &amp; Tore">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="gates" data-name="vertical / moderne stahlsysteme tore, pforten &amp; zaunfelder stahl vertikal ral">
-          <a class="product-image" href="#anfrage" data-product="VERTICAL / Moderne Stahlsysteme"><img src="images/products/product-29.jpg" alt="VERTICAL / Moderne Stahlsysteme"></a>
-          <div class="product-body">
-            <span class="product-group">Tore, Pforten &amp; Zaunfelder</span>
-            <h3>VERTICAL / Moderne Stahlsysteme</h3>
-            <p>Vertikale und lineare Stahlsysteme für moderne Zaunanlagen.</p>
-            <div class="chips"><span>Stahl</span><span>vertikal</span><span>RAL</span></div>
-            <a class="text-link" href="#anfrage" data-product="VERTICAL / Moderne Stahlsysteme">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="gates" data-name="moderne tor- und zaunsysteme tore, pforten &amp; zaunfelder tor zaunfeld ral">
-          <a class="product-image" href="#anfrage" data-product="MODERNE Tor- und Zaunsysteme"><img src="images/products/product-30.jpg" alt="MODERNE Tor- und Zaunsysteme"></a>
-          <div class="product-body">
-            <span class="product-group">Tore, Pforten &amp; Zaunfelder</span>
-            <h3>MODERNE Tor- und Zaunsysteme</h3>
-            <p>Weitere Stahlvarianten für Tore, Pforten und Zaunfelder.</p>
-            <div class="chips"><span>Tor</span><span>Zaunfeld</span><span>RAL</span></div>
-            <a class="text-link" href="#anfrage" data-product="MODERNE Tor- und Zaunsysteme">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="gates" data-name="horizontal zaunfelder tore, pforten &amp; zaunfelder horizontal tor zaunfeld">
-          <a class="product-image" href="#anfrage" data-product="HORIZONTAL Zaunfelder"><img src="images/products/product-31.jpg" alt="HORIZONTAL Zaunfelder"></a>
-          <div class="product-body">
-            <span class="product-group">Tore, Pforten &amp; Zaunfelder</span>
-            <h3>HORIZONTAL Zaunfelder</h3>
-            <p>Horizontale Zaunfelder und Tore für klare Architektur.</p>
-            <div class="chips"><span>horizontal</span><span>Tor</span><span>Zaunfeld</span></div>
-            <a class="text-link" href="#anfrage" data-product="HORIZONTAL Zaunfelder">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="gates" data-name="palisade / full systeme tore, pforten &amp; zaunfelder palisade full stahl">
-          <a class="product-image" href="#anfrage" data-product="PALISADE / FULL Systeme"><img src="images/products/product-32.jpg" alt="PALISADE / FULL Systeme"></a>
-          <div class="product-body">
-            <span class="product-group">Tore, Pforten &amp; Zaunfelder</span>
-            <h3>PALISADE / FULL Systeme</h3>
-            <p>Palisaden- und Vollsysteme für private und gewerbliche Anlagen.</p>
-            <div class="chips"><span>Palisade</span><span>Full</span><span>Stahl</span></div>
-            <a class="text-link" href="#anfrage" data-product="PALISADE / FULL Systeme">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="gates" data-name="kombo® tore &amp; pforten tore, pforten &amp; zaunfelder kombo tor pforte">
-          <a class="product-image" href="#anfrage" data-product="KOMBO® Tore &amp; Pforten"><img src="images/products/product-33.jpg" alt="KOMBO® Tore &amp; Pforten"></a>
-          <div class="product-body">
-            <span class="product-group">Tore, Pforten &amp; Zaunfelder</span>
-            <h3>KOMBO® Tore &amp; Pforten</h3>
-            <p>KOMBO-Systeme für Tore, Wickets und Schiebetore mit dekorativem Schnitt.</p>
-            <div class="chips"><span>KOMBO</span><span>Tor</span><span>Pforte</span></div>
-            <a class="text-link" href="#anfrage" data-product="KOMBO® Tore &amp; Pforten">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="equipment" data-name="tor-automatik automatik &amp; zubehör automatik schiebetor antrieb">
-          <a class="product-image" href="#anfrage" data-product="Tor-Automatik"><img src="images/products/product-34.jpg" alt="Tor-Automatik"></a>
-          <div class="product-body">
-            <span class="product-group">Automatik &amp; Zubehör</span>
-            <h3>Tor-Automatik</h3>
-            <p>Automatiksysteme für Schiebe- und Doppelflügeltore.</p>
-            <div class="chips"><span>Automatik</span><span>Schiebetor</span><span>Antrieb</span></div>
-            <a class="text-link" href="#anfrage" data-product="Tor-Automatik">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="gates" data-name="aluminium panel fences aluminium-zäune aluminium panel dekor">
-          <a class="product-image" href="#anfrage" data-product="Aluminium Panel Fences"><img src="images/products/product-35.jpg" alt="Aluminium Panel Fences"></a>
-          <div class="product-body">
-            <span class="product-group">Aluminium-Zäune</span>
-            <h3>Aluminium Panel Fences</h3>
-            <p>Aluminium-Füllungen und Dekore für moderne Zaunfelder.</p>
-            <div class="chips"><span>Aluminium</span><span>Panel</span><span>Dekor</span></div>
-            <a class="text-link" href="#anfrage" data-product="Aluminium Panel Fences">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="gates" data-name="aluminium füllungen holzoptik aluminium-zäune aluminium holzoptik design">
-          <a class="product-image" href="#anfrage" data-product="Aluminium Füllungen Holzoptik"><img src="images/products/product-36.jpg" alt="Aluminium Füllungen Holzoptik"></a>
-          <div class="product-body">
-            <span class="product-group">Aluminium-Zäune</span>
-            <h3>Aluminium Füllungen Holzoptik</h3>
-            <p>Paneele mit Mokka-Oak-Optik und weiteren Designvarianten.</p>
-            <div class="chips"><span>Aluminium</span><span>Holzoptik</span><span>Design</span></div>
-            <a class="text-link" href="#anfrage" data-product="Aluminium Füllungen Holzoptik">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="equipment" data-name="briefkästen ausstattung briefkasten zaunpfosten post">
-          <a class="product-image" href="#anfrage" data-product="Briefkästen"><img src="images/products/product-37.jpg" alt="Briefkästen"></a>
-          <div class="product-body">
-            <span class="product-group">Ausstattung</span>
-            <h3>Briefkästen</h3>
-            <p>Einbau-Briefkästen und Briefkastenlösungen für Zaunpfosten.</p>
-            <div class="chips"><span>Briefkasten</span><span>Zaunpfosten</span><span>Post</span></div>
-            <a class="text-link" href="#anfrage" data-product="Briefkästen">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="equipment" data-name="mehrfach-briefkästen ausstattung mehrfach briefkasten inox">
-          <a class="product-image" href="#anfrage" data-product="Mehrfach-Briefkästen"><img src="images/products/product-38.jpg" alt="Mehrfach-Briefkästen"></a>
-          <div class="product-body">
-            <span class="product-group">Ausstattung</span>
-            <h3>Mehrfach-Briefkästen</h3>
-            <p>Multi-Unit-Mailbox-Systeme für mehrere Parteien.</p>
-            <div class="chips"><span>Mehrfach</span><span>Briefkasten</span><span>inox</span></div>
-            <a class="text-link" href="#anfrage" data-product="Mehrfach-Briefkästen">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="equipment" data-name="briefkasten mit video ausstattung video briefkasten monitor">
-          <a class="product-image" href="#anfrage" data-product="Briefkasten mit Video"><img src="images/products/product-39.jpg" alt="Briefkasten mit Video"></a>
-          <div class="product-body">
-            <span class="product-group">Ausstattung</span>
-            <h3>Briefkasten mit Video</h3>
-            <p>Mailbox-Lösungen mit Videoeinheit und Monitoroptionen.</p>
-            <div class="chips"><span>Video</span><span>Briefkasten</span><span>Monitor</span></div>
-            <a class="text-link" href="#anfrage" data-product="Briefkasten mit Video">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="equipment" data-name="letter &amp; parcel post ausstattung paketbox post ausstattung">
-          <a class="product-image" href="#anfrage" data-product="Letter &amp; Parcel Post"><img src="images/products/product-40.jpg" alt="Letter &amp; Parcel Post"></a>
-          <div class="product-body">
-            <span class="product-group">Ausstattung</span>
-            <h3>Letter &amp; Parcel Post</h3>
-            <p>Paket- und Briefpostlösungen als Zaunsystem-Ausstattung.</p>
-            <div class="chips"><span>Paketbox</span><span>Post</span><span>Ausstattung</span></div>
-            <a class="text-link" href="#anfrage" data-product="Letter &amp; Parcel Post">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="lighting" data-name="gartenlampen beleuchtung lampen led garten">
-          <a class="product-image" href="#anfrage" data-product="Gartenlampen"><img src="images/products/product-41.jpg" alt="Gartenlampen"></a>
-          <div class="product-body">
-            <span class="product-group">Beleuchtung</span>
-            <h3>Gartenlampen</h3>
-            <p>Außen- und Gartenleuchten für Zaun- und Eingangsbereiche.</p>
-            <div class="chips"><span>Lampen</span><span>LED</span><span>Garten</span></div>
-            <a class="text-link" href="#anfrage" data-product="Gartenlampen">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="lighting" data-name="led block lampen beleuchtung led block licht zaun">
-          <a class="product-image" href="#anfrage" data-product="LED BLOCK Lampen"><img src="images/products/product-42.jpg" alt="LED BLOCK Lampen"></a>
-          <div class="product-body">
-            <span class="product-group">Beleuchtung</span>
-            <h3>LED BLOCK Lampen</h3>
-            <p>LED BLOCK Leuchten passend zu ausgewählten Zaunsystemen.</p>
-            <div class="chips"><span>LED BLOCK</span><span>Licht</span><span>Zaun</span></div>
-            <a class="text-link" href="#anfrage" data-product="LED BLOCK Lampen">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="equipment" data-name="multimedia-post &amp; video intercom multimedia video intercom multimedia">
-          <a class="product-image" href="#anfrage" data-product="Multimedia-Post &amp; Video Intercom"><img src="images/products/product-43.jpg" alt="Multimedia-Post &amp; Video Intercom"></a>
-          <div class="product-body">
-            <span class="product-group">Multimedia</span>
-            <h3>Multimedia-Post &amp; Video Intercom</h3>
-            <p>Multimedia-Pfosten und Videogegensprechanlagen.</p>
-            <div class="chips"><span>Video</span><span>Intercom</span><span>Multimedia</span></div>
-            <a class="text-link" href="#anfrage" data-product="Multimedia-Post &amp; Video Intercom">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="equipment" data-name="zubehör ausstattung zubehör montage system">
-          <a class="product-image" href="#anfrage" data-product="Zubehör"><img src="images/products/product-44.jpg" alt="Zubehör"></a>
-          <div class="product-body">
-            <span class="product-group">Ausstattung</span>
-            <h3>Zubehör</h3>
-            <p>Montage- und Systemzubehör für Zaun- und Betonsteinprojekte.</p>
-            <div class="chips"><span>Zubehör</span><span>Montage</span><span>System</span></div>
-            <a class="text-link" href="#anfrage" data-product="Zubehör">Produkt anfragen →</a>
-          </div>
-        </article>
-
-        <article class="product-card" data-cat="chemistry" data-name="beton-chemie chemie chemie imprägnierung kleber">
-          <a class="product-image" href="#anfrage" data-product="Beton-Chemie"><img src="images/products/product-45.jpg" alt="Beton-Chemie"></a>
-          <div class="product-body">
-            <span class="product-group">Chemie</span>
-            <h3>Beton-Chemie</h3>
-            <p>Imprägnierungen, Kleber und Pflegemittel für Betonprodukte.</p>
-            <div class="chips"><span>Chemie</span><span>Imprägnierung</span><span>Kleber</span></div>
-            <a class="text-link" href="#anfrage" data-product="Beton-Chemie">Produkt anfragen →</a>
-          </div>
-        </article>
-        </div>
-        <p class="note">Hinweis: Technische Daten, Farben, Verfügbarkeit und Nutzungsrechte an Herstellerbildern vor Veröffentlichung prüfen. Keine Onlinepreise.</p>
-      </div>
-    </section>
-
-    <section id="projekte">
-      <div class="container">
-        <div class="section-head"><div><p class="kicker">Projektideen</p><h2>Inspiration für Kunden</h2></div><p>Diese Projektbereiche helfen Besuchern, schnell die passende Anwendung zu finden.</p></div>
-        <div class="project-grid">
-          <article class="project-card"><img src="images/products/product-01.jpg" alt="Sichtschutz Projekt"><div><h3>Sichtschutz</h3><p>Betonsteine kombiniert mit Zaunfeldern.</p></div></article>
-          <article class="project-card"><img src="images/products/product-28.jpg" alt="Einfahrt mit Tor"><div><h3>Einfahrt</h3><p>Tor, Pforte und Pfeiler als Komplettlösung.</p></div></article>
-          <article class="project-card"><img src="images/products/product-21.jpg" alt="Gartenmauer"><div><h3>Gartenmauer</h3><p>Palisaden, Pflanzsteine und Mauerbereiche.</p></div></article>
-          <article class="project-card"><img src="images/products/product-18.jpg" alt="Fassade"><div><h3>Fassade & Sockel</h3><p>Dekorative Betonoptik für Wandflächen.</p></div></article>
-          <article class="project-card"><img src="images/products/product-42.jpg" alt="Beleuchtung"><div><h3>Beleuchtung</h3><p>LED BLOCK und Gartenlampen für Eingänge.</p></div></article>
-          <article class="project-card"><img src="images/products/product-24.jpg" alt="Fundamente"><div><h3>Fundamente</h3><p>Basis, Verbinder und Zubehör für Montage.</p></div></article>
-        </div>
+        <p class="kicker">Ausgewählte Bereiche ohne Onlinepreise</p>
+        <h1>Bereiche für Zaun, Mauer, Garten & Einfahrt</h1>
+        <p class="lead">Die Seite zeigt nur die wichtigsten 6 Bereiche. Besucher wählen einen Bereich und können direkt eine individuelle Projektanfrage senden.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#bilder">Bereiche ansehen</a><a class="btn btn-soft" href="#anfrage">Projekt anfragen</a></div>
       </div>
     </section>
 
     <section id="bilder" style="background:var(--soft)">
       <div class="container">
-        <div class="section-head"><div><p class="kicker">Bildübersicht</p><h2>Alle Produktbilder aus den Unterlagen</h2></div><p>Eine große Bildgalerie für die Produktseite. Die Bilder enthalten keine Onlinepreise und sind als Produkt-/Projektmotive gedacht.</p></div>
-        <div class="gallery-grid">
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-05.jpg" alt="Produktbild Seite 5">
-          <figcaption>Produktbild · Seite 5</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-06.jpg" alt="Produktbild Seite 6">
-          <figcaption>Produktbild · Seite 6</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-07.jpg" alt="Produktbild Seite 7">
-          <figcaption>Produktbild · Seite 7</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-08.jpg" alt="Produktbild Seite 8">
-          <figcaption>Produktbild · Seite 8</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-09.jpg" alt="Produktbild Seite 9">
-          <figcaption>Produktbild · Seite 9</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-10.jpg" alt="Produktbild Seite 10">
-          <figcaption>Produktbild · Seite 10</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-11.jpg" alt="Produktbild Seite 11">
-          <figcaption>Produktbild · Seite 11</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-12.jpg" alt="Produktbild Seite 12">
-          <figcaption>Produktbild · Seite 12</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-13.jpg" alt="Produktbild Seite 13">
-          <figcaption>Produktbild · Seite 13</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-14.jpg" alt="Produktbild Seite 14">
-          <figcaption>Produktbild · Seite 14</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-15.jpg" alt="Produktbild Seite 15">
-          <figcaption>Produktbild · Seite 15</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-16.jpg" alt="Produktbild Seite 16">
-          <figcaption>Produktbild · Seite 16</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-17.jpg" alt="Produktbild Seite 17">
-          <figcaption>Produktbild · Seite 17</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-18.jpg" alt="Produktbild Seite 18">
-          <figcaption>Produktbild · Seite 18</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-19.jpg" alt="Produktbild Seite 19">
-          <figcaption>Produktbild · Seite 19</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-20.jpg" alt="Produktbild Seite 20">
-          <figcaption>Produktbild · Seite 20</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-21.jpg" alt="Produktbild Seite 21">
-          <figcaption>Produktbild · Seite 21</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-22.jpg" alt="Produktbild Seite 22">
-          <figcaption>Produktbild · Seite 22</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-23.jpg" alt="Produktbild Seite 23">
-          <figcaption>Produktbild · Seite 23</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-24.jpg" alt="Produktbild Seite 24">
-          <figcaption>Produktbild · Seite 24</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-25.jpg" alt="Produktbild Seite 25">
-          <figcaption>Produktbild · Seite 25</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-26.jpg" alt="Produktbild Seite 26">
-          <figcaption>Produktbild · Seite 26</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-27.jpg" alt="Produktbild Seite 27">
-          <figcaption>Produktbild · Seite 27</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-28.jpg" alt="Produktbild Seite 28">
-          <figcaption>Produktbild · Seite 28</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-29.jpg" alt="Produktbild Seite 29">
-          <figcaption>Produktbild · Seite 29</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-30.jpg" alt="Produktbild Seite 30">
-          <figcaption>Produktbild · Seite 30</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-31.jpg" alt="Produktbild Seite 31">
-          <figcaption>Produktbild · Seite 31</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-32.jpg" alt="Produktbild Seite 32">
-          <figcaption>Produktbild · Seite 32</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-33.jpg" alt="Produktbild Seite 33">
-          <figcaption>Produktbild · Seite 33</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-34.jpg" alt="Produktbild Seite 34">
-          <figcaption>Produktbild · Seite 34</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-35.jpg" alt="Produktbild Seite 35">
-          <figcaption>Produktbild · Seite 35</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-36.jpg" alt="Produktbild Seite 36">
-          <figcaption>Produktbild · Seite 36</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-37.jpg" alt="Produktbild Seite 37">
-          <figcaption>Produktbild · Seite 37</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-38.jpg" alt="Produktbild Seite 38">
-          <figcaption>Produktbild · Seite 38</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-39.jpg" alt="Produktbild Seite 39">
-          <figcaption>Produktbild · Seite 39</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-40.jpg" alt="Produktbild Seite 40">
-          <figcaption>Produktbild · Seite 40</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-41.jpg" alt="Produktbild Seite 41">
-          <figcaption>Produktbild · Seite 41</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-42.jpg" alt="Produktbild Seite 42">
-          <figcaption>Produktbild · Seite 42</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-43.jpg" alt="Produktbild Seite 43">
-          <figcaption>Produktbild · Seite 43</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-44.jpg" alt="Produktbild Seite 44">
-          <figcaption>Produktbild · Seite 44</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-45.jpg" alt="Produktbild Seite 45">
-          <figcaption>Produktbild · Seite 45</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-46.jpg" alt="Produktbild Seite 46">
-          <figcaption>Produktbild · Seite 46</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-47.jpg" alt="Produktbild Seite 47">
-          <figcaption>Produktbild · Seite 47</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-48.jpg" alt="Produktbild Seite 48">
-          <figcaption>Produktbild · Seite 48</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-49.jpg" alt="Produktbild Seite 49">
-          <figcaption>Produktbild · Seite 49</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-50.jpg" alt="Produktbild Seite 50">
-          <figcaption>Produktbild · Seite 50</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-51.jpg" alt="Produktbild Seite 51">
-          <figcaption>Produktbild · Seite 51</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-52.jpg" alt="Produktbild Seite 52">
-          <figcaption>Produktbild · Seite 52</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-53.jpg" alt="Produktbild Seite 53">
-          <figcaption>Produktbild · Seite 53</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-54.jpg" alt="Produktbild Seite 54">
-          <figcaption>Produktbild · Seite 54</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-55.jpg" alt="Produktbild Seite 55">
-          <figcaption>Produktbild · Seite 55</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-56.jpg" alt="Produktbild Seite 56">
-          <figcaption>Produktbild · Seite 56</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-57.jpg" alt="Produktbild Seite 57">
-          <figcaption>Produktbild · Seite 57</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-58.jpg" alt="Produktbild Seite 58">
-          <figcaption>Produktbild · Seite 58</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-59.jpg" alt="Produktbild Seite 59">
-          <figcaption>Produktbild · Seite 59</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-60.jpg" alt="Produktbild Seite 60">
-          <figcaption>Produktbild · Seite 60</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-61.jpg" alt="Produktbild Seite 61">
-          <figcaption>Produktbild · Seite 61</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-62.jpg" alt="Produktbild Seite 62">
-          <figcaption>Produktbild · Seite 62</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-63.jpg" alt="Produktbild Seite 63">
-          <figcaption>Produktbild · Seite 63</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-64.jpg" alt="Produktbild Seite 64">
-          <figcaption>Produktbild · Seite 64</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-65.jpg" alt="Produktbild Seite 65">
-          <figcaption>Produktbild · Seite 65</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-66.jpg" alt="Produktbild Seite 66">
-          <figcaption>Produktbild · Seite 66</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-67.jpg" alt="Produktbild Seite 67">
-          <figcaption>Produktbild · Seite 67</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-68.jpg" alt="Produktbild Seite 68">
-          <figcaption>Produktbild · Seite 68</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-69.jpg" alt="Produktbild Seite 69">
-          <figcaption>Produktbild · Seite 69</figcaption>
-        </figure>
-
-        <figure class="gallery-card">
-          <img src="images/gallery/gallery-70.jpg" alt="Produktbild Seite 70">
-          <figcaption>Produktbild · Seite 70</figcaption>
-        </figure>
+        <div class="section-head">
+          <div>
+            <p class="kicker">Bildbereiche</p>
+            <h2>6 wichtige Bereiche</h2>
+          </div>
+          <p>Die Seite zeigt nur 6 wichtige Bereiche. Jeder Bereich öffnet eine eigene Detailseite mit passendem Inhalt.</p>
+        </div>
+
+        <div class="category-overview only-six-categories" id="categoryOverview">
+          <a href="zaunsysteme.html" class="category-entry-card simple-category-card" data-category-name="Zaunsysteme">
+            <span class="category-entry-image">
+              <img src="images/gallery/gallery-05.jpg" alt="Zaunsysteme">
+              <span>Bereich 1</span>
+            </span>
+            <strong>Zaunsysteme</strong>
+            <small>Moderne Zaun- und Mauersysteme mit klaren Linien.</small>
+          </a>
+          <a href="betonsteine-mauern.html" class="category-entry-card simple-category-card" data-category-name="Betonsteine &amp; Mauern">
+            <span class="category-entry-image">
+              <img src="images/gallery/gallery-16.jpg" alt="Betonsteine &amp; Mauern">
+              <span>Bereich 2</span>
+            </span>
+            <strong>Betonsteine &amp; Mauern</strong>
+            <small>Betonsteine, Mauerflächen und strukturierte Oberflächen.</small>
+          </a>
+          <a href="tore-zaunfelder.html" class="category-entry-card simple-category-card" data-category-name="Tore &amp; Zaunfelder">
+            <span class="category-entry-image">
+              <img src="images/gallery/gallery-27.jpg" alt="Tore &amp; Zaunfelder">
+              <span>Bereich 3</span>
+            </span>
+            <strong>Tore &amp; Zaunfelder</strong>
+            <small>Tore, Pforten, Zaunfelder und Einfahrtslösungen.</small>
+          </a>
+          <a href="gartenarchitektur.html" class="category-entry-card simple-category-card" data-category-name="Gartenarchitektur">
+            <span class="category-entry-image">
+              <img src="images/gallery/gallery-38.jpg" alt="Gartenarchitektur">
+              <span>Bereich 4</span>
+            </span>
+            <strong>Gartenarchitektur</strong>
+            <small>Palisaden, Gartenmauern, Pflanzsteine und Außenbereiche.</small>
+          </a>
+          <a href="beleuchtung-ausstattung.html" class="category-entry-card simple-category-card" data-category-name="Beleuchtung &amp; Ausstattung">
+            <span class="category-entry-image">
+              <img src="images/gallery/gallery-49.jpg" alt="Beleuchtung &amp; Ausstattung">
+              <span>Bereich 5</span>
+            </span>
+            <strong>Beleuchtung &amp; Ausstattung</strong>
+            <small>Beleuchtung, Briefkästen, Multimedia und Video-Intercom.</small>
+          </a>
+          <a href="zubehoer-details.html" class="category-entry-card simple-category-card" data-category-name="Zubehör &amp; Details">
+            <span class="category-entry-image">
+              <img src="images/gallery/gallery-60.jpg" alt="Zubehör &amp; Details">
+              <span>Bereich 6</span>
+            </span>
+            <strong>Zubehör &amp; Details</strong>
+            <small>Zubehör, Verbinder, Fundamente und weitere Details.</small>
+          </a>
         </div>
       </div>
     </section>
@@ -1068,26 +1154,47 @@
   </main>
 
   <footer>
-    <div class="container foot"><p>© <span id="year"></span> Zaunmacher24 · Demo-Produktseite ohne Onlinepreise.</p><div><a href="index.html">Start</a><a href="#produkte">Produkte</a><a href="#anfrage">Anfrage</a></div></div>
+    <div class="container foot">
+      <div class="footer-brand">
+        <div class="logo">
+          <img class="logo-mark" src="images/logo-icon.png" alt="" aria-hidden="true">
+          <span class="logo-wordmark">
+            <span class="logo-text">zaunmacher<span>24</span></span>
+            <small class="logo-tagline">ZAUN · TOR · MAUER</small>
+          </span>
+        </div>
+        <p>© <span id="year"></span> Zaunmacher24 · Produktseite ohne Onlinepreise.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Start</a>
+        <a href="#bilder">Bereiche</a>
+        <a href="#anfrage">Anfrage</a>
+      </div>
+    </div>
   </footer>
 
   <script>
-    const menu=document.getElementById('menu');
-    const toggle=document.getElementById('mobileToggle');
-    toggle.addEventListener('click',()=>menu.classList.toggle('open'));
-    document.getElementById('year').textContent=new Date().getFullYear();
-    const buttons=document.querySelectorAll('.filter-btn');
-    const tiles=document.querySelectorAll('.category-tile');
-    const cards=document.querySelectorAll('.product-card');
-    const search=document.getElementById('search');
-    const productInput=document.getElementById('product');
-    let active='all';
-    function setFilter(f){ active=f; buttons.forEach(b=>b.classList.toggle('active', b.dataset.filter===f)); tiles.forEach(t=>t.classList.toggle('active', t.dataset.filter===f)); apply(); document.getElementById('produkte').scrollIntoView({behavior:'smooth'}); }
-    function apply(){ const term=search.value.trim().toLowerCase(); cards.forEach(card=>{ const okCat=active==='all'||card.dataset.cat===active; const okSearch=!term||card.dataset.name.includes(term)||card.innerText.toLowerCase().includes(term); card.classList.toggle('hidden', !(okCat&&okSearch)); }); }
-    buttons.forEach(b=>b.addEventListener('click',()=>{ active=b.dataset.filter; buttons.forEach(x=>x.classList.toggle('active',x===b)); apply(); }));
-    tiles.forEach(t=>t.addEventListener('click',()=>setFilter(t.dataset.filter)));
-    search.addEventListener('input',apply);
-    document.querySelectorAll('[data-product]').forEach(a=>a.addEventListener('click',()=>{ productInput.value=a.dataset.product; }));
+    const pageHeader = document.querySelector('header');
+    const menu = document.getElementById('menu');
+    const toggle = document.getElementById('mobileToggle');
+    const year = document.getElementById('year');
+
+    function updateHeaderState() {
+      if (!pageHeader) return;
+      pageHeader.classList.toggle('is-scrolled', window.scrollY > 40);
+    }
+
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => menu.classList.toggle('open'));
+    }
+
+    if (year) {
+      year.textContent = new Date().getFullYear();
+    }
+});
   </script>
 </body>
 </html>
